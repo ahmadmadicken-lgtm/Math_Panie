@@ -774,10 +774,12 @@
 
   <!-- ── SIDEBAR ── -->
   <nav class="sidebar" id="sidebar">
-    <div class="sidebar-logo">
-      <div class="app-name">Matematika SMA</div>
-      <div class="app-sub">Persiapan UTBK / SNBT 2026</div>
-    </div>
+    <a class="sidebar-logo" href="index.html" style="text-decoration:none;display:block;transition:background .15s;" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
+      <div class="app-name" style="display:flex;align-items:center;gap:6px;">
+        <span style="font-size:11px;color:var(--teks3)">←</span> Matematika SMA
+      </div>
+      <div class="app-sub">Kembali ke Halaman Utama</div>
+    </a>
 
     <div class="sidebar-bab-info">
       <div class="bab-label">Fase 1 · Bab 01</div>
@@ -799,7 +801,10 @@
       <span class="nav-num">4</span> Persiapan UMPTN
     </button>
 
-    <div class="nav-section-label" style="margin-top:.5rem">Bab Berikutnya</div>
+    <div class="nav-section-label" style="margin-top:.5rem">Navigasi Bab</div>
+    <a class="nav-item" href="index.html">
+      <span class="nav-num">🏠</span> Beranda
+    </a>
     <a class="nav-item" href="bab-02-persamaan-linear.html">
       <span class="nav-num">→</span> Bab 02 · Persamaan Linear
     </a>
@@ -1311,12 +1316,11 @@
       </div>
 
       <div class="nav-bawah" style="justify-content:space-between">
-        <button class="btn-nav" style="background:var(--bg);color:var(--teks);border:0.5px solid var(--border2)" onclick="gantiSeksi('dasar', document.querySelectorAll('.nav-item')[0])">
-          ← Kembali ke Awal
-        </button>
-        <a class="btn-nav" href="bab-02-persamaan-linear.html">
-          Bab 02: Persamaan Linear →
-        </a>
+        <div style="display:flex;gap:8px;">
+          <a class="btn-nav" href="index.html" style="background:var(--bg);color:var(--teks);border:0.5px solid var(--border2);">🏠 Beranda</a>
+          <button class="btn-nav" style="background:var(--bg);color:var(--teks);border:0.5px solid var(--border2)" onclick="gantiSeksi('dasar', document.querySelectorAll('.nav-item')[0])">← Awal Bab</button>
+        </div>
+        <a class="btn-nav" href="bab-02-persamaan-linear.html">Bab 02: Persamaan Linear →</a>
       </div>
     </div>
 

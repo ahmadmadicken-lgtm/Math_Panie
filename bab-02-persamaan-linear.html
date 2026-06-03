@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bab 02 — Persamaan & Pertidaksamaan Linear | Matematika SMA</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --biru:      #185FA5; --biru-muda: #E6F1FB; --biru-teks: #0C447C;
+    --hijau:     #3B6D11; --hijau-muda:#EAF3DE; --hijau-teks:#27500A;
+    --amber:     #854F0B; --amber-muda:#FAEEDA; --amber-teks:#633806;
+    --ungu:      #534AB7; --ungu-muda: #EEEDFE; --ungu-teks: #3C3489;
+    --merah:     #A32D2D; --merah-muda:#FCEBEB; --merah-teks:#791F1F;
+    --teal:      #0F6E56; --teal-muda: #E1F5EE; --teal-teks: #085041;
+    --bg:        #ffffff; --bg2: #F8F7F4; --bg3: #F1EFE8;
+    --teks:      #1a1a18; --teks2: #5F5E5A; --teks3: #888780;
+    --border:    rgba(0,0,0,0.09); --border2: rgba(0,0,0,0.16);
+    --radius: 8px; --radius-lg: 12px;
+    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --mono: 'Fira Code', 'Courier New', monospace;
+  }
+  html { font-size: 16px; }
+  body { font-family: var(--font); background: var(--bg2); color: var(--teks); line-height: 1.7; }
+
+  .shell { display: flex; min-height: 100vh; }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 260px; flex-shrink: 0;
+    background: var(--bg); border-right: 0.5px solid var(--border2);
+    position: sticky; top: 0; height: 100vh; overflow-y: auto;
+    display: flex; flex-direction: column;
+  }
+  .sidebar-logo { padding: 1.25rem 1.25rem 1rem; border-bottom: 0.5px solid var(--border); }
+  .sidebar-logo .app-name { font-size: 13px; font-weight: 700; color: var(--teks); letter-spacing: -.02em; }
+  .sidebar-logo .app-sub  { font-size: 11px; color: var(--teks3); margin-top: 1px; }
+  .sidebar-bab-info { padding: .875rem 1.25rem; background: var(--biru-muda); border-bottom: 0.5px solid var(--border); }
+  .sidebar-bab-info .bab-label { font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--biru-teks); margin-bottom: 2px; }
+  .sidebar-bab-info .bab-title { font-size: 14px; font-weight: 700; color: var(--biru-teks); line-height: 1.35; }
+  .sidebar-bab-info .bab-fase  { font-size: 11px; color: var(--biru); margin-top: 4px; }
+  .nav-section-label { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teks3); padding: .875rem 1.25rem .375rem; }
+  .nav-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: .5rem 1.25rem; font-size: 13px; color: var(--teks2);
+    cursor: pointer; border-left: 2px solid transparent;
+    transition: all .15s; text-decoration: none; background: none;
+    border-top: none; border-right: none; border-bottom: none;
+    width: 100%; text-align: left;
+  }
+  .nav-item:hover { background: var(--bg2); color: var(--teks); }
+  .nav-item.aktif { background: var(--biru-muda); color: var(--biru-teks); border-left-color: var(--biru); font-weight: 600; }
+  .nav-item .nav-num {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--bg3); color: var(--teks3);
+    font-size: 10px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .nav-item.aktif .nav-num { background: var(--biru); color: #fff; }
+  .sidebar-progress { margin-top: auto; padding: 1rem 1.25rem; border-top: 0.5px solid var(--border); }
+  .progress-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--teks3); margin-bottom: 6px; }
+  .progress-track { height: 4px; background: var(--bg3); border-radius: 99px; overflow: hidden; }
+  .progress-fill  { height: 100%; background: var(--biru); border-radius: 99px; transition: width .4s ease; }
+
+  /* MAIN */
+  .main { flex: 1; min-width: 0; padding: 2rem 2.5rem; max-width: 820px; }
+
+  /* HEADER */
+  .page-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 0.5px solid var(--border); }
+  .fase-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 99px;
+    background: var(--hijau-muda); color: var(--hijau-teks); margin-bottom: 10px;
+  }
+  .page-header h1 { font-size: 28px; font-weight: 800; color: var(--teks); letter-spacing: -.03em; line-height: 1.2; margin-bottom: 8px; }
+  .page-header .deskripsi { font-size: 15px; color: var(--teks2); line-height: 1.65; max-width: 620px; }
+  .meta-row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  .meta-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; padding: 4px 12px; border-radius: 99px; border: 0.5px solid var(--border2); color: var(--teks2); background: var(--bg); }
+
+  /* SEKSI */
+  .seksi { display: none; }
+  .seksi.tampil { display: block; }
+  .level-banner {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12px; font-weight: 700; padding: 5px 14px;
+    border-radius: 99px; margin-bottom: 1.5rem;
+  }
+  .banner-sd  { background: var(--hijau-muda); color: var(--hijau-teks); }
+  .banner-smp { background: var(--biru-muda);  color: var(--biru-teks); }
+  .banner-sma { background: var(--ungu-muda);  color: var(--ungu-teks); }
+  .banner-un  { background: var(--merah-muda); color: var(--merah-teks); }
+
+  /* CARDS */
+  .kartu { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.25rem; }
+  .kartu-judul { font-size: 15px; font-weight: 700; color: var(--teks); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+  .kartu-judul .ico { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; background: var(--bg2); flex-shrink: 0; }
+
+  /* ANALOGI */
+  .analogi { background: var(--hijau-muda); border-left: 3px solid var(--hijau); border-radius: 0 var(--radius) var(--radius) 0; padding: 1rem 1.25rem; margin: .75rem 0; }
+  .analogi .lbl { font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--hijau-teks); margin-bottom: 5px; }
+  .analogi p { font-size: 14px; color: var(--hijau-teks); line-height: 1.7; }
+
+  /* INFO BOXES */
+  .info-box { border-radius: var(--radius); padding: .875rem 1.1rem; margin: .75rem 0; display: flex; gap: 10px; font-size: 14px; line-height: 1.65; border: 0.5px solid transparent; }
+  .info-box .ico { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .info-box.info   { background: var(--biru-muda);  border-color: #B5D4F4; color: var(--biru-teks); }
+  .info-box.tips   { background: var(--amber-muda); border-color: #FAC775; color: var(--amber-teks); }
+  .info-box.hati   { background: var(--ungu-muda);  border-color: #CECBF6; color: var(--ungu-teks); }
+  .info-box.bahaya { background: var(--merah-muda); border-color: #F7C1C1; color: var(--merah-teks); }
+  .info-box.sukses { background: var(--hijau-muda); border-color: #C0DD97; color: var(--hijau-teks); }
+
+  /* RUMUS */
+  .rumus { background: var(--biru-muda); border: 0.5px solid #B5D4F4; border-radius: var(--radius); padding: .875rem 1.1rem; font-family: var(--mono); font-size: 14px; color: var(--biru-teks); text-align: center; margin: .75rem 0; line-height: 1.9; }
+  .rumus.teal  { background: var(--teal-muda);  border-color: #9FE1CB; color: var(--teal-teks); }
+  .rumus.ungu  { background: var(--ungu-muda);  border-color: #CECBF6; color: var(--ungu-teks); }
+  .rumus.amber { background: var(--amber-muda); border-color: #FAC775; color: var(--amber-teks); }
+
+  /* TABEL */
+  .tabel-wrap { overflow-x: auto; margin: .75rem 0; }
+  table.sifat { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  table.sifat th { text-align: left; padding: 8px 12px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--teks3); border-bottom: 0.5px solid var(--border2); background: var(--bg2); }
+  table.sifat td { padding: 10px 12px; border-bottom: 0.5px solid var(--border); vertical-align: top; line-height: 1.6; }
+  table.sifat tr:last-child td { border-bottom: none; }
+  table.sifat td:first-child { font-family: var(--mono); font-size: 13px; color: var(--biru); background: var(--biru-muda); width: 40%; }
+  table.sifat em { color: var(--teks2); font-style: normal; font-size: 12.5px; }
+
+  /* SOAL */
+  .soal-box { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+  .soal-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .soal-meta .tag { font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 99px; }
+  .tag-mudah  { background: var(--hijau-muda); color: var(--hijau-teks); }
+  .tag-sedang { background: var(--amber-muda); color: var(--amber-teks); }
+  .tag-sulit  { background: var(--merah-muda); color: var(--merah-teks); }
+  .tag-umptn  { background: var(--ungu-muda);  color: var(--ungu-teks); }
+  .soal-teks  { font-size: 14.5px; color: var(--teks); line-height: 1.7; margin-bottom: 1rem; }
+  .btn-solusi { font-size: 13px; padding: 6px 16px; background: var(--biru-muda); color: var(--biru-teks); border: 0.5px solid #B5D4F4; border-radius: var(--radius); cursor: pointer; font-weight: 600; transition: background .15s; }
+  .btn-solusi:hover { background: #B5D4F4; }
+  .solusi { display: none; margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--border); }
+  .solusi.buka { display: block; }
+  .langkah { display: flex; gap: 12px; align-items: flex-start; margin-bottom: .75rem; }
+  .langkah .num { width: 24px; height: 24px; border-radius: 50%; background: var(--biru-muda); color: var(--biru-teks); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .langkah .teks { font-size: 14px; color: var(--teks2); line-height: 1.7; }
+  .langkah .teks strong { color: var(--teks); font-weight: 700; }
+  .langkah .teks code { font-family: var(--mono); font-size: 13px; background: var(--bg3); padding: 1px 5px; border-radius: 4px; color: var(--biru); }
+
+  /* KUIS */
+  .kuis-opsi { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: .875rem; }
+  @media (max-width: 500px) { .kuis-opsi { grid-template-columns: 1fr; } }
+  .opsi { padding: 9px 14px; font-size: 13.5px; text-align: left; background: var(--bg); border: 0.5px solid var(--border2); border-radius: var(--radius); cursor: pointer; transition: all .15s; color: var(--teks); line-height: 1.5; }
+  .opsi:hover:not(:disabled) { background: var(--biru-muda); border-color: #B5D4F4; color: var(--biru-teks); }
+  .opsi.benar { background: var(--hijau-muda) !important; border-color: #97C459 !important; color: var(--hijau-teks) !important; }
+  .opsi.salah { background: var(--merah-muda) !important; border-color: #F09595 !important; color: var(--merah-teks) !important; }
+  .kuis-feedback { display: none; margin-top: .875rem; font-size: 13.5px; line-height: 1.65; color: var(--teks2); }
+  .kuis-feedback.tampil { display: block; }
+
+  /* VISUALISASI */
+  .viz { background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin: .875rem 0; }
+  .viz-label { font-size: 12px; color: var(--teks3); margin-bottom: .875rem; text-align: center; }
+
+  /* GARIS BILANGAN */
+  .garis-bilangan-wrap { overflow-x: auto; padding: 1rem 0; }
+  .garis-bilangan { position: relative; height: 60px; min-width: 420px; }
+  .gb-line { position: absolute; top: 29px; left: 20px; right: 20px; height: 2px; background: var(--border2); }
+  .gb-fill { position: absolute; top: 25px; height: 10px; background: var(--biru); opacity: .35; transition: all .3s; }
+  .gb-tick { position: absolute; top: 20px; width: 1px; height: 18px; background: var(--teks3); }
+  .gb-num  { position: absolute; top: 42px; font-size: 11px; color: var(--teks3); transform: translateX(-50%); }
+  .gb-point { position: absolute; top: 21px; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--biru); background: var(--bg); transform: translateX(-50%); transition: left .3s; }
+  .gb-point.closed { background: var(--biru); }
+  .gb-arrow { position: absolute; top: 25px; height: 10px; }
+
+  .slider-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .slider-row label { font-size: 13px; color: var(--teks2); width: 130px; flex-shrink: 0; }
+  .slider-row input[type=range] { flex: 1; accent-color: var(--biru); }
+  .slider-row .val { font-size: 14px; font-weight: 700; min-width: 50px; text-align: right; color: var(--teks); font-family: var(--mono); }
+
+  .persamaan-display { text-align: center; font-family: var(--mono); font-size: 18px; color: var(--biru-teks); font-weight: 700; margin: .5rem 0; }
+  .jawaban-display   { text-align: center; font-size: 15px; color: var(--teks2); margin-top: 4px; }
+  .jawaban-display strong { color: var(--teks); font-size: 22px; }
+
+  /* KONEKSI GRID */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin: .75rem 0; }
+  .koneksi-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1rem; }
+  .koneksi-card .k-ico   { font-size: 20px; color: var(--biru); margin-bottom: 8px; }
+  .koneksi-card .k-judul { font-size: 13px; font-weight: 700; color: var(--teks); margin-bottom: 4px; }
+  .koneksi-card .k-desc  { font-size: 12.5px; color: var(--teks2); line-height: 1.6; }
+
+  /* SEKSI HEAD */
+  .seksi-head { font-size: 17px; font-weight: 700; color: var(--teks); margin: 1.75rem 0 1rem; padding-bottom: 8px; border-bottom: 0.5px solid var(--border); }
+
+  /* UMPTN */
+  .umptn-header { display: flex; align-items: center; gap: 8px; margin-bottom: .875rem; }
+  .tahun-pill { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 99px; background: var(--merah-muda); color: var(--merah-teks); }
+
+  /* NAV BAWAH */
+  .nav-bawah { display: flex; justify-content: space-between; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border); }
+  .btn-nav { display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px; font-size: 14px; font-weight: 700; background: var(--biru); color: #fff; border: none; border-radius: var(--radius); cursor: pointer; transition: background .15s; text-decoration: none; }
+  .btn-nav:hover { background: var(--biru-teks); }
+  .btn-nav.sekunder { background: var(--bg); color: var(--teks); border: 0.5px solid var(--border2); }
+  .btn-nav.sekunder:hover { background: var(--bg3); }
+
+  /* MOBILE */
+  .menu-toggle { display: none; position: fixed; bottom: 1.25rem; right: 1.25rem; width: 48px; height: 48px; border-radius: 50%; background: var(--biru); color: #fff; border: none; font-size: 20px; cursor: pointer; z-index: 200; align-items: center; justify-content: center; box-shadow: 0 2px 12px rgba(24,95,165,.35); }
+  @media (max-width: 768px) {
+    .sidebar { position: fixed; left: -260px; top: 0; z-index: 100; transition: left .25s ease; }
+    .sidebar.buka { left: 0; }
+    .main { padding: 1.25rem 1rem 4rem; }
+    .menu-toggle { display: flex; }
+    .page-header h1 { font-size: 22px; }
+  }
+
+  /* TABEL NILAI */
+  table.nilai { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: .75rem 0; }
+  table.nilai th { background: var(--bg3); padding: 8px 12px; text-align: center; font-size: 12px; font-weight: 700; border: 0.5px solid var(--border2); }
+  table.nilai td { padding: 9px 12px; text-align: center; border: 0.5px solid var(--border); }
+  table.nilai td.ya  { background: var(--hijau-muda); color: var(--hijau-teks); font-weight: 700; }
+  table.nilai td.tdk { background: var(--merah-muda); color: var(--merah-teks); }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <a class="sidebar-logo" href="index.html" style="text-decoration:none;display:block;transition:background .15s;" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
+      <div class="app-name" style="display:flex;align-items:center;gap:6px;">
+        <span style="font-size:11px;color:var(--teks3)">←</span> Matematika SMA
+      </div>
+      <div class="app-sub">Kembali ke Halaman Utama</div>
+    </a>
+    <div class="sidebar-bab-info">
+      <div class="bab-label">Fase 1 · Bab 02</div>
+      <div class="bab-title">Persamaan &amp; Pertidaksamaan Linear</div>
+      <div class="bab-fase">Fondasi Aljabar</div>
+    </div>
+    <div class="nav-section-label">Isi Bab</div>
+    <button class="nav-item aktif" onclick="gantiSeksi('dasar',this)"><span class="nav-num">1</span> Konsep Dasar</button>
+    <button class="nav-item" onclick="gantiSeksi('pengembangan',this)"><span class="nav-num">2</span> Pengembangan</button>
+    <button class="nav-item" onclick="gantiSeksi('pendalaman',this)"><span class="nav-num">3</span> Pendalaman</button>
+    <button class="nav-item" onclick="gantiSeksi('umptn',this)"><span class="nav-num">4</span> Persiapan UMPTN</button>
+    <div class="nav-section-label" style="margin-top:.5rem">Navigasi Bab</div>
+    <a class="nav-item" href="index.html"><span class="nav-num">🏠</span> Beranda</a>
+    <a class="nav-item" href="bab-01-eksponen-logaritma.html"><span class="nav-num">←</span> Bab 01 · Eksponen</a>
+    <a class="nav-item" href="bab-03-spldv-spltv.html"><span class="nav-num">→</span> Bab 03 · SPLDV/SPLTV</a>
+    <div class="sidebar-progress">
+      <div class="progress-label"><span>Kemajuan bab ini</span><span id="pct">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="page-header">
+      <div class="fase-pill">Fase 1 — Fondasi Aljabar</div>
+      <h1>Persamaan &amp; Pertidaksamaan Linear</h1>
+      <p class="deskripsi">
+        Fondasi paling mendasar matematika SMA. Persamaan mencari nilai yang <em>tepat</em>,
+        pertidaksamaan mencari <em>rentang</em> nilai. Dikuasai → hampir semua bab selanjutnya lebih mudah.
+      </p>
+      <div class="meta-row">
+        <span class="meta-chip">📘 Kelas 10</span>
+        <span class="meta-chip">🎯 PK &amp; PM UTBK</span>
+        <span class="meta-chip">⏱ ~75 menit</span>
+        <span class="meta-chip">🔑 Prasyarat semua bab</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         SEKSI 1 · KONSEP DASAR
+    ══════════════════════════════ -->
+    <div id="seksi-dasar" class="seksi tampil">
+      <span class="level-banner banner-sd">Level SD/SMP — Konsep Dasar</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚖️</span> 1.1 Analogi — Timbangan Neraca</div>
+        <div class="analogi">
+          <div class="lbl">Bayangkan ini</div>
+          <p>Bayangkan timbangan neraca yang setimbang. Kiri = kanan. Kalau kamu tambah 3 kg di kiri,
+          kamu harus tambah 3 kg di kanan agar tetap seimbang. Inilah persamaan —
+          <strong>apa pun yang kamu lakukan di satu sisi, lakukan hal yang sama di sisi lain.</strong></p>
+        </div>
+        <p style="font-size:14px;color:var(--teks2);line-height:1.7;margin-top:.75rem">
+          <strong>2x + 3 = 11</strong> artinya: "ada suatu nilai x yang kalau dimasukkan ke sisi kiri,
+          hasilnya sama dengan 11." Tugas kita: cari nilai x itu.
+        </p>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📏</span> 1.2 Analogi Pertidaksamaan — Batas Tinggi Wahana</div>
+        <div class="analogi">
+          <div class="lbl">Bayangkan ini</div>
+          <p>Di wahana permainan ada papan: "Tinggi minimal 120 cm". Artinya semua pengunjung
+          dengan tinggi ≥ 120 cm boleh masuk — bukan hanya satu orang, tapi <strong>semua yang memenuhi syarat</strong>.
+          Inilah pertidaksamaan — kita mencari <em>himpunan</em> nilai yang memenuhi suatu kondisi.</p>
+        </div>
+        <p style="font-size:14px;color:var(--teks2);line-height:1.7;margin-top:.75rem">
+          <strong>2x + 1 &gt; 7</strong> artinya: "berapa saja nilai x yang membuat sisi kiri lebih dari 7?"
+          Jawabannya bukan satu angka, tapi suatu <em>rentang</em>: <strong>x &gt; 3</strong>.
+        </p>
+      </div>
+
+      <!-- VISUALISASI INTERAKTIF GARIS BILANGAN -->
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎮</span> Visualisasi — Garis Bilangan Interaktif</div>
+        <div class="viz">
+          <div class="viz-label">Atur koefisien dan konstanta, lihat penyelesaiannya di garis bilangan</div>
+          <div class="slider-row">
+            <label>Koefisien x (a)</label>
+            <input type="range" min="1" max="5" value="2" step="1" id="sl-a" oninput="updateGB()">
+            <span class="val" id="v-a">2</span>
+          </div>
+          <div class="slider-row">
+            <label>Konstanta kiri (b)</label>
+            <input type="range" min="-5" max="5" value="1" step="1" id="sl-b" oninput="updateGB()">
+            <span class="val" id="v-b">1</span>
+          </div>
+          <div class="slider-row">
+            <label>Konstanta kanan (c)</label>
+            <input type="range" min="1" max="15" value="7" step="1" id="sl-c" oninput="updateGB()">
+            <span class="val" id="v-c">7</span>
+          </div>
+          <div class="persamaan-display" id="persamaan-disp">2x + 1 &gt; 7</div>
+          <div class="jawaban-display">Penyelesaian: x &gt; <strong id="hasil-x">3</strong></div>
+          <div class="garis-bilangan-wrap">
+            <div class="garis-bilangan" id="gb-container"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🌍</span> 1.3 Contoh Kehidupan Nyata</div>
+        <div class="info-box info">
+          <span class="ico">🛒</span>
+          <div><strong>Belanja:</strong> Harga 1 kg apel adalah x rupiah. Kamu membeli 3 kg dan total
+          bayar Rp 45.000. Persamaannya: <strong>3x = 45.000 → x = 15.000</strong></div>
+        </div>
+        <div class="info-box tips">
+          <span class="ico">💳</span>
+          <div><strong>Anggaran:</strong> Kamu punya Rp 200.000 dan ingin beli buku seharga Rp 35.000 per buah.
+          Berapa buku maksimal bisa dibeli? <strong>35.000n ≤ 200.000 → n ≤ 5,7 → maksimal 5 buku</strong></div>
+        </div>
+        <div class="info-box hati">
+          <span class="ico">🏃</span>
+          <div><strong>Olahraga:</strong> Seorang pelari sudah berlari 3 km dan target minimal 10 km.
+          Berapa km lagi? <strong>3 + x ≥ 10 → x ≥ 7 km</strong></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end">
+        <button class="btn-nav" onclick="gantiSeksi('pengembangan',document.querySelectorAll('.nav-item')[1])">Lanjut ke Pengembangan →</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         SEKSI 2 · PENGEMBANGAN
+    ══════════════════════════════ -->
+    <div id="seksi-pengembangan" class="seksi">
+      <span class="level-banner banner-smp">Level SMP/SMA Awal — Pengembangan Konsep</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📐</span> 2.1 Definisi Formal</div>
+        <div class="rumus">Persamaan linear satu variabel: ax + b = c, a ≠ 0<br>Solusi: x = (c − b) / a</div>
+        <div class="rumus teal" style="margin-top:.5rem">Pertidaksamaan linear: ax + b &gt; c (atau &lt;, ≥, ≤)<br>Perhatikan: jika a &lt; 0, tanda BERBALIK saat dibagi a</div>
+        <div class="info-box bahaya" style="margin-top:.875rem">
+          <span class="ico">🚨</span>
+          <div><strong>Aturan kritis pertidaksamaan:</strong> Kalau kedua ruas dibagi atau dikali bilangan
+          <em>negatif</em>, tanda pertidaksamaan <strong>harus dibalik</strong>!<br>
+          Contoh: −2x &gt; 6 → x &lt; −3 (bukan x &gt; −3)</div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📋</span> 2.2 Sifat-Sifat Kesetaraan dan Ketaksetaraan</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Operasi</th><th>Pada Persamaan</th><th>Pada Pertidaksamaan</th></tr></thead>
+            <tbody>
+              <tr><td>+ atau − konstanta</td><td>Tanda = tetap<br><em>x+2=5 → x=3</em></td><td>Tanda tetap<br><em>x+2&gt;5 → x&gt;3</em></td></tr>
+              <tr><td>× atau ÷ bilangan positif</td><td>Tanda = tetap<br><em>2x=8 → x=4</em></td><td>Tanda tetap<br><em>2x&gt;8 → x&gt;4</em></td></tr>
+              <tr><td>× atau ÷ bilangan negatif</td><td>Tanda = tetap<br><em>−x=3 → x=−3</em></td><td>Tanda BERBALIK ⚠️<br><em>−x&gt;3 → x&lt;−3</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📋</span> 2.3 Notasi Penyelesaian Pertidaksamaan</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Bentuk</th><th>Garis Bilangan</th><th>Himpunan / Interval</th></tr></thead>
+            <tbody>
+              <tr><td>x &gt; a</td><td>Titik a terbuka (○), panah ke kanan</td><td>{x | x &gt; a} atau (a, ∞)</td></tr>
+              <tr><td>x ≥ a</td><td>Titik a tertutup (●), panah ke kanan</td><td>{x | x ≥ a} atau [a, ∞)</td></tr>
+              <tr><td>x &lt; a</td><td>Titik a terbuka (○), panah ke kiri</td><td>{x | x &lt; a} atau (−∞, a)</td></tr>
+              <tr><td>x ≤ a</td><td>Titik a tertutup (●), panah ke kiri</td><td>{x | x ≤ a} atau (−∞, a]</td></tr>
+              <tr><td>a &lt; x &lt; b</td><td>Dua titik terbuka, garis di antara</td><td>{x | a &lt; x &lt; b} atau (a, b)</td></tr>
+              <tr><td>a ≤ x ≤ b</td><td>Dua titik tertutup, garis di antara</td><td>{x | a ≤ x ≤ b} atau [a, b]</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="seksi-head">Contoh Soal Bertahap</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-mudah">Mudah</span><span style="font-size:12px;color:var(--teks3)">Persamaan satu variabel</span></div>
+        <div class="soal-teks">Selesaikan: <strong>3x − 7 = 2x + 5</strong></div>
+        <button class="btn-solusi" onclick="toggleSolusi('s1')">Lihat solusi</button>
+        <div id="s1" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Pindahkan suku x ke kiri: <code>3x − 2x = 5 + 7</code></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Sederhanakan: <code>x = 12</code></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Cek: <code>3(12) − 7 = 29</code> dan <code>2(12) + 5 = 29</code> ✓ <strong>x = 12</strong></div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-mudah">Mudah</span><span style="font-size:12px;color:var(--teks3)">Pertidaksamaan dasar</span></div>
+        <div class="soal-teks">Tentukan HP: <strong>5 − 2x ≤ 11</strong></div>
+        <button class="btn-solusi" onclick="toggleSolusi('s2')">Lihat solusi</button>
+        <div id="s2" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Pindahkan 5 ke kanan: <code>−2x ≤ 11 − 5</code> → <code>−2x ≤ 6</code></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Bagi dengan −2 → tanda BERBALIK: <code>x ≥ −3</code></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks"><strong>HP = {x | x ≥ −3}</strong> atau x ∈ [−3, ∞) ✓</div></div>
+          <div class="info-box bahaya" style="margin-top:.5rem">
+            <span class="ico">⚠️</span>
+            <div>Tanda ≤ berubah menjadi ≥ karena dibagi −2 (negatif)!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-sedang">Menengah</span><span style="font-size:12px;color:var(--teks3)">Pertidaksamaan ganda</span></div>
+        <div class="soal-teks">Tentukan HP: <strong>−3 ≤ 2x + 1 &lt; 9</strong></div>
+        <button class="btn-solusi" onclick="toggleSolusi('s3')">Lihat solusi</button>
+        <div id="s3" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Kurangi semua bagian dengan 1: <code>−3−1 ≤ 2x &lt; 9−1</code> → <code>−4 ≤ 2x &lt; 8</code></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Bagi semua dengan 2 (positif, tanda tetap): <code>−2 ≤ x &lt; 4</code></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks"><strong>HP = {x | −2 ≤ x &lt; 4}</strong> atau x ∈ [−2, 4) ✓</div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end">
+        <button class="btn-nav" onclick="gantiSeksi('pendalaman',document.querySelectorAll('.nav-item')[2])">Lanjut ke Pendalaman →</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         SEKSI 3 · PENDALAMAN
+    ══════════════════════════════ -->
+    <div id="seksi-pendalaman" class="seksi">
+      <span class="level-banner banner-sma">Level SMA Lanjut — Pendalaman Materi</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.1 Persamaan Linear dengan Nilai Mutlak</div>
+        <div class="rumus">|ax + b| = c → ax + b = c  atau  ax + b = −c<br>(syarat: c ≥ 0)</div>
+        <div class="soal-box" style="background:var(--bg)">
+          <div class="soal-meta"><span class="tag tag-sedang">Contoh</span></div>
+          <div class="soal-teks">Selesaikan: <strong>|2x − 3| = 7</strong></div>
+          <button class="btn-solusi" onclick="toggleSolusi('s4')">Lihat solusi</button>
+          <div id="s4" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Kasus 1: <code>2x − 3 = 7</code> → <code>2x = 10</code> → <strong>x = 5</strong></div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Kasus 2: <code>2x − 3 = −7</code> → <code>2x = −4</code> → <strong>x = −2</strong></div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks"><strong>HP = {−2, 5}</strong> ✓</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.2 Pertidaksamaan dengan Nilai Mutlak</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Bentuk</th><th>Transformasi</th><th>Penyelesaian</th></tr></thead>
+            <tbody>
+              <tr><td>|ax + b| &lt; c</td><td>−c &lt; ax+b &lt; c</td><td>Pertidaksamaan ganda</td></tr>
+              <tr><td>|ax + b| &gt; c</td><td>ax+b &lt; −c atau ax+b &gt; c</td><td>Dua himpunan terpisah</td></tr>
+              <tr><td>|ax + b| ≤ c</td><td>−c ≤ ax+b ≤ c</td><td>Interval tertutup</td></tr>
+              <tr><td>|ax + b| ≥ c</td><td>ax+b ≤ −c atau ax+b ≥ c</td><td>Dua himpunan terpisah</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="soal-box" style="background:var(--bg);margin-top:1rem">
+          <div class="soal-meta"><span class="tag tag-sedang">Contoh</span></div>
+          <div class="soal-teks">Tentukan HP: <strong>|3x − 6| ≥ 9</strong></div>
+          <button class="btn-solusi" onclick="toggleSolusi('s5')">Lihat solusi</button>
+          <div id="s5" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Bentuk ≥ → dua kondisi: <code>3x−6 ≥ 9</code> atau <code>3x−6 ≤ −9</code></div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Kasus 1: <code>3x ≥ 15</code> → <strong>x ≥ 5</strong></div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks">Kasus 2: <code>3x ≤ −3</code> → <strong>x ≤ −1</strong></div></div>
+            <div class="langkah"><div class="num">4</div><div class="teks"><strong>HP = {x | x ≤ −1 atau x ≥ 5}</strong> atau (−∞,−1] ∪ [5,∞) ✓</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.3 Pertidaksamaan Pecahan Linear</div>
+        <div class="info-box hati">
+          <span class="ico">⚠️</span>
+          <div><strong>Jangan langsung kali silang!</strong> Jika penyebut bisa negatif (mengandung variabel),
+          kali silang akan mengubah tanda secara tak terduga. Gunakan metode tabel tanda.</div>
+        </div>
+        <div class="soal-box" style="background:var(--bg)">
+          <div class="soal-meta"><span class="tag tag-sulit">Lanjut</span></div>
+          <div class="soal-teks">Tentukan HP: <strong>(2x − 1) / (x + 3) &gt; 1</strong></div>
+          <button class="btn-solusi" onclick="toggleSolusi('s6')">Lihat solusi</button>
+          <div id="s6" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Pindahkan semua ke kiri: <code>(2x−1)/(x+3) − 1 &gt; 0</code></div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Samakan penyebut: <code>(2x−1−(x+3))/(x+3) &gt; 0</code> → <code>(x−4)/(x+3) &gt; 0</code></div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks">Titik kritis: x = 4 dan x = −3. Buat tabel tanda:</div></div>
+            <div style="overflow-x:auto;margin:.5rem 0">
+              <table class="nilai">
+                <tr><th>Interval</th><th>x−4</th><th>x+3</th><th>(x−4)/(x+3)</th><th>Hasil</th></tr>
+                <tr><td>x &lt; −3</td><td class="tdk">−</td><td class="tdk">−</td><td class="ya">+</td><td class="ya">✓</td></tr>
+                <tr><td>−3 &lt; x &lt; 4</td><td class="tdk">−</td><td class="ya">+</td><td class="tdk">−</td><td class="tdk">✗</td></tr>
+                <tr><td>x &gt; 4</td><td class="ya">+</td><td class="ya">+</td><td class="ya">+</td><td class="ya">✓</td></tr>
+              </table>
+            </div>
+            <div class="langkah"><div class="num">4</div><div class="teks"><strong>HP = {x | x &lt; −3 atau x &gt; 4}</strong> ✓ (x = −3 tidak termasuk karena menyebut nol)</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seksi-head">3.4 Hubungan dengan Bab Lain</div>
+      <div class="grid-2">
+        <div class="koneksi-card">
+          <div class="k-ico">🔗</div>
+          <div class="k-judul">SPLDV/SPLTV (Bab 03)</div>
+          <div class="k-desc">Sistem persamaan adalah kumpulan persamaan linear yang diselesaikan bersamaan.</div>
+        </div>
+        <div class="koneksi-card">
+          <div class="k-ico">📈</div>
+          <div class="k-judul">Program Linear (Bab 21)</div>
+          <div class="k-desc">Daerah penyelesaian program linear dibentuk dari pertidaksamaan linear.</div>
+        </div>
+        <div class="koneksi-card">
+          <div class="k-ico">∫</div>
+          <div class="k-judul">Pertidaksamaan Kuadrat (Bab 09)</div>
+          <div class="k-desc">Teknik tabel tanda yang dipelajari di sini juga dipakai untuk pertidaksamaan kuadrat.</div>
+        </div>
+        <div class="koneksi-card">
+          <div class="k-ico">📊</div>
+          <div class="k-judul">Nilai Mutlak → Modul</div>
+          <div class="k-desc">Persamaan dan pertidaksamaan nilai mutlak adalah topik yang konsisten muncul di UTBK.</div>
+        </div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end">
+        <button class="btn-nav" onclick="gantiSeksi('umptn',document.querySelectorAll('.nav-item')[3])">Lanjut ke Persiapan UMPTN →</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         SEKSI 4 · PERSIAPAN UMPTN
+    ══════════════════════════════ -->
+    <div id="seksi-umptn" class="seksi">
+      <span class="level-banner banner-un">Persiapan UTBK/SNBT</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎯</span> 4.1 Pola Kemunculan di UTBK</div>
+        <div class="grid-2">
+          <div style="background:var(--biru-muda);border-radius:var(--radius);padding:1rem">
+            <div style="font-size:12px;font-weight:700;color:var(--biru-teks);margin-bottom:6px">Pengetahuan Kuantitatif</div>
+            <ul style="padding-left:1.1rem;font-size:13px;color:var(--biru-teks);line-height:2">
+              <li>Persamaan linear (langsung)</li>
+              <li>Nilai mutlak</li>
+              <li>Pertidaksamaan pecahan</li>
+            </ul>
+          </div>
+          <div style="background:var(--ungu-muda);border-radius:var(--radius);padding:1rem">
+            <div style="font-size:12px;font-weight:700;color:var(--ungu-teks);margin-bottom:6px">Penalaran Matematika</div>
+            <ul style="padding-left:1.1rem;font-size:13px;color:var(--ungu-teks);line-height:2">
+              <li>Model matematika konteks nyata</li>
+              <li>Ketidaksamaan dari cerita</li>
+              <li>Interpretasi solusi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 4.2 Tips &amp; Trik UMPTN</div>
+        <div class="info-box tips">
+          <span class="ico">💡</span>
+          <div><strong>Trik 1 — Model matematika dulu:</strong> Soal cerita UMPTN selalu bisa diubah ke
+          persamaan/pertidaksamaan. Identifikasi variabel, tulis relasi, baru selesaikan.</div>
+        </div>
+        <div class="info-box tips">
+          <span class="ico">💡</span>
+          <div><strong>Trik 2 — Cek tanda saat nilai mutlak:</strong> Untuk |f(x)| = g(x), pastikan
+          g(x) ≥ 0. Jika g(x) &lt; 0, tidak ada solusi. Ini menghemat waktu pengerjaan.</div>
+        </div>
+        <div class="info-box tips">
+          <span class="ico">💡</span>
+          <div><strong>Trik 3 — Verifikasi substitusi:</strong> Kalau ragu, substitusikan kembali.
+          Untuk soal pilihan ganda, coba substitusi pilihan jawaban — sering lebih cepat.</div>
+        </div>
+        <div class="info-box bahaya">
+          <span class="ico">🚨</span>
+          <div><strong>Jebakan utama:</strong> Lupa membalik tanda pertidaksamaan saat mengalikan/membagi
+          dengan negatif, dan lupa memeriksa syarat penyebut ≠ 0 pada pertidaksamaan pecahan.</div>
+        </div>
+      </div>
+
+      <div class="seksi-head">4.3 Latihan Soal UMPTN</div>
+
+      <div class="kartu">
+        <div class="umptn-header">
+          <span class="tahun-pill">Prediksi SNBT 2026</span>
+          <span style="font-size:12px;color:var(--teks3)">Pengetahuan Kuantitatif</span>
+        </div>
+        <div class="soal-teks">
+          Himpunan penyelesaian dari <strong>|2x + 5| &lt; 9</strong> adalah...
+        </div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k1')">A. −7 &lt; x &lt; 2</button>
+          <button class="opsi" onclick="jawab(this,true,'k1')">B. −7 &lt; x &lt; 2</button>
+          <button class="opsi" onclick="jawab(this,false,'k1')">C. x &lt; −7 atau x &gt; 2</button>
+          <button class="opsi" onclick="jawab(this,false,'k1')">D. −2 &lt; x &lt; 7</button>
+        </div>
+        <div id="k1-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="kartu">
+        <div class="umptn-header">
+          <span class="tahun-pill">Prediksi SNBT 2026</span>
+          <span style="font-size:12px;color:var(--teks3)">Penalaran Matematika</span>
+        </div>
+        <div class="soal-teks">
+          Seorang pedagang membeli x kg beras seharga Rp 12.000/kg dan y kg gula seharga Rp 15.000/kg.
+          Total belanjanya tidak lebih dari Rp 180.000. Jika ia membeli 5 kg beras, maka berat gula
+          maksimal yang bisa dibeli adalah...
+        </div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k2')">A. 6 kg</button>
+          <button class="opsi" onclick="jawab(this,false,'k2')">B. 7 kg</button>
+          <button class="opsi" onclick="jawab(this,true,'k2')">C. 8 kg</button>
+          <button class="opsi" onclick="jawab(this,false,'k2')">D. 9 kg</button>
+        </div>
+        <div id="k2-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="seksi-head">4.4 Pembahasan Mendalam</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3)">Soal 1 — Nilai Mutlak</span></div>
+        <div class="soal-teks">Tentukan HP dari <strong>|2x + 5| &lt; 9</strong>.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u1')">Lihat pembahasan mendalam</button>
+        <div id="u1" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem">
+            <span>🔑</span><div><strong>Kunci:</strong> Bentuk |...| &lt; c → pertidaksamaan ganda: −c &lt; ... &lt; c</div>
+          </div>
+          <div class="langkah"><div class="num">1</div><div class="teks">Terapkan definisi: <code>−9 &lt; 2x + 5 &lt; 9</code></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Kurangi 5 semua bagian: <code>−14 &lt; 2x &lt; 4</code></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Bagi 2 (positif, tanda tetap): <code>−7 &lt; x &lt; 2</code></div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks"><strong>HP = (−7, 2)</strong> atau {x | −7 &lt; x &lt; 2} → <strong>Jawaban B ✓</strong></div></div>
+          <div class="info-box tips" style="margin-top:.75rem">
+            <span>⭐</span>
+            <div><strong>Ingat:</strong> |...| &lt; c → ganda (interval). |...| &gt; c → dua bagian terpisah. Hafalkan pola ini!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3)">Soal 2 — Model Matematika</span></div>
+        <div class="soal-teks">Pedagang membeli 5 kg beras (Rp 12.000/kg) dan y kg gula (Rp 15.000/kg), total ≤ Rp 180.000. Gula maksimal?</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u2')">Lihat pembahasan mendalam</button>
+        <div id="u2" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem">
+            <span>🔑</span><div><strong>Kunci:</strong> Buat model matematika dari soal cerita terlebih dahulu!</div>
+          </div>
+          <div class="langkah"><div class="num">1</div><div class="teks">Model: <code>12.000(5) + 15.000y ≤ 180.000</code></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Hitung: <code>60.000 + 15.000y ≤ 180.000</code></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Kurangi 60.000: <code>15.000y ≤ 120.000</code></div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks">Bagi 15.000: <code>y ≤ 8</code> → <strong>Gula maksimal 8 kg → Jawaban C ✓</strong></div></div>
+          <div class="info-box tips" style="margin-top:.75rem">
+            <span>⭐</span>
+            <div><strong>Pola soal PM UTBK:</strong> Selalu terjemahkan cerita ke model matematika dulu.
+            "Tidak lebih dari" = ≤, "paling sedikit" = ≥, "lebih dari" = &gt;.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-bawah">
+        <div style="display:flex;gap:8px;">
+          <a class="btn-nav sekunder" href="index.html">🏠 Beranda</a>
+          <a class="btn-nav sekunder" href="bab-01-eksponen-logaritma.html">← Bab 01</a>
+        </div>
+        <a class="btn-nav" href="bab-03-spldv-spltv.html">Bab 03: SPLDV/SPLTV →</a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu">☰</button>
+
+<script>
+  function gantiSeksi(id, btn) {
+    document.querySelectorAll('.seksi').forEach(s => s.classList.remove('tampil'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('aktif'));
+    document.getElementById('seksi-' + id).classList.add('tampil');
+    if (btn) btn.classList.add('aktif');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const map = { dasar:25, pengembangan:50, pendalaman:75, umptn:100 };
+    const pct = map[id] || 0;
+    document.getElementById('progFill').style.width = pct + '%';
+    document.getElementById('pct').textContent = pct + '%';
+  }
+
+  function toggleSolusi(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('buka');
+  }
+
+  function toggleMenu() {
+    document.getElementById('sidebar').classList.toggle('buka');
+  }
+
+  function jawab(btn, benar, kuisId) {
+    const parent = btn.closest('.kartu');
+    parent.querySelectorAll('.opsi').forEach(b => { b.disabled = true; });
+    btn.classList.add(benar ? 'benar' : 'salah');
+    if (!benar) {
+      parent.querySelectorAll('.opsi').forEach(b => {
+        if (b.getAttribute('onclick').includes('true')) b.classList.add('benar');
+      });
+    }
+    const fb = document.getElementById(kuisId + '-fb');
+    fb.classList.add('tampil');
+    fb.innerHTML = benar
+      ? '<span style="color:var(--hijau);font-weight:700">✓ Benar!</span> Lihat pembahasan lengkap di bagian 4.4.'
+      : '<span style="color:var(--merah);font-weight:700">✗ Belum tepat.</span> Perhatikan langkah transformasi nilai mutlak dan model matematika. Lihat pembahasan 4.4.';
+  }
+
+  /* ── VISUALISASI GARIS BILANGAN ── */
+  function updateGB() {
+    const a = parseInt(document.getElementById('sl-a').value);
+    const b = parseInt(document.getElementById('sl-b').value);
+    const c = parseInt(document.getElementById('sl-c').value);
+    document.getElementById('v-a').textContent = a;
+    document.getElementById('v-b').textContent = b >= 0 ? '+' + b : b;
+    document.getElementById('v-c').textContent = c;
+
+    const x = parseFloat(((c - b) / a).toFixed(2));
+
+    const bSign = b >= 0 ? ' + ' + b : ' − ' + Math.abs(b);
+    document.getElementById('persamaan-disp').textContent = a + 'x' + bSign + ' > ' + c;
+    document.getElementById('hasil-x').textContent = x % 1 === 0 ? x : x.toFixed(2);
+
+    renderGB(x);
+  }
+
+  function renderGB(xVal) {
+    const container = document.getElementById('gb-container');
+    container.innerHTML = '';
+    const W = container.offsetWidth || 420;
+    const minV = Math.floor(xVal) - 5;
+    const maxV = Math.ceil(xVal) + 5;
+    const range = maxV - minV;
+    const toX = v => 20 + ((v - minV) / range) * (W - 40);
+
+    const line = document.createElement('div');
+    line.className = 'gb-line';
+    container.appendChild(line);
+
+    for (let v = minV; v <= maxV; v++) {
+      const px = toX(v);
+      const tick = document.createElement('div');
+      tick.className = 'gb-tick';
+      tick.style.left = px + 'px';
+      container.appendChild(tick);
+      const num = document.createElement('div');
+      num.className = 'gb-num';
+      num.style.left = px + 'px';
+      num.textContent = v;
+      container.appendChild(num);
+    }
+
+    const fill = document.createElement('div');
+    fill.className = 'gb-fill';
+    fill.style.left = toX(xVal) + 'px';
+    fill.style.right = '20px';
+    fill.style.top = '25px';
+    fill.style.height = '10px';
+    container.appendChild(fill);
+
+    const arrow = document.createElement('div');
+    arrow.style.cssText = `position:absolute;top:25px;left:${toX(xVal)}px;right:0;height:10px;display:flex;align-items:center;justify-content:flex-end;padding-right:4px;font-size:16px;color:var(--biru);font-weight:700`;
+    arrow.textContent = '→';
+    container.appendChild(arrow);
+
+    const pt = document.createElement('div');
+    pt.className = 'gb-point';
+    pt.style.left = toX(xVal) + 'px';
+    container.appendChild(pt);
+  }
+
+  updateGB();
+  window.addEventListener('resize', updateGB);
+</script>
+</body>
+</html>
