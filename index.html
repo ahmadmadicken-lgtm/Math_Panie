@@ -290,8 +290,8 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 
   <div class="progress-bar-wrap">
     <span class="prog-label">Progres keseluruhan</span>
-    <div class="prog-track"><div class="prog-fill" style="width:9.375%"></div></div>
-    <span class="prog-pct">3 / 32 bab</span>
+    <div class="prog-track"><div class="prog-fill" style="width:12.5%"></div></div>
+    <span class="prog-pct">4 / 32 bab</span>
   </div>
 
   <div class="search-wrap">
@@ -328,7 +328,7 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
           <div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-arrow">→</span></div>
         </div>
         <div class="bab-card selesai" data-nama="sistem persamaan linear spldv spltv" onclick="navigasi('bab03')"><div class="bab-card-top"><div class="bab-nama">Sistem Persamaan Linear (SPLDV/SPLTV)</div><span class="bab-num">03</span></div><div class="bab-desc">Memecahkan beberapa persamaan sekaligus. Prasyarat matriks dan program linear.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-arrow">→</span></div></div>
-        <div class="bab-card coming-soon" data-nama="himpunan logika matematika"><div class="bab-card-top"><div class="bab-nama">Himpunan &amp; Logika Matematika</div><span class="bab-num">04</span></div><div class="bab-desc">Notasi himpunan, irisan, gabungan, dan prinsip logika dasar.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
+        <div class="bab-card selesai" data-nama="himpunan logika matematika" onclick="navigasi('bab04')"><div class="bab-card-top"><div class="bab-nama">Himpunan &amp; Logika Matematika</div><span class="bab-num">04</span></div><div class="bab-desc">Notasi himpunan, irisan, gabungan, dan prinsip logika dasar.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-arrow">→</span></div></div>
         <div class="bab-card coming-soon" data-nama="perbandingan rasio proporsi"><div class="bab-card-top"><div class="bab-nama">Perbandingan, Rasio &amp; Proporsi</div><span class="bab-num">05</span></div><div class="bab-desc">Skala, perbandingan senilai &amp; berbalik nilai. Sangat sering di soal PM.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
         <div class="bab-card coming-soon" data-nama="aritmetika sosial bunga diskon pajak"><div class="bab-card-top"><div class="bab-nama">Aritmetika Sosial</div><span class="bab-num">06</span></div><div class="bab-desc">Bunga tunggal &amp; majemuk, diskon, pajak, untung rugi.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
       </div>
@@ -960,10 +960,385 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 
 <!-- Mobile toggle -->
 <div id="page-bab04" class="page">
+<div class="shell">
+  <nav class="sidebar" id="sb04">
+    <a class="sidebar-logo" href="#" onclick="navigasi('home');return false;" style="text-decoration:none;display:block;transition:background .15s;" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
+      <div class="app-name" style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--teks3)">←</span> Matematika SMA</div>
+      <div class="app-sub">Kembali ke Halaman Utama</div>
+    </a>
+    <div class="sidebar-bab-info" style="background:var(--biru-muda);">
+      <div class="bab-label" style="color:var(--biru-teks);">Fase 1 · Bab 04</div>
+      <div class="bab-title" style="color:var(--biru-teks);">Himpunan &amp; Logika Matematika</div>
+      <div class="bab-fase" style="color:var(--biru);">Fondasi Aljabar</div>
+    </div>
+    <div class="nav-section-label">Isi Bab</div>
+    <button class="nav-item aktif" onclick="gantiSeksi('dasar',this)"><span class="nav-num">1</span> Konsep Dasar</button>
+    <button class="nav-item" onclick="gantiSeksi('pengembangan',this)"><span class="nav-num">2</span> Pengembangan</button>
+    <button class="nav-item" onclick="gantiSeksi('pendalaman',this)"><span class="nav-num">3</span> Pendalaman</button>
+    <button class="nav-item" onclick="gantiSeksi('umptn',this)"><span class="nav-num">4</span> Persiapan UMPTN</button>
+    <div class="nav-section-label" style="margin-top:.5rem">Navigasi Bab</div>
+    <a class="nav-item" href="#" onclick="navigasi('home');return false;"><span class="nav-num">🏠</span> Beranda</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab03');return false;"><span class="nav-num">←</span> Bab 03 · SPLDV/SPLTV</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab05');return false;"><span class="nav-num">→</span> Bab 05 · Perbandingan</a>
+    <div class="sidebar-progress">
+      <div class="progress-label"><span>Kemajuan bab ini</span><span id="pct-b04">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="pf-b04" style="width:0%"></div></div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <div class="fase-pill">Fase 1 — Fondasi Aljabar</div>
+      <h1>Himpunan &amp; Logika Matematika</h1>
+      <p class="deskripsi">Himpunan adalah cara mengorganisasi objek-objek ke dalam kelompok. Logika matematika mengajarkan cara berpikir valid dan menyimpulkan secara tepat. Keduanya menjadi bahasa dasar matematika formal dan sering muncul di soal PM UTBK.</p>
+      <div class="meta-row">
+        <span class="meta-chip">📘 Kelas 10–11</span>
+        <span class="meta-chip">🎯 PM UTBK</span>
+        <span class="meta-chip">⏱ ~80 menit</span>
+        <span class="meta-chip">🔑 Prasyarat: Bab 02</span>
+      </div>
+    </div>
+
+    <!-- ══ SEKSI 1: DASAR ══ -->
+    <div id="seksi-dasar" class="seksi tampil">
+      <span class="level-banner banner-sd">Level SD/SMP — Konsep Dasar</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎒</span> 1.1 Analogi Himpunan — Laci Lemari</div>
+        <div class="analogi">
+          <div class="lbl">Bayangkan ini</div>
+          <p>Bayangkan lemari dengan laci-laci berlabel. Laci "Baju Merah" hanya berisi baju merah. Laci "Baju Panjang" hanya berisi baju panjang. Beberapa baju bisa masuk ke <em>dua</em> laci sekaligus — baju merah yang juga panjang. Inilah himpunan: <strong>kumpulan objek dengan syarat yang jelas</strong>.</p>
+        </div>
+        <p style="font-size:14px;color:var(--teks2);line-height:1.7;margin-top:.75rem">
+          Himpunan ditulis dengan kurung kurawal: <strong>A = {1, 2, 3, 4, 5}</strong>. Setiap objek di dalam himpunan disebut <strong>anggota</strong> atau <strong>elemen</strong>.
+        </p>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎮</span> Visualisasi — Diagram Venn Interaktif</div>
+        <div class="viz">
+          <div class="viz-label">Klik tombol untuk melihat operasi himpunan di diagram Venn</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;justify-content:center;">
+            <button onclick="setVenn('irisan')" id="btn-irisan" style="padding:5px 14px;font-size:12px;font-weight:600;border-radius:99px;border:0.5px solid var(--biru);background:var(--biru);color:#fff;cursor:pointer;">A ∩ B (Irisan)</button>
+            <button onclick="setVenn('gabungan')" id="btn-gabungan" style="padding:5px 14px;font-size:12px;font-weight:600;border-radius:99px;border:0.5px solid var(--border2);background:var(--bg);color:var(--teks2);cursor:pointer;">A ∪ B (Gabungan)</button>
+            <button onclick="setVenn('selisihA')" id="btn-selisihA" style="padding:5px 14px;font-size:12px;font-weight:600;border-radius:99px;border:0.5px solid var(--border2);background:var(--bg);color:var(--teks2);cursor:pointer;">A \ B (Selisih)</button>
+            <button onclick="setVenn('komplemen')" id="btn-komplemen" style="padding:5px 14px;font-size:12px;font-weight:600;border-radius:99px;border:0.5px solid var(--border2);background:var(--bg);color:var(--teks2);cursor:pointer;">Aᶜ (Komplemen)</button>
+          </div>
+          <canvas id="venn-canvas" width="420" height="220" style="max-width:100%;display:block;margin:0 auto;border-radius:var(--radius);background:var(--bg);"></canvas>
+          <div id="venn-desc" style="text-align:center;margin-top:.75rem;font-size:13px;color:var(--teks2);line-height:1.6;">
+            <strong>A ∩ B</strong> = elemen yang ada di <em>kedua</em> himpunan sekaligus.
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">💡</span> 1.2 Analogi Logika — Sinyal Lampu Lalu Lintas</div>
+        <div class="analogi">
+          <div class="lbl">Bayangkan ini</div>
+          <p>Lampu <strong>hijau</strong> = boleh jalan (nilai <strong>Benar / True</strong>). Lampu <strong>merah</strong> = harus berhenti (nilai <strong>Salah / False</strong>). Logika matematika bekerja seperti ini — setiap pernyataan hanya bisa Benar atau Salah, tidak ada di tengah.</p>
+        </div>
+        <p style="font-size:14px;color:var(--teks2);line-height:1.7;margin-top:.75rem">
+          <strong>Pernyataan (proposisi)</strong> adalah kalimat yang bisa dinilai benar atau salah. "2 + 2 = 4" → <span style="color:var(--hijau);font-weight:600">Benar</span>. "Jakarta ibu kota Surabaya" → <span style="color:var(--merah);font-weight:600">Salah</span>.
+        </p>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🌍</span> 1.3 Contoh Nyata</div>
+        <div class="info-box info"><span class="ico">🏫</span><div><strong>Survei siswa:</strong> 30 siswa suka matematika, 25 suka fisika, 10 suka keduanya. Berapa yang suka setidaknya satu pelajaran? Pakai rumus: |A ∪ B| = |A| + |B| − |A ∩ B| = 30 + 25 − 10 = <strong>45 siswa</strong>.</div></div>
+        <div class="info-box tips"><span class="ico">📱</span><div><strong>Filter aplikasi:</strong> Saat kamu filter foto "pemandangan DAN senja", itu operasi irisan (∩). Filter "pemandangan ATAU pantai" itu operasi gabungan (∪).</div></div>
+        <div class="info-box hati"><span class="ico">🔐</span><div><strong>Logika di pemrograman:</strong> Kondisi IF dalam kode adalah logika matematika — <code>if (hujan AND hari_libur)</code> menggunakan konjungsi (∧).</div></div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('pengembangan',document.querySelectorAll('#page-bab04 .nav-item')[1])">Lanjut ke Pengembangan →</button>
+      </div>
+    </div>
+
+    <!-- ══ SEKSI 2: PENGEMBANGAN ══ -->
+    <div id="seksi-pengembangan" class="seksi">
+      <span class="level-banner banner-smp">Level SMP/SMA Awal — Pengembangan Konsep</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📐</span> 2.1 Notasi dan Istilah Himpunan</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Simbol</th><th>Nama</th><th>Contoh &amp; Arti</th></tr></thead>
+            <tbody>
+              <tr><td>∈</td><td>Anggota</td><td>3 ∈ {1,2,3,4} → "3 adalah anggota himpunan ini"</td></tr>
+              <tr><td>∉</td><td>Bukan anggota</td><td>5 ∉ {1,2,3,4} → "5 bukan anggota"</td></tr>
+              <tr><td>⊆</td><td>Himpunan bagian</td><td>{1,2} ⊆ {1,2,3} → semua elemen kiri ada di kanan</td></tr>
+              <tr><td>∅ atau {}</td><td>Himpunan kosong</td><td>Himpunan tanpa anggota sama sekali</td></tr>
+              <tr><td>n(A)</td><td>Kardinalitas</td><td>n({a,b,c}) = 3 → jumlah anggota = 3</td></tr>
+              <tr><td>S atau U</td><td>Semesta</td><td>Himpunan terbesar yang memuat semua himpunan yang dibahas</td></tr>
+              <tr><td>Aᶜ atau A'</td><td>Komplemen</td><td>Semua elemen di S yang TIDAK ada di A</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📋</span> 2.2 Operasi Himpunan</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Operasi</th><th>Simbol</th><th>Definisi &amp; Contoh</th></tr></thead>
+            <tbody>
+              <tr><td>Irisan</td><td>A ∩ B</td><td>Elemen yang ada di A DAN B.<br><em>A={1,2,3}, B={2,3,4} → A∩B={2,3}</em></td></tr>
+              <tr><td>Gabungan</td><td>A ∪ B</td><td>Elemen yang ada di A ATAU B (atau keduanya).<br><em>A={1,2,3}, B={2,3,4} → A∪B={1,2,3,4}</em></td></tr>
+              <tr><td>Selisih</td><td>A \ B</td><td>Elemen di A yang TIDAK ada di B.<br><em>A={1,2,3}, B={2,3,4} → A\B={1}</em></td></tr>
+              <tr><td>Komplemen</td><td>Aᶜ</td><td>Elemen di S yang tidak ada di A.<br><em>S={1..5}, A={1,2} → Aᶜ={3,4,5}</em></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rumus" style="margin-top:.875rem;">Rumus Inklusi-Eksklusi:<br>n(A ∪ B) = n(A) + n(B) − n(A ∩ B)</div>
+        <div class="rumus teal" style="margin-top:.5rem;">Tiga himpunan:<br>n(A∪B∪C) = n(A)+n(B)+n(C) − n(A∩B) − n(A∩C) − n(B∩C) + n(A∩B∩C)</div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📋</span> 2.3 Logika Matematika — Operator Dasar</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Operator</th><th>Simbol</th><th>Dibaca</th><th>Contoh</th></tr></thead>
+            <tbody>
+              <tr><td>Negasi</td><td>¬p atau ~p</td><td>"tidak p"</td><td>p: "Hari hujan" → ¬p: "Hari tidak hujan"</td></tr>
+              <tr><td>Konjungsi</td><td>p ∧ q</td><td>"p dan q"</td><td>Benar hanya jika p DAN q sama-sama benar</td></tr>
+              <tr><td>Disjungsi</td><td>p ∨ q</td><td>"p atau q"</td><td>Salah hanya jika p DAN q sama-sama salah</td></tr>
+              <tr><td>Implikasi</td><td>p → q</td><td>"jika p maka q"</td><td>Salah hanya jika p benar tapi q salah</td></tr>
+              <tr><td>Biimplikasi</td><td>p ↔ q</td><td>"p jika dan hanya jika q"</td><td>Benar jika p dan q sama-sama B atau sama-sama S</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📋</span> 2.4 Tabel Kebenaran Implikasi</div>
+        <div class="info-box bahaya"><span class="ico">⚠️</span><div><strong>Yang paling sering salah:</strong> p → q bernilai <strong>BENAR</strong> ketika p <em>salah</em> — bahkan tanpa melihat nilai q. Ini kontra-intuitif tapi inilah definisi formalnya!</div></div>
+        <div style="overflow-x:auto;margin:.75rem 0;">
+          <table style="border-collapse:collapse;font-size:13.5px;width:100%;max-width:420px;">
+            <thead><tr style="background:var(--bg2);">
+              <th style="padding:8px 14px;border:0.5px solid var(--border2);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--teks3);">p</th>
+              <th style="padding:8px 14px;border:0.5px solid var(--border2);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--teks3);">q</th>
+              <th style="padding:8px 14px;border:0.5px solid var(--border2);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--teks3);">p → q</th>
+              <th style="padding:8px 14px;border:0.5px solid var(--border2);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--teks3);">¬q → ¬p (Kontraposisi)</th>
+            </tr></thead>
+            <tbody>
+              <tr><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;color:var(--hijau-teks);font-weight:700;">B</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;color:var(--hijau-teks);font-weight:700;">B</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;background:var(--hijau-muda);color:var(--hijau-teks);font-weight:700;">B</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;background:var(--hijau-muda);color:var(--hijau-teks);font-weight:700;">B</td></tr>
+              <tr><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;color:var(--hijau-teks);font-weight:700;">B</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;color:var(--merah-teks);font-weight:700;">S</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;background:var(--merah-muda);color:var(--merah-teks);font-weight:700;">S</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;background:var(--merah-muda);color:var(--merah-teks);font-weight:700;">S</td></tr>
+              <tr><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;color:var(--merah-teks);font-weight:700;">S</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;color:var(--hijau-teks);font-weight:700;">B</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;background:var(--hijau-muda);color:var(--hijau-teks);font-weight:700;">B ⚠️</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;background:var(--hijau-muda);color:var(--hijau-teks);font-weight:700;">B</td></tr>
+              <tr><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;color:var(--merah-teks);font-weight:700;">S</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;color:var(--merah-teks);font-weight:700;">S</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;background:var(--hijau-muda);color:var(--hijau-teks);font-weight:700;">B ⚠️</td><td style="padding:9px 14px;border:0.5px solid var(--border);text-align:center;background:var(--hijau-muda);color:var(--hijau-teks);font-weight:700;">B</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="seksi-head">Contoh Soal Bertahap</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-mudah">Mudah</span><span style="font-size:12px;color:var(--teks3)">Operasi himpunan + inklusi-eksklusi</span></div>
+        <div class="soal-teks">Dari 40 siswa, 25 suka basket, 20 suka voli, dan 8 suka keduanya. Berapa siswa yang <strong>tidak suka keduanya</strong>?</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s04-1')">Lihat solusi</button>
+        <div id="s04-1" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">n(B ∪ V) = n(B) + n(V) − n(B ∩ V) = 25 + 20 − 8 = <strong>37 siswa</strong> suka setidaknya satu olahraga</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Yang tidak suka keduanya = 40 − 37 = <strong>3 siswa</strong> ✓</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-mudah">Mudah</span><span style="font-size:12px;color:var(--teks3)">Nilai kebenaran implikasi</span></div>
+        <div class="soal-teks">Diketahui p bernilai <strong>Benar</strong> dan q bernilai <strong>Salah</strong>. Tentukan nilai kebenaran: <strong>(¬p ∨ q)</strong></div>
+        <button class="btn-solusi" onclick="toggleSolusi('s04-2')">Lihat solusi</button>
+        <div id="s04-2" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">¬p = negasi dari Benar = <strong>Salah</strong></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">¬p ∨ q = Salah ∨ Salah = <strong>Salah</strong> ✓</div></div>
+          <div class="info-box info" style="margin-top:.5rem"><span>💡</span><div>Ingat: disjungsi (∨) hanya Salah jika KEDUANYA salah.</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-sedang">Menengah</span><span style="font-size:12px;color:var(--teks3)">Konvers, invers, kontraposisi</span></div>
+        <div class="soal-teks">Dari implikasi <strong>"Jika hari hujan maka jalanan basah"</strong>, tentukan konvers, invers, dan kontraposisinya.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s04-3')">Lihat solusi</button>
+        <div id="s04-3" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks"><strong>Implikasi asli (p→q):</strong> "Jika hujan maka jalanan basah"</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks"><strong>Konvers (q→p):</strong> "Jika jalanan basah maka hari hujan" — <em>tidak selalu benar!</em></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks"><strong>Invers (¬p→¬q):</strong> "Jika tidak hujan maka jalanan tidak basah" — <em>tidak selalu benar!</em></div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks"><strong>Kontraposisi (¬q→¬p):</strong> "Jika jalanan tidak basah maka tidak hujan" — <em>selalu ekuivalen dengan asli!</em> ✓</div></div>
+          <div class="info-box tips" style="margin-top:.5rem"><span>⭐</span><div><strong>Kunci:</strong> Implikasi SELALU ekuivalen dengan kontraposisinya. Konvers dan invers ekuivalen satu sama lain — tapi TIDAK dengan implikasi asli.</div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('pendalaman',document.querySelectorAll('#page-bab04 .nav-item')[2])">Lanjut ke Pendalaman →</button>
+      </div>
+    </div>
+
+    <!-- ══ SEKSI 3: PENDALAMAN ══ -->
+    <div id="seksi-pendalaman" class="seksi">
+      <span class="level-banner banner-sma">Level SMA Lanjut — Pendalaman Materi</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.1 Hukum-Hukum Himpunan</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Hukum</th><th>Untuk Himpunan</th><th>Untuk Logika</th></tr></thead>
+            <tbody>
+              <tr><td>Komutatif</td><td>A∩B = B∩A &nbsp;|&nbsp; A∪B = B∪A</td><td>p∧q ≡ q∧p</td></tr>
+              <tr><td>Asosiatif</td><td>(A∩B)∩C = A∩(B∩C)</td><td>(p∧q)∧r ≡ p∧(q∧r)</td></tr>
+              <tr><td>Distributif</td><td>A∩(B∪C) = (A∩B)∪(A∩C)</td><td>p∧(q∨r) ≡ (p∧q)∨(p∧r)</td></tr>
+              <tr><td>De Morgan</td><td>(A∪B)ᶜ = Aᶜ∩Bᶜ</td><td>¬(p∨q) ≡ ¬p∧¬q</td></tr>
+              <tr><td>De Morgan</td><td>(A∩B)ᶜ = Aᶜ∪Bᶜ</td><td>¬(p∧q) ≡ ¬p∨¬q</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-box hati"><span class="ico">⚠️</span><div><strong>Hukum De Morgan</strong> adalah yang paling sering diuji di UMPTN. Hafalkan: negasi dari "dan" jadi "atau", dan sebaliknya — sambil masing-masing komponen dinegasi.</div></div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.2 Penarikan Kesimpulan (Silogisme)</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Aturan</th><th>Bentuk</th><th>Nama</th></tr></thead>
+            <tbody>
+              <tr><td>Modus Ponens</td><td>p→q, p benar → q benar</td><td>Penegasan anteseden</td></tr>
+              <tr><td>Modus Tollens</td><td>p→q, q salah → p salah</td><td>Penyangkalan konsekuen</td></tr>
+              <tr><td>Silogisme</td><td>p→q, q→r → p→r</td><td>Rantai implikasi</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="soal-box" style="background:var(--bg);margin-top:1rem;">
+          <div class="soal-meta"><span class="tag tag-sedang">Contoh</span></div>
+          <div class="soal-teks">Premis 1: Jika Ahmad rajin belajar, maka ia lulus ujian.<br>Premis 2: Ahmad tidak lulus ujian.<br><strong>Kesimpulan?</strong></div>
+          <button class="btn-solusi" onclick="toggleSolusi('s04-4')">Lihat solusi</button>
+          <div id="s04-4" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Bentuk: p → q, ¬q → ? (Modus Tollens)</div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Modus Tollens: jika q salah, maka p salah.</div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks"><strong>Kesimpulan: Ahmad tidak rajin belajar.</strong> ✓</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.3 Soal Aplikasi — Tiga Himpunan</div>
+        <div class="soal-box" style="background:var(--bg);">
+          <div class="soal-meta"><span class="tag tag-sulit">Lanjut</span></div>
+          <div class="soal-teks">Dari 60 siswa: 30 ikut ekskul Musik (M), 25 ikut Olahraga (O), 20 ikut Seni (S). Yang ikut M∩O = 10, O∩S = 8, M∩S = 6, dan M∩O∩S = 3. Berapa siswa yang <strong>tidak ikut satupun</strong> ekskul?</div>
+          <button class="btn-solusi" onclick="toggleSolusi('s04-5')">Lihat solusi</button>
+          <div id="s04-5" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Gunakan rumus tiga himpunan:<br>n(M∪O∪S) = 30+25+20 − 10−8−6 + 3 = <strong>54</strong></div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Tidak ikut satupun = 60 − 54 = <strong>6 siswa</strong> ✓</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seksi-head">3.4 Hubungan dengan Bab Lain</div>
+      <div class="grid-2">
+        <div class="koneksi-card"><div class="k-ico">🔗</div><div class="k-judul">Peluang (Bab 25–26)</div><div class="k-desc">Ruang sampel adalah himpunan. Kejadian adalah himpunan bagian. Operasi himpunan langsung dipakai dalam peluang majemuk.</div></div>
+        <div class="koneksi-card"><div class="k-ico">📈</div><div class="k-judul">Fungsi (Bab 07)</div><div class="k-desc">Domain dan kodomain fungsi adalah himpunan. Relasi antara dua himpunan mendefinisikan fungsi.</div></div>
+        <div class="koneksi-card"><div class="k-ico">🧮</div><div class="k-judul">Statistika (Bab 22–23)</div><div class="k-desc">Populasi dan sampel dalam statistika adalah konsep himpunan. Diagram Venn dipakai untuk analisis data kategorik.</div></div>
+        <div class="koneksi-card"><div class="k-ico">💻</div><div class="k-ico">🤖</div><div class="k-judul">Logika &amp; Pemrograman</div><div class="k-desc">Logika matematika adalah fondasi algoritma, kondisi if-else, dan query database (AND, OR, NOT).</div></div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('umptn',document.querySelectorAll('#page-bab04 .nav-item')[3])">Lanjut ke Persiapan UMPTN →</button>
+      </div>
+    </div>
+
+    <!-- ══ SEKSI 4: UMPTN ══ -->
+    <div id="seksi-umptn" class="seksi">
+      <span class="level-banner banner-un">Persiapan UTBK/SNBT</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎯</span> 4.1 Pola Kemunculan di UTBK</div>
+        <div class="grid-2">
+          <div style="background:var(--biru-muda);border-radius:var(--radius);padding:1rem;">
+            <div style="font-size:12px;font-weight:700;color:var(--biru-teks);margin-bottom:6px;">Pengetahuan Kuantitatif</div>
+            <ul style="padding-left:1.1rem;font-size:13px;color:var(--biru-teks);line-height:2;"><li>Nilai kebenaran majemuk</li><li>Kontraposisi &amp; ekuivalensi</li><li>Penarikan kesimpulan</li></ul>
+          </div>
+          <div style="background:var(--ungu-muda);border-radius:var(--radius);padding:1rem;">
+            <div style="font-size:12px;font-weight:700;color:var(--ungu-teks);margin-bottom:6px;">Penalaran Matematika</div>
+            <ul style="padding-left:1.1rem;font-size:13px;color:var(--ungu-teks);line-height:2;"><li>Soal survei 2–3 kelompok</li><li>Diagram Venn dari cerita</li><li>Mencari anggota tak diketahui</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 4.2 Tips &amp; Trik UMPTN</div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 1 — Gambar Venn dulu:</strong> Untuk soal survei himpunan, selalu gambar diagram Venn dan isi dari tengah (irisan tiga) ke luar. Jangan dari jumlah total.</div></div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 2 — Kontraposisi = ekuivalen:</strong> Soal yang minta "pernyataan yang ekuivalen dengan p→q" → jawabannya adalah kontraposisi ¬q→¬p. Bukan konvers, bukan invers!</div></div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 3 — De Morgan cepat:</strong> ¬(p∧q) → ganti "dan" jadi "atau", negasi semua komponen. ¬(p∨q) → ganti "atau" jadi "dan", negasi semua komponen.</div></div>
+        <div class="info-box bahaya"><span class="ico">🚨</span><div><strong>Jebakan utama:</strong> Konvers dan invers <em>tidak</em> ekuivalen dengan implikasi asli. Banyak siswa salah memilih konvers sebagai pernyataan yang ekuivalen!</div></div>
+      </div>
+
+      <div class="seksi-head">4.3 Latihan Soal UMPTN</div>
+
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Penalaran Matematika</span></div>
+        <div class="soal-teks">Dari 50 orang, 30 suka kopi, 25 suka teh, dan 10 suka keduanya. Banyak orang yang <strong>tidak suka kopi maupun teh</strong> adalah...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k04-1')">A. 3 orang</button>
+          <button class="opsi" onclick="jawab(this,false,'k04-1')">B. 4 orang</button>
+          <button class="opsi" onclick="jawab(this,true,'k04-1')">C. 5 orang</button>
+          <button class="opsi" onclick="jawab(this,false,'k04-1')">D. 6 orang</button>
+        </div>
+        <div id="k04-1-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Pengetahuan Kuantitatif</span></div>
+        <div class="soal-teks">Pernyataan yang <strong>ekuivalen</strong> dengan "Jika siswa rajin, maka nilainya bagus" adalah...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k04-2')">A. Jika siswa tidak rajin, maka nilainya tidak bagus</button>
+          <button class="opsi" onclick="jawab(this,false,'k04-2')">B. Jika nilainya bagus, maka siswa rajin</button>
+          <button class="opsi" onclick="jawab(this,true,'k04-2')">C. Jika nilainya tidak bagus, maka siswa tidak rajin</button>
+          <button class="opsi" onclick="jawab(this,false,'k04-2')">D. Siswa rajin dan nilainya bagus</button>
+        </div>
+        <div id="k04-2-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="seksi-head">4.4 Pembahasan Mendalam</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3);">Soal 1 — Inklusi-Eksklusi</span></div>
+        <div class="soal-teks">50 orang, 30 suka kopi (K), 25 suka teh (T), 10 suka keduanya. Tidak suka keduanya?</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u04-1')">Lihat pembahasan mendalam</button>
+        <div id="u04-1" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem"><span>🔑</span><div><strong>Kunci:</strong> Isi diagram Venn dari bagian tengah ke tepi, lalu kurangi dari total.</div></div>
+          <div class="langkah"><div class="num">1</div><div class="teks">n(K ∪ T) = n(K) + n(T) − n(K ∩ T) = 30 + 25 − 10 = <strong>45</strong></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Tidak suka keduanya = 50 − 45 = <strong>5 orang → Jawaban C ✓</strong></div></div>
+          <div class="info-box tips" style="margin-top:.75rem"><span>⭐</span><div><strong>Pola UMPTN:</strong> Selalu: total − n(A∪B). Dan n(A∪B) = n(A) + n(B) − n(A∩B). Dua langkah ini cukup untuk semua soal survei dua himpunan.</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3);">Soal 2 — Kontraposisi</span></div>
+        <div class="soal-teks">"Jika siswa rajin, maka nilainya bagus." Pernyataan yang ekuivalen?</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u04-2')">Lihat pembahasan mendalam</button>
+        <div id="u04-2" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem"><span>🔑</span><div><strong>Kunci:</strong> Ekuivalen = sama nilai kebenarannya. Implikasi hanya ekuivalen dengan kontraposisinya.</div></div>
+          <div class="langkah"><div class="num">1</div><div class="teks">Implikasi asli: p → q, di mana p = "rajin", q = "nilai bagus"</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Kontraposisi: ¬q → ¬p = "Jika nilainya <em>tidak</em> bagus, maka siswa <em>tidak</em> rajin"</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Opsi A = Invers (¬p→¬q) — tidak ekuivalen. Opsi B = Konvers (q→p) — tidak ekuivalen. <strong>Jawaban C = Kontraposisi ✓</strong></div></div>
+          <div class="info-box bahaya" style="margin-top:.75rem"><span>🚨</span><div><strong>Jangan tertukar:</strong> Konvers (B) terlihat "masuk akal" tapi TIDAK ekuivalen dengan implikasi asli secara logika formal!</div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah">
+        <div style="display:flex;gap:8px;">
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('home');return false;">🏠 Beranda</a>
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('bab03');return false;">← Bab 03</a>
+        </div>
+        <a class="btn-nav" href="#" onclick="navigasi('bab05');return false;">Bab 05: Perbandingan &amp; Rasio →</a>
+      </div>
+    </div>
+
+  </main>
+</div>
+</div>
+
+<div id="page-bab05" class="page">
   <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1rem;padding:2rem;text-align:center;">
     <div style="font-size:48px">🚧</div>
-    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 04 — Segera Hadir</div>
-    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Himpunan &amp; Logika Matematika sedang dalam pengerjaan.</div>
+    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 05 — Segera Hadir</div>
+    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Perbandingan, Rasio &amp; Proporsi sedang dalam pengerjaan.</div>
     <button onclick="navigasi('home')" style="margin-top:1rem;padding:10px 24px;background:var(--biru);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;cursor:pointer;">← Kembali ke Beranda</button>
   </div>
 </div>
@@ -2129,6 +2504,95 @@ function renderGB(xVal) {
 }
 
 window.addEventListener('resize', () => { if (typeof updateGB === 'function') updateGB(); });
+
+
+/* ══ BAB 04 — VENN CANVAS ══ */
+var vennMode = 'irisan';
+function setVenn(mode) {
+  vennMode = mode;
+  ['irisan','gabungan','selisihA','komplemen'].forEach(m => {
+    var b = document.getElementById('btn-' + m);
+    if (b) { b.style.background = m===mode ? 'var(--biru)' : 'var(--bg)'; b.style.color = m===mode ? '#fff' : 'var(--teks2)'; b.style.borderColor = m===mode ? 'var(--biru)' : 'var(--border2)'; }
+  });
+  var descs = {
+    irisan: '<strong>A ∩ B</strong> = elemen yang ada di <em>kedua</em> himpunan sekaligus. A={1,2,3,4,5}, B={3,4,5,6,7} → A∩B={3,4,5}',
+    gabungan: '<strong>A ∪ B</strong> = semua elemen yang ada di A <em>atau</em> B. A∪B={1,2,3,4,5,6,7}',
+    selisihA: '<strong>A \\ B</strong> = elemen di A yang <em>tidak</em> ada di B. A\\B={1,2}',
+    komplemen: '<strong>Aᶜ</strong> = semua elemen di S yang <em>tidak</em> ada di A. Jika S={1..8}, Aᶜ={6,7,8}'
+  };
+  var d = document.getElementById('venn-desc');
+  if (d) d.innerHTML = descs[mode];
+  drawVenn();
+}
+function drawVenn() {
+  var canvas = document.getElementById('venn-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+  var cx = W/2, cy = H/2, r = 75, off = 45;
+  var ax = cx - off, bx = cx + off;
+
+  // Highlight area berdasarkan mode
+  ctx.save();
+  if (vennMode === 'irisan') {
+    // Irisan = overlap dua lingkaran
+    ctx.beginPath(); ctx.arc(ax, cy, r, 0, 2*Math.PI);
+    ctx.clip();
+    ctx.beginPath(); ctx.arc(bx, cy, r, 0, 2*Math.PI);
+    ctx.fillStyle = 'rgba(24,95,165,0.25)'; ctx.fill();
+  } else if (vennMode === 'gabungan') {
+    ctx.beginPath(); ctx.arc(ax, cy, r, 0, 2*Math.PI); ctx.fillStyle = 'rgba(24,95,165,0.18)'; ctx.fill();
+    ctx.beginPath(); ctx.arc(bx, cy, r, 0, 2*Math.PI); ctx.fillStyle = 'rgba(24,95,165,0.18)'; ctx.fill();
+  } else if (vennMode === 'selisihA') {
+    // A minus B: dalam A, luar B
+    ctx.beginPath();
+    ctx.arc(ax, cy, r, 0, 2*Math.PI);
+    ctx.clip();
+    ctx.fillStyle = 'rgba(24,95,165,0.25)';
+    ctx.fillRect(0,0,W,H);
+    ctx.save();
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.beginPath(); ctx.arc(bx, cy, r, 0, 2*Math.PI); ctx.fill();
+    ctx.restore();
+  } else if (vennMode === 'komplemen') {
+    // Komplemen A: luar A, dalam kotak semesta
+    ctx.rect(20,20,W-40,H-40); ctx.arc(ax, cy, r, 0, 2*Math.PI, true);
+    ctx.fillStyle = 'rgba(83,74,183,0.2)'; ctx.fill();
+  }
+  ctx.restore();
+
+  // Kotak semesta
+  ctx.strokeStyle = 'rgba(136,135,128,0.4)'; ctx.lineWidth = 1; ctx.setLineDash([4,3]);
+  ctx.strokeRect(20,20,W-40,H-40);
+  ctx.setLineDash([]);
+
+  // Label S
+  ctx.fillStyle = 'var(--teks3)'; ctx.font = '12px sans-serif'; ctx.textAlign = 'left';
+  ctx.fillText('S', 28, 38);
+
+  // Lingkaran A
+  ctx.beginPath(); ctx.arc(ax, cy, r, 0, 2*Math.PI);
+  ctx.strokeStyle = '#185FA5'; ctx.lineWidth = 2; ctx.stroke();
+
+  // Lingkaran B
+  ctx.beginPath(); ctx.arc(bx, cy, r, 0, 2*Math.PI);
+  ctx.strokeStyle = '#3B6D11'; ctx.lineWidth = 2; ctx.stroke();
+
+  // Label A, B
+  ctx.fillStyle = '#185FA5'; ctx.font = '600 16px sans-serif'; ctx.textAlign = 'center';
+  ctx.fillText('A', ax - r/2 - 6, cy + 5);
+  ctx.fillStyle = '#3B6D11';
+  ctx.fillText('B', bx + r/2 + 6, cy + 5);
+
+  // Elemen contoh
+  ctx.font = '11px sans-serif'; ctx.fillStyle = '#5F5E5A'; ctx.textAlign = 'center';
+  var elA = ['1','2']; var elAB = ['3','4','5']; var elB = ['6','7'];
+  elA.forEach(function(e,i){ ctx.fillText(e, ax - 30, cy - 15 + i*22); });
+  elAB.forEach(function(e,i){ ctx.fillText(e, cx, cy - 22 + i*22); });
+  elB.forEach(function(e,i){ ctx.fillText(e, bx + 30, cy - 10 + i*22); });
+}
+document.addEventListener('DOMContentLoaded', function() { setTimeout(function(){ setVenn('irisan'); drawVenn(); }, 150); });
 
 /* ══ BAB 03 — CANVAS SPLDV ══ */
 function drawSPLDV() {
