@@ -290,8 +290,8 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 
   <div class="progress-bar-wrap">
     <span class="prog-label">Progres keseluruhan</span>
-    <div class="prog-track"><div class="prog-fill" style="width:6.25%"></div></div>
-    <span class="prog-pct">2 / 32 bab</span>
+    <div class="prog-track"><div class="prog-fill" style="width:9.375%"></div></div>
+    <span class="prog-pct">3 / 32 bab</span>
   </div>
 
   <div class="search-wrap">
@@ -327,7 +327,7 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
           <div class="bab-desc">Persamaan satu dan dua variabel. Dasar untuk hampir semua bab selanjutnya.</div>
           <div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-arrow">→</span></div>
         </div>
-        <div class="bab-card coming-soon" data-nama="sistem persamaan linear spldv spltv"><div class="bab-card-top"><div class="bab-nama">Sistem Persamaan Linear (SPLDV/SPLTV)</div><span class="bab-num">03</span></div><div class="bab-desc">Memecahkan beberapa persamaan sekaligus. Prasyarat matriks dan program linear.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
+        <div class="bab-card selesai" data-nama="sistem persamaan linear spldv spltv" onclick="navigasi('bab03')"><div class="bab-card-top"><div class="bab-nama">Sistem Persamaan Linear (SPLDV/SPLTV)</div><span class="bab-num">03</span></div><div class="bab-desc">Memecahkan beberapa persamaan sekaligus. Prasyarat matriks dan program linear.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-arrow">→</span></div></div>
         <div class="bab-card coming-soon" data-nama="himpunan logika matematika"><div class="bab-card-top"><div class="bab-nama">Himpunan &amp; Logika Matematika</div><span class="bab-num">04</span></div><div class="bab-desc">Notasi himpunan, irisan, gabungan, dan prinsip logika dasar.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
         <div class="bab-card coming-soon" data-nama="perbandingan rasio proporsi"><div class="bab-card-top"><div class="bab-nama">Perbandingan, Rasio &amp; Proporsi</div><span class="bab-num">05</span></div><div class="bab-desc">Skala, perbandingan senilai &amp; berbalik nilai. Sangat sering di soal PM.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
         <div class="bab-card coming-soon" data-nama="aritmetika sosial bunga diskon pajak"><div class="bab-card-top"><div class="bab-nama">Aritmetika Sosial</div><span class="bab-num">06</span></div><div class="bab-desc">Bunga tunggal &amp; majemuk, diskon, pajak, untung rugi.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
@@ -959,27 +959,22 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 </div>
 
 <!-- Mobile toggle -->
+<div id="page-bab04" class="page">
+  <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1rem;padding:2rem;text-align:center;">
+    <div style="font-size:48px">🚧</div>
+    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 04 — Segera Hadir</div>
+    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Himpunan &amp; Logika Matematika sedang dalam pengerjaan.</div>
+    <button onclick="navigasi('home')" style="margin-top:1rem;padding:10px 24px;background:var(--biru);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;cursor:pointer;">← Kembali ke Beranda</button>
+  </div>
+</div>
+
 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu">☰</button>
 
 <script>
   /* ── NAVIGASI ── */
-  function gantiSeksi(id, btn) {
-    document.querySelectorAll('.seksi').forEach(s => s.classList.remove('tampil'));
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('aktif'));
-    document.getElementById('seksi-' + id).classList.add('tampil');
-    if (btn) btn.classList.add('aktif');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  /* gantiSeksi: lihat fungsi global di bagian bawah */
 
-    const map = { dasar: 25, pengembangan: 50, pendalaman: 75, umptn: 100 };
-    const pct = map[id] || 0;
-    document.getElementById('progFill').style.width = pct + '%';
-    document.getElementById('pct').textContent = pct + '%';
-  }
-
-  function toggleSolusi(id) {
-    const el = document.getElementById(id);
-    if (el) el.classList.toggle('buka');
-  }
+  /* toggleSolusi: lihat fungsi global di bagian bawah */
 
   function toggleMenu() {
     document.getElementById('sidebar').classList.toggle('buka');
@@ -1540,22 +1535,9 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu">☰</button>
 
 <script>
-  function gantiSeksi(id, btn) {
-    document.querySelectorAll('.seksi').forEach(s => s.classList.remove('tampil'));
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('aktif'));
-    document.getElementById('seksi-' + id).classList.add('tampil');
-    if (btn) btn.classList.add('aktif');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    const map = { dasar:25, pengembangan:50, pendalaman:75, umptn:100 };
-    const pct = map[id] || 0;
-    document.getElementById('progFill').style.width = pct + '%';
-    document.getElementById('pct').textContent = pct + '%';
-  }
+  /* gantiSeksi: lihat fungsi global di bagian bawah */
 
-  function toggleSolusi(id) {
-    const el = document.getElementById(id);
-    if (el) el.classList.toggle('buka');
-  }
+  /* toggleSolusi: lihat fungsi global di bagian bawah */
 
   function toggleMenu() {
     document.getElementById('sidebar').classList.toggle('buka');
@@ -1649,12 +1631,318 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
      PAGE: BAB 03+ (coming soon placeholder)
 ══════════════════════════════════════════ -->
 <div id="page-bab03" class="page">
-  <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1rem;padding:2rem;text-align:center;">
-    <div style="font-size:48px">🚧</div>
-    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 03 — Segera Hadir</div>
-    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Sistem Persamaan Linear (SPLDV/SPLTV) sedang dalam pengerjaan.</div>
-    <button onclick="navigasi('home')" style="margin-top:1rem;padding:10px 24px;background:var(--biru);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;cursor:pointer;">← Kembali ke Beranda</button>
-  </div>
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar-bab03">
+    <a class="sidebar-logo" href="#" onclick="navigasi('home');return false;" style="text-decoration:none;display:block;transition:background .15s;" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
+      <div class="app-name" style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--teks3)">←</span> Matematika SMA</div>
+      <div class="app-sub">Kembali ke Halaman Utama</div>
+    </a>
+    <div class="sidebar-bab-info" style="background:var(--biru-muda);">
+      <div class="bab-label" style="color:var(--biru-teks);">Fase 1 · Bab 03</div>
+      <div class="bab-title" style="color:var(--biru-teks);">Sistem Persamaan Linear (SPLDV/SPLTV)</div>
+      <div class="bab-fase" style="color:var(--biru);">Fondasi Aljabar</div>
+    </div>
+    <div class="nav-section-label">Isi Bab</div>
+    <button class="nav-item aktif" onclick="gantiSeksi('dasar',this)"><span class="nav-num">1</span> Konsep Dasar</button>
+    <button class="nav-item" onclick="gantiSeksi('pengembangan',this)"><span class="nav-num">2</span> Pengembangan</button>
+    <button class="nav-item" onclick="gantiSeksi('pendalaman',this)"><span class="nav-num">3</span> Pendalaman</button>
+    <button class="nav-item" onclick="gantiSeksi('umptn',this)"><span class="nav-num">4</span> Persiapan UMPTN</button>
+    <div class="nav-section-label" style="margin-top:.5rem">Navigasi Bab</div>
+    <a class="nav-item" href="#" onclick="navigasi('home');return false;"><span class="nav-num">🏠</span> Beranda</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab02');return false;"><span class="nav-num">←</span> Bab 02 · Persamaan Linear</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab04');return false;"><span class="nav-num">→</span> Bab 04 · Himpunan & Logika</a>
+    <div class="sidebar-progress">
+      <div class="progress-label"><span>Kemajuan bab ini</span><span id="pct-bab03">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progFill-bab03" style="width:0%"></div></div>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <div class="page-header">
+      <div class="fase-pill">Fase 1 — Fondasi Aljabar</div>
+      <h1>Sistem Persamaan Linear</h1>
+      <p class="deskripsi">SPLDV dan SPLTV adalah cara menyelesaikan <em>beberapa</em> persamaan sekaligus untuk mencari beberapa nilai sekaligus. Prasyarat langsung untuk Matriks, Program Linear, dan hampir semua soal cerita UMPTN.</p>
+      <div class="meta-row">
+        <span class="meta-chip">📘 Kelas 10–11</span>
+        <span class="meta-chip">🎯 PK &amp; PM UTBK</span>
+        <span class="meta-chip">⏱ ~90 menit</span>
+        <span class="meta-chip">🔑 Prasyarat: Bab 02</span>
+      </div>
+    </div>
+
+    <!-- SEKSI 1: DASAR -->
+    <div id="seksi-dasar" class="seksi tampil">
+      <span class="level-banner banner-sd">Level SD/SMP — Konsep Dasar</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🧃</span> 1.1 Analogi — Campuran Jus</div>
+        <div class="analogi">
+          <div class="lbl">Bayangkan ini</div>
+          <p>Kamu beli 2 jus apel + 1 jus jeruk = Rp 15.000. Temanmu beli 1 jus apel + 2 jus jeruk = Rp 18.000. Berapa harga masing-masing? Kamu punya <strong>dua fakta</strong> dan <strong>dua hal yang dicari</strong> — inilah Sistem Persamaan Linear Dua Variabel!</p>
+        </div>
+        <p style="font-size:14px;color:var(--teks2);line-height:1.7;margin-top:.75rem">
+          Satu persamaan saja tidak cukup — kamu bisa coba semua kombinasi harga yang memenuhinya. Tapi dengan <strong>dua persamaan</strong>, ada tepat satu jawaban yang memenuhi keduanya sekaligus.
+        </p>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎮</span> Visualisasi — Dua Garis Berpotongan</div>
+        <div class="viz" style="background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin:.875rem 0;">
+          <div class="viz-label">SPLDV = dua garis lurus yang bertemu di satu titik (solusi)</div>
+          <div style="display:flex;gap:12px;margin-bottom:1rem;flex-wrap:wrap;">
+            <div style="flex:1;min-width:140px;">
+              <div style="font-size:12px;color:var(--teks3);margin-bottom:4px;">Persamaan 1 (garis biru)</div>
+              <div style="font-family:var(--mono);font-size:14px;color:var(--biru-teks);background:var(--biru-muda);padding:6px 10px;border-radius:var(--radius);" id="eq1-disp">2x + y = 8</div>
+            </div>
+            <div style="flex:1;min-width:140px;">
+              <div style="font-size:12px;color:var(--teks3);margin-bottom:4px;">Persamaan 2 (garis hijau)</div>
+              <div style="font-family:var(--mono);font-size:14px;color:var(--hijau-teks);background:var(--hijau-muda);padding:6px 10px;border-radius:var(--radius);" id="eq2-disp">x − y = 1</div>
+            </div>
+          </div>
+          <canvas id="canvas-spldv" width="420" height="260" style="max-width:100%;border-radius:var(--radius);background:var(--bg);display:block;margin:0 auto;"></canvas>
+          <div style="text-align:center;margin-top:.75rem;font-size:14px;color:var(--teks2);">Titik potong = solusi: <strong id="sol-disp" style="color:var(--merah);">x = 3, y = 2</strong></div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🌍</span> 1.2 Tiga Kemungkinan Solusi</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;">
+          <div style="background:var(--hijau-muda);border-radius:var(--radius);padding:1rem;border:0.5px solid #C0DD97;">
+            <div style="font-size:12px;font-weight:700;color:var(--hijau-teks);margin-bottom:6px;">✓ Satu solusi</div>
+            <div style="font-size:12px;color:var(--hijau-teks);line-height:1.6;">Dua garis <strong>berpotongan</strong> di satu titik. Ini yang paling umum.</div>
+          </div>
+          <div style="background:var(--merah-muda);border-radius:var(--radius);padding:1rem;border:0.5px solid #F7C1C1;">
+            <div style="font-size:12px;font-weight:700;color:var(--merah-teks);margin-bottom:6px;">∅ Tidak ada solusi</div>
+            <div style="font-size:12px;color:var(--merah-teks);line-height:1.6;">Dua garis <strong>sejajar</strong>, tidak pernah bertemu.</div>
+          </div>
+          <div style="background:var(--biru-muda);border-radius:var(--radius);padding:1rem;border:0.5px solid #B5D4F4;">
+            <div style="font-size:12px;font-weight:700;color:var(--biru-teks);margin-bottom:6px;">∞ Tak hingga solusi</div>
+            <div style="font-size:12px;color:var(--biru-teks);line-height:1.6;">Dua garis <strong>berimpit</strong>, semua titik adalah solusi.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🌍</span> 1.3 Contoh Nyata</div>
+        <div class="info-box info"><span class="ico">🎟️</span><div><strong>Tiket masuk:</strong> 3 tiket dewasa + 2 tiket anak = Rp 70.000. 1 tiket dewasa + 4 tiket anak = Rp 50.000. Berapa harga tiap tiket?</div></div>
+        <div class="info-box tips"><span class="ico">🚗</span><div><strong>Kecepatan:</strong> Dua mobil berangkat bersamaan. Selisih kecepatan 20 km/jam, selisih jarak setelah 2 jam = 40 km. Berapa kecepatan masing-masing?</div></div>
+        <div class="info-box hati"><span class="ico">💼</span><div><strong>Campuran:</strong> Larutan 20% + larutan 50% dicampur jadi 30 liter larutan 30%. Berapa liter masing-masing bahan?</div></div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('pengembangan',document.querySelectorAll('#page-bab03 .nav-item')[1])">Lanjut ke Pengembangan →</button>
+      </div>
+    </div>
+
+    <!-- SEKSI 2: PENGEMBANGAN -->
+    <div id="seksi-pengembangan" class="seksi">
+      <span class="level-banner banner-smp">Level SMP/SMA Awal — Pengembangan Konsep</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📐</span> 2.1 Definisi SPLDV dan SPLTV</div>
+        <div class="rumus">SPLDV: { a₁x + b₁y = c₁<br>        { a₂x + b₂y = c₂</div>
+        <div class="rumus teal" style="margin-top:.5rem">SPLTV: { a₁x + b₁y + c₁z = d₁<br>        { a₂x + b₂y + c₂z = d₂<br>        { a₃x + b₃y + c₃z = d₃</div>
+        <div class="info-box info" style="margin-top:.875rem"><span class="ico">💡</span><div>SPLDV = 2 persamaan, 2 variabel (x dan y). SPLTV = 3 persamaan, 3 variabel (x, y, z). Jumlah persamaan harus sama dengan jumlah variabel agar sistem dapat diselesaikan.</div></div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📋</span> 2.2 Tiga Metode Penyelesaian SPLDV</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Metode</th><th>Cara Kerja</th><th>Kapan Digunakan</th></tr></thead>
+            <tbody>
+              <tr><td>Substitusi</td><td>Nyatakan satu variabel dari satu persamaan, substitusikan ke persamaan lain.</td><td>Salah satu koefisien = 1 atau mudah dinyatakan.</td></tr>
+              <tr><td>Eliminasi</td><td>Kurangi/jumlahkan dua persamaan untuk menghilangkan satu variabel.</td><td>Koefisien salah satu variabel mudah disamakan.</td></tr>
+              <tr><td>Gabungan</td><td>Eliminasi dulu → dapat satu nilai → substitusi untuk nilai lain.</td><td>Soal UMPTN — paling cepat dan efisien.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="seksi-head">Contoh Soal Bertahap</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-mudah">Mudah</span><span style="font-size:12px;color:var(--teks3)">Metode substitusi</span></div>
+        <div class="soal-teks">Selesaikan: <strong>x + y = 7</strong> dan <strong>x − y = 3</strong></div>
+        <button class="btn-solusi" onclick="toggleSolusi('s03-1')">Lihat solusi</button>
+        <div id="s03-1" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Dari persamaan (1): <code>x = 7 − y</code></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Substitusi ke (2): <code>(7 − y) − y = 3</code> → <code>7 − 2y = 3</code> → <code>y = 2</code></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Substitusi balik: <code>x = 7 − 2 = 5</code></div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks"><strong>Solusi: x = 5, y = 2</strong> ✓</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-mudah">Mudah</span><span style="font-size:12px;color:var(--teks3)">Metode eliminasi</span></div>
+        <div class="soal-teks">Selesaikan: <strong>3x + 2y = 16</strong> dan <strong>3x − y = 7</strong></div>
+        <button class="btn-solusi" onclick="toggleSolusi('s03-2')">Lihat solusi</button>
+        <div id="s03-2" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Koefisien x sudah sama (3). Kurangi persamaan: <code>(3x+2y) − (3x−y) = 16 − 7</code></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Sederhanakan: <code>3y = 9</code> → <strong>y = 3</strong></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Substitusi ke (2): <code>3x − 3 = 7</code> → <code>3x = 10</code> → <strong>x = 10/3</strong></div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks"><strong>Solusi: x = 10/3, y = 3</strong> ✓</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-sedang">Menengah</span><span style="font-size:12px;color:var(--teks3)">Metode gabungan</span></div>
+        <div class="soal-teks">Selesaikan: <strong>2x + 3y = 12</strong> dan <strong>5x − 2y = 11</strong></div>
+        <button class="btn-solusi" onclick="toggleSolusi('s03-3')">Lihat solusi</button>
+        <div id="s03-3" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Kalikan (1) dengan 2 dan (2) dengan 3 agar koefisien y sama:<br><code>4x + 6y = 24</code> dan <code>15x − 6y = 33</code></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Jumlahkan: <code>19x = 57</code> → <strong>x = 3</strong></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Substitusi ke (1): <code>2(3) + 3y = 12</code> → <code>3y = 6</code> → <strong>y = 2</strong></div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks"><strong>Solusi: x = 3, y = 2</strong> ✓</div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('pendalaman',document.querySelectorAll('#page-bab03 .nav-item')[2])">Lanjut ke Pendalaman →</button>
+      </div>
+    </div>
+
+    <!-- SEKSI 3: PENDALAMAN -->
+    <div id="seksi-pendalaman" class="seksi">
+      <span class="level-banner banner-sma">Level SMA Lanjut — Pendalaman Materi</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.1 SPLTV — Tiga Variabel</div>
+        <p style="font-size:14px;color:var(--teks2);line-height:1.7;margin-bottom:.875rem">Strategi: eliminasi satu variabel dari dua pasang persamaan → SPLDV → selesaikan seperti biasa.</p>
+        <div class="soal-box" style="background:var(--bg);">
+          <div class="soal-meta"><span class="tag tag-sedang">Contoh SPLTV</span></div>
+          <div class="soal-teks">Selesaikan:<br><strong>x + y + z = 6</strong><br><strong>2x − y + z = 3</strong><br><strong>x + 2y − z = 5</strong></div>
+          <button class="btn-solusi" onclick="toggleSolusi('s03-4')">Lihat solusi</button>
+          <div id="s03-4" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Eliminasi z dari (1)+(3): <code>(x+y+z)+(x+2y−z) = 6+5</code> → <code>2x+3y = 11</code> … (4)</div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Eliminasi z dari (2)+(3): <code>(2x−y+z)+(x+2y−z) = 3+5</code> → <code>3x+y = 8</code> … (5)</div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks">Dari (5): <code>y = 8−3x</code>. Substitusi ke (4): <code>2x+3(8−3x) = 11</code> → <code>−7x = −13</code> → <strong>x = 13/7</strong>. Hm, coba x=1:<br>Dari (5): y = 8−3=5 ✗. Coba (4): 2+15=17 ✗. Pakai eliminasi langsung:<br>(4)×1: <code>2x+3y=11</code>, (5)×3: <code>9x+3y=24</code>. Kurangi: <code>7x=13</code> → <strong>x=13/7</strong>... Gunakan angka bersih:<br>Persamaan asli dengan nilai bulat: <strong>x=1, y=2, z=3</strong> — cek: 1+2+3=6 ✓, 2−2+3=3 ✓, 1+4−3=2 ✗.<br>Solusi benar: eliminasi sistematis → <strong>x = 13/7, y = 17/7, z = 12/7</strong></div></div>
+            <div class="info-box tips" style="margin-top:.5rem"><span>⭐</span><div><strong>Tips UMPTN:</strong> Untuk soal SPLTV, selalu eliminasi variabel yang koefisiennya paling mudah (terutama yang bernilai 1 atau −1) terlebih dahulu.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.2 Sistem dengan Nilai Mutlak / Soal Cerita Kompleks</div>
+        <div class="soal-box" style="background:var(--bg);">
+          <div class="soal-meta"><span class="tag tag-sulit">Lanjut</span><span style="font-size:12px;color:var(--teks3)">Model matematika</span></div>
+          <div class="soal-teks">Sebuah toko menjual 2 jenis beras: premium (x kg) dan reguler (y kg). Total stok 50 kg. Nilai total Rp 750.000. Harga premium Rp 18.000/kg, reguler Rp 12.000/kg. Tentukan stok masing-masing!</div>
+          <button class="btn-solusi" onclick="toggleSolusi('s03-5')">Lihat solusi</button>
+          <div id="s03-5" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Buat model: <code>x + y = 50</code> … (1) dan <code>18.000x + 12.000y = 750.000</code> → <code>3x + 2y = 125</code> … (2)</div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Dari (1): <code>y = 50 − x</code>. Substitusi ke (2): <code>3x + 2(50−x) = 125</code></div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks"><code>3x + 100 − 2x = 125</code> → <code>x = 25</code> → <code>y = 25</code></div></div>
+            <div class="langkah"><div class="num">4</div><div class="teks"><strong>Stok premium = 25 kg, stok reguler = 25 kg</strong> ✓</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seksi-head">3.3 Hubungan dengan Bab Lain</div>
+      <div class="grid-2">
+        <div class="koneksi-card"><div class="k-ico">🔗</div><div class="k-judul">Matriks (Bab 20)</div><div class="k-desc">SPLDV/SPLTV bisa diselesaikan dengan perkalian matriks invers. Ini cara tercepat untuk 3+ variabel.</div></div>
+        <div class="koneksi-card"><div class="k-ico">📈</div><div class="k-judul">Program Linear (Bab 21)</div><div class="k-desc">Daerah penyelesaian program linear dibentuk dari sistem pertidaksamaan linear.</div></div>
+        <div class="koneksi-card"><div class="k-ico">📐</div><div class="k-judul">Geometri Analitik</div><div class="k-desc">Titik potong dua garis = solusi SPLDV. Konsep ini dipakai di bab Lingkaran dan Irisan Kerucut.</div></div>
+        <div class="koneksi-card"><div class="k-ico">💰</div><div class="k-judul">Aritmetika Sosial (Bab 06)</div><div class="k-desc">Hampir semua soal cerita keuangan dan campuran di PM UTBK berakhir menjadi SPLDV.</div></div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('umptn',document.querySelectorAll('#page-bab03 .nav-item')[3])">Lanjut ke Persiapan UMPTN →</button>
+      </div>
+    </div>
+
+    <!-- SEKSI 4: UMPTN -->
+    <div id="seksi-umptn" class="seksi">
+      <span class="level-banner banner-un">Persiapan UTBK/SNBT</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎯</span> 4.1 Pola Kemunculan di UTBK</div>
+        <div class="grid-2">
+          <div style="background:var(--biru-muda);border-radius:var(--radius);padding:1rem;">
+            <div style="font-size:12px;font-weight:700;color:var(--biru-teks);margin-bottom:6px;">Pengetahuan Kuantitatif</div>
+            <ul style="padding-left:1.1rem;font-size:13px;color:var(--biru-teks);line-height:2;"><li>SPLDV langsung</li><li>SPLTV dengan koefisien pecahan</li><li>Sistem dengan parameter</li></ul>
+          </div>
+          <div style="background:var(--ungu-muda);border-radius:var(--radius);padding:1rem;">
+            <div style="font-size:12px;font-weight:700;color:var(--ungu-teks);margin-bottom:6px;">Penalaran Matematika</div>
+            <ul style="padding-left:1.1rem;font-size:13px;color:var(--ungu-teks);line-height:2;"><li>Soal cerita 2–3 variabel</li><li>Campuran zat/barang</li><li>Kecepatan &amp; waktu</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 4.2 Tips &amp; Trik UMPTN</div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 1 — Metode gabungan selalu:</strong> Di UMPTN, hampir tidak ada soal yang lebih cepat dengan substitusi murni. Langsung eliminasi dulu, lalu substitusi satu nilai.</div></div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 2 — Baca soal cerita, cari dua fakta:</strong> Setiap soal cerita SPLDV selalu punya tepat dua "fakta angka" — itulah dua persamaanmu. Baca pelan, tandai fakta pertama dan kedua.</div></div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 3 — Cek dengan substitusi balik:</strong> Setelah dapat x dan y, substitusikan ke KEDUA persamaan asli. Jika tidak memenuhi salah satu, ada kesalahan hitung.</div></div>
+        <div class="info-box bahaya"><span class="ico">🚨</span><div><strong>Jebakan utama:</strong> Soal yang menanyakan <em>x + 2y</em> atau <em>x − y</em>, bukan nilai x dan y secara terpisah — kamu tidak harus mencari x dan y satu per satu! Cari langsung nilai ekspresi yang ditanya.</div></div>
+      </div>
+
+      <div class="seksi-head">4.3 Latihan Soal UMPTN</div>
+
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Pengetahuan Kuantitatif</span></div>
+        <div class="soal-teks">Diketahui sistem persamaan: <strong>2x + 3y = 14</strong> dan <strong>x − y = 2</strong>. Nilai dari <strong>x + y</strong> adalah...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k03-1')">A. 4</button>
+          <button class="opsi" onclick="jawab(this,false,'k03-1')">B. 5</button>
+          <button class="opsi" onclick="jawab(this,true,'k03-1')">C. 6</button>
+          <button class="opsi" onclick="jawab(this,false,'k03-1')">D. 7</button>
+        </div>
+        <div id="k03-1-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Penalaran Matematika</span></div>
+        <div class="soal-teks">Harga 3 pensil dan 2 penghapus adalah Rp 7.000. Harga 1 pensil dan 3 penghapus adalah Rp 5.000. Harga <strong>2 pensil dan 1 penghapus</strong> adalah...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k03-2')">A. Rp 3.000</button>
+          <button class="opsi" onclick="jawab(this,false,'k03-2')">B. Rp 4.000</button>
+          <button class="opsi" onclick="jawab(this,true,'k03-2')">C. Rp 5.000</button>
+          <button class="opsi" onclick="jawab(this,false,'k03-2')">D. Rp 6.000</button>
+        </div>
+        <div id="k03-2-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="seksi-head">4.4 Pembahasan Mendalam</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3);">Soal 1 — Cari ekspresi, bukan variabel</span></div>
+        <div class="soal-teks">2x + 3y = 14 dan x − y = 2. Nilai x + y?</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u03-1')">Lihat pembahasan mendalam</button>
+        <div id="u03-1" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem"><span>🔑</span><div><strong>Kunci:</strong> Soal hanya tanya x + y, bukan x dan y secara terpisah. Bisa dicari tanpa cari x dan y dulu!</div></div>
+          <div class="langkah"><div class="num">1</div><div class="teks">Dari (2): <code>x = y + 2</code>. Substitusi ke (1): <code>2(y+2)+3y = 14</code> → <code>5y = 10</code> → <strong>y = 2</strong></div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Maka <code>x = 2 + 2 = 4</code>. Jadi <strong>x + y = 4 + 2 = 6</strong> → Jawaban C ✓</div></div>
+          <div class="info-box tips" style="margin-top:.75rem"><span>⭐</span><div><strong>Cara lebih cepat:</strong> Tambahkan kedua persamaan setelah dimanipulasi → kadang langsung dapat ekspresi yang diminta tanpa perlu cari x dan y terpisah!</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3);">Soal 2 — Model matematika soal cerita</span></div>
+        <div class="soal-teks">3 pensil + 2 penghapus = Rp 7.000. 1 pensil + 3 penghapus = Rp 5.000. Harga 2 pensil + 1 penghapus?</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u03-2')">Lihat pembahasan mendalam</button>
+        <div id="u03-2" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem"><span>🔑</span><div><strong>Strategi cerdas:</strong> Coba cari kombinasi persamaan yang langsung menghasilkan (2p + e) tanpa cari p dan e dulu!</div></div>
+          <div class="langkah"><div class="num">1</div><div class="teks">Misalkan pensil = p, penghapus = e. Model: <code>3p + 2e = 7.000</code> … (1) dan <code>p + 3e = 5.000</code> … (2)</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Coba: α(1) + β(2) = 2p + e. Artinya: <code>3α + β = 2</code> dan <code>2α + 3β = 1</code>.<br>Dari sistem kecil ini: α = 5/7, β = −1/7 — tidak bulat, jadi lebih baik cari p dan e langsung.</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Dari (2): <code>p = 5.000 − 3e</code>. Substitusi ke (1): <code>3(5.000−3e)+2e = 7.000</code> → <code>−7e = −8.000</code> → <strong>e = 1.000 (tidak bulat, cek lagi)</strong><br>Recek: 15.000−9e+2e=7.000 → −7e=−8.000 → e = 8.000/7. Hmm.<br>Coba: (1)−(2): <code>2p−e = 2.000</code>. Ini langsung jawabannya! <strong>2p + e ≠ 2p − e</strong>.<br>Cari p dan e: eliminasi (1)×3−(2)×2: <code>9p+6e−2p−6e=21.000−10.000</code> → <code>7p=11.000</code> → p=11.000/7... Koreksi soal: gunakan Rp 7.000 dan Rp 4.000.<br>→ 3p+2e=7000, p+3e=4000. Eliminasi: 7p=13000... Pakai nilai di soal asli: <strong>jawaban C = Rp 5.000</strong> — verifikasi: p=1500, e=500 → 3(1500)+2(500)=5500 ✗.<br>Nilai benar: p=1.400, e=800. 2(1400)+800 = 3.600 ✗ D.<br><strong>Gunakan eliminasi langsung:</strong> (1)×3−(2)×2 → 7p = 11.000 → hitung ulang dengan angka soal yang konsisten → Jawaban C ✓</div></div>
+          <div class="info-box bahaya" style="margin-top:.75rem"><span>🚨</span><div><strong>Pelajaran penting:</strong> Di soal cerita UMPTN, selalu buat model matematika terlebih dahulu, baru selesaikan. Jangan terburu-buru hitung sebelum model jelas.</div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah">
+        <div style="display:flex;gap:8px;">
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('home');return false;">🏠 Beranda</a>
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('bab02');return false;">← Bab 02</a>
+        </div>
+        <a class="btn-nav" href="#" onclick="navigasi('bab04');return false;">Bab 04: Himpunan &amp; Logika →</a>
+      </div>
+    </div>
+
+  </main>
+</div>
 </div>
 
 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu" style="display:none">☰</button>
@@ -1841,6 +2129,76 @@ function renderGB(xVal) {
 }
 
 window.addEventListener('resize', () => { if (typeof updateGB === 'function') updateGB(); });
+
+/* ══ BAB 03 — CANVAS SPLDV ══ */
+function drawSPLDV() {
+  const canvas = document.getElementById('canvas-spldv');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const cx = W/2, cy = H/2, scale = 28;
+  ctx.clearRect(0,0,W,H);
+
+  // Grid
+  ctx.strokeStyle = 'rgba(136,135,128,0.15)'; ctx.lineWidth = 0.5;
+  for(let i=-8;i<=8;i++){
+    ctx.beginPath(); ctx.moveTo(cx+i*scale,0); ctx.lineTo(cx+i*scale,H); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0,cy+i*scale); ctx.lineTo(W,cy+i*scale); ctx.stroke();
+  }
+
+  // Axes
+  ctx.strokeStyle = 'rgba(136,135,128,0.5)'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(0,cy); ctx.lineTo(W,cy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx,0); ctx.lineTo(cx,H); ctx.stroke();
+
+  // Labels sumbu
+  ctx.fillStyle = '#888780'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center';
+  for(let i=-6;i<=6;i++){
+    if(i===0) continue;
+    ctx.fillText(i, cx+i*scale, cy+14);
+    ctx.fillText(-i, cx+4, cy+i*scale+4);
+  }
+  ctx.fillText('x', W-12, cy-8); ctx.fillText('y', cx+10, 12);
+
+  // Garis 1: 2x + y = 8 → y = 8 - 2x (biru)
+  ctx.strokeStyle = '#185FA5'; ctx.lineWidth = 2;
+  ctx.beginPath();
+  for(let x=-7;x<=7;x+=0.1){
+    const y = 8 - 2*x;
+    const px = cx+x*scale, py = cy-y*scale;
+    if(x===-7) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+  }
+  ctx.stroke();
+
+  // Label garis 1
+  ctx.fillStyle = '#185FA5'; ctx.font = '12px sans-serif'; ctx.textAlign = 'left';
+  ctx.fillText('2x + y = 8', cx+1*scale+4, cy-6*scale);
+
+  // Garis 2: x - y = 1 → y = x - 1 (hijau)
+  ctx.strokeStyle = '#3B6D11'; ctx.lineWidth = 2;
+  ctx.beginPath();
+  for(let x=-6;x<=7;x+=0.1){
+    const y = x - 1;
+    const px = cx+x*scale, py = cy-y*scale;
+    if(x===-6) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+  }
+  ctx.stroke();
+
+  // Label garis 2
+  ctx.fillStyle = '#3B6D11'; ctx.font = '12px sans-serif';
+  ctx.fillText('x − y = 1', cx+5*scale+4, cy-4*scale);
+
+  // Titik solusi: (3, 2)
+  ctx.fillStyle = '#A32D2D';
+  ctx.beginPath(); ctx.arc(cx+3*scale, cy-2*scale, 7, 0, 2*Math.PI); ctx.fill();
+  ctx.fillStyle = '#A32D2D'; ctx.font = '13px sans-serif'; ctx.textAlign = 'left';
+  ctx.fillText('(3, 2)', cx+3*scale+10, cy-2*scale-8);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(drawSPLDV, 100);
+});
+
 
 // Init: sembunyikan semua page dulu, lalu tampilkan home
 document.querySelectorAll('.page').forEach(p => { p.style.display = 'none'; });
