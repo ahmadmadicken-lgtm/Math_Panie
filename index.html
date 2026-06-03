@@ -400,7 +400,7 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 <!-- ══════════════════════════════════════════
      PAGE: BAB 01
 ══════════════════════════════════════════ -->
-<div id="page-bab01" class="page" style="display:none">
+<div id="page-bab01" class="page">
 <div class="shell">
 
   <!-- ── SIDEBAR ── -->
@@ -1062,7 +1062,7 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 <!-- ══════════════════════════════════════════
      PAGE: BAB 02
 ══════════════════════════════════════════ -->
-<div id="page-bab02" class="page" style="display:none">
+<div id="page-bab02" class="page">
 <div class="shell">
 
   <!-- SIDEBAR -->
@@ -1664,12 +1664,15 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 const pages = {};
 
 function navigasi(pageId) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('aktif'));
+  document.querySelectorAll('.page').forEach(p => {
+    p.classList.remove('aktif');
+    p.style.display = 'none';
+  });
   const target = document.getElementById('page-' + pageId);
   if (target) {
     target.classList.add('aktif');
+    target.style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // tampilkan/sembunyikan menu toggle
     const isHome = pageId === 'home';
     document.getElementById('menuToggle').style.display = isHome ? 'none' : '';
   }
@@ -1838,6 +1841,11 @@ function renderGB(xVal) {
 }
 
 window.addEventListener('resize', () => { if (typeof updateGB === 'function') updateGB(); });
+
+// Init: sembunyikan semua page dulu, lalu tampilkan home
+document.querySelectorAll('.page').forEach(p => { p.style.display = 'none'; });
+const homeEl = document.getElementById('page-home');
+if (homeEl) { homeEl.style.display = 'block'; homeEl.classList.add('aktif'); }
 </script>
 </body>
 </html>
