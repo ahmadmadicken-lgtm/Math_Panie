@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matematika SMA — Persiapan UTBK/SNBT 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --biru:      #185FA5; --biru-muda: #E6F1FB; --biru-teks: #0C447C;
+    --hijau:     #3B6D11; --hijau-muda:#EAF3DE; --hijau-teks:#27500A;
+    --amber:     #854F0B; --amber-muda:#FAEEDA; --amber-teks:#633806;
+    --ungu:      #534AB7; --ungu-muda: #EEEDFE; --ungu-teks: #3C3489;
+    --merah:     #A32D2D; --merah-muda:#FCEBEB; --merah-teks:#791F1F;
+    --teal:      #0F6E56; --teal-muda: #E1F5EE; --teal-teks: #085041;
+    --bg:        #ffffff; --bg2: #F8F7F4; --bg3: #F1EFE8;
+    --teks:      #1a1a18; --teks2: #5F5E5A; --teks3: #888780;
+    --border:    rgba(0,0,0,0.09); --border2: rgba(0,0,0,0.16);
+    --radius:    8px; --radius-lg: 12px;
+    --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--bg2); color: var(--teks); line-height: 1.7; }
+
+  /* ── TOP NAV ── */
+  .topnav {
+    background: var(--bg);
+    border-bottom: 0.5px solid var(--border2);
+    padding: 0 2rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .topnav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 32px; height: 32px;
+    background: var(--biru);
+    border-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--teks);
+    letter-spacing: -.02em;
+  }
+
+  .brand-sub {
+    font-size: 11px;
+    color: var(--teks3);
+  }
+
+  .topnav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 99px;
+    border: 0.5px solid var(--border2);
+    background: var(--bg);
+    color: var(--teks2);
+    cursor: pointer;
+    transition: all .15s;
+    text-decoration: none;
+  }
+
+  .nav-pill:hover { background: var(--bg3); color: var(--teks); }
+  .nav-pill.aktif { background: var(--biru); color: #fff; border-color: var(--biru); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--bg);
+    border-bottom: 0.5px solid var(--border);
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+  }
+
+  .hero-kelas-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 99px;
+    background: var(--biru-muda);
+    color: var(--biru-teks);
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--teks);
+    letter-spacing: -.04em;
+    line-height: 1.15;
+    margin-bottom: .875rem;
+  }
+
+  .hero h1 span { color: var(--biru); }
+
+  .hero-desc {
+    font-size: 16px;
+    color: var(--teks2);
+    max-width: 560px;
+    margin: 0 auto 1.75rem;
+    line-height: 1.65;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat .n {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--teks);
+    letter-spacing: -.03em;
+    line-height: 1.1;
+  }
+
+  .hero-stat .l {
+    font-size: 12px;
+    color: var(--teks3);
+    margin-top: 2px;
+  }
+
+  /* ── PROGRESS OVERVIEW ── */
+  .progress-bar-wrap {
+    background: var(--bg);
+    border-bottom: 0.5px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .prog-label { font-size: 13px; color: var(--teks2); flex-shrink: 0; }
+
+  .prog-track {
+    flex: 1;
+    height: 6px;
+    background: var(--bg3);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .prog-fill {
+    height: 100%;
+    background: var(--biru);
+    border-radius: 99px;
+    transition: width .4s ease;
+  }
+
+  .prog-pct {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--biru);
+    flex-shrink: 0;
+    min-width: 36px;
+    text-align: right;
+  }
+
+  /* ── MAIN CONTAINER ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  /* ── FASE SECTION ── */
+  .fase-section { margin-bottom: 2.5rem; }
+
+  .fase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.1rem;
+  }
+
+  .fase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 99px;
+    flex-shrink: 0;
+  }
+
+  .f1 { background: var(--hijau-muda); color: var(--hijau-teks); }
+  .f2 { background: var(--biru-muda);  color: var(--biru-teks); }
+  .f3 { background: var(--ungu-muda);  color: var(--ungu-teks); }
+  .f4 { background: var(--amber-muda); color: var(--amber-teks); }
+  .f5 { background: var(--merah-muda); color: var(--merah-teks); }
+
+  .fase-line { flex: 1; height: 0.5px; background: var(--border2); }
+  .fase-count { font-size: 12px; color: var(--teks3); flex-shrink: 0; }
+
+  /* ── BAB GRID ── */
+  .bab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  /* ── BAB CARD ── */
+  .bab-card {
+    background: var(--bg);
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius-lg);
+    padding: 1.1rem 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: all .15s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bab-card:hover {
+    border-color: var(--biru);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(24,95,165,.1);
+  }
+
+  .bab-card.selesai {
+    border-color: var(--hijau);
+  }
+
+  .bab-card.selesai::after {
+    content: '✓';
+    position: absolute;
+    top: 10px; right: 12px;
+    width: 20px; height: 20px;
+    background: var(--hijau-muda);
+    color: var(--hijau-teks);
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    line-height: 20px;
+  }
+
+  .bab-card.coming-soon {
+    opacity: .55;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .bab-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .bab-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--teks3);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .bab-nama {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--teks);
+    line-height: 1.35;
+    flex: 1;
+  }
+
+  .bab-desc {
+    font-size: 12px;
+    color: var(--teks3);
+    line-height: 1.55;
+  }
+
+  .bab-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2px;
+  }
+
+  .tag-row { display: flex; gap: 4px; flex-wrap: wrap; }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 99px;
+    letter-spacing: .02em;
+  }
+
+  .tag-pk     { background: var(--biru-muda);  color: var(--biru-teks); }
+  .tag-pm     { background: var(--ungu-muda);  color: var(--ungu-teks); }
+  .tag-mudah  { background: var(--hijau-muda); color: var(--hijau-teks); }
+  .tag-sedang { background: var(--amber-muda); color: var(--amber-teks); }
+  .tag-sulit  { background: var(--merah-muda); color: var(--merah-teks); }
+
+  .bab-arrow {
+    font-size: 14px;
+    color: var(--teks3);
+    transition: transform .15s;
+  }
+
+  .bab-card:hover .bab-arrow { transform: translateX(3px); color: var(--biru); }
+
+  .bab-soon-label {
+    font-size: 11px;
+    color: var(--teks3);
+    font-style: italic;
+  }
+
+  /* ── LEGEND ── */
+  .legend-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    padding: .875rem 2rem;
+    background: var(--bg);
+    border-bottom: 0.5px solid var(--border);
+    font-size: 12px;
+    color: var(--teks3);
+  }
+
+  .leg-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .leg-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 12px;
+    color: var(--teks3);
+    border-top: 0.5px solid var(--border);
+    background: var(--bg);
+  }
+
+  /* ── SEARCH ── */
+  .search-wrap {
+    padding: 1rem 2rem;
+    background: var(--bg);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 420px;
+    padding: 8px 14px 8px 38px;
+    font-size: 14px;
+    border: 0.5px solid var(--border2);
+    border-radius: 99px;
+    background: var(--bg2);
+    color: var(--teks);
+    outline: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23888780' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    transition: border-color .15s;
+  }
+
+  .search-input:focus { border-color: var(--biru); background-color: var(--bg); }
+  .search-input::placeholder { color: var(--teks3); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 26px; }
+    .hero { padding: 2rem 1.25rem 1.75rem; }
+    .container { padding: 1.25rem 1rem 3rem; }
+    .hero-stats { gap: 1.25rem; }
+    .topnav { padding: 0 1rem; }
+    .topnav-right { display: none; }
+    .bab-grid { grid-template-columns: 1fr 1fr; }
+    .progress-bar-wrap { padding: 1rem; }
+    .legend-bar { padding: .75rem 1rem; gap: 8px; }
+    .search-wrap { padding: .75rem 1rem; }
+  }
+
+  @media (max-width: 420px) {
+    .bab-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── TOP NAV ── -->
+<nav class="topnav">
+  <div class="topnav-brand">
+    <div class="brand-icon">M</div>
+    <div>
+      <div class="brand-name">Matematika SMA</div>
+      <div class="brand-sub">Persiapan UTBK / SNBT</div>
+    </div>
+  </div>
+  <div class="topnav-right">
+    <a href="#fase-1" class="nav-pill">Fase 1</a>
+    <a href="#fase-2" class="nav-pill">Fase 2</a>
+    <a href="#fase-3" class="nav-pill">Fase 3</a>
+    <a href="#fase-4" class="nav-pill">Fase 4</a>
+    <a href="#fase-5" class="nav-pill">Fase 5</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-kelas-badge">📚 SMA Kelas 10–12 · Kurikulum Merdeka</div>
+  <h1>Kuasai Matematika<br><span>dari Dasar hingga UMPTN</span></h1>
+  <p class="hero-desc">
+    32 bab terstruktur — dari konsep paling fundamental hingga strategi mengerjakan
+    soal UTBK/SNBT. Setiap bab dirancang agar kamu mengerti sebelum lanjut ke bab berikutnya.
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="n">32</div><div class="l">Total Bab</div></div>
+    <div class="hero-stat"><div class="n">5</div><div class="l">Fase Belajar</div></div>
+    <div class="hero-stat"><div class="n">128+</div><div class="l">Contoh Soal</div></div>
+    <div class="hero-stat"><div class="n">64+</div><div class="l">Soal UMPTN</div></div>
+  </div>
+</section>
+
+<!-- ── PROGRESS ── -->
+<div class="progress-bar-wrap">
+  <span class="prog-label">Progres keseluruhan</span>
+  <div class="prog-track">
+    <div class="prog-fill" id="progTotal" style="width: 3.125%"></div>
+  </div>
+  <span class="prog-pct" id="progPct">1 / 32 bab</span>
+</div>
+
+<!-- ── SEARCH ── -->
+<div class="search-wrap">
+  <input type="text" class="search-input" id="searchInput"
+    placeholder="Cari bab... (contoh: trigonometri, integral, matriks)"
+    oninput="filterBab()">
+</div>
+
+<!-- ── LEGEND ── -->
+<div class="legend-bar">
+  <span style="font-weight:600;color:var(--teks2)">Keterangan:</span>
+  <span class="leg-item"><span class="leg-dot" style="background:var(--hijau)"></span>Selesai</span>
+  <span class="leg-item"><span class="leg-dot" style="background:var(--biru)"></span>Tersedia</span>
+  <span class="leg-item"><span class="leg-dot" style="background:var(--teks3)"></span>Segera hadir</span>
+  <span style="margin-left:4px">·</span>
+  <span class="leg-item"><span class="tag tag-pk" style="font-size:10px">PK</span>Pengetahuan Kuantitatif</span>
+  <span class="leg-item"><span class="tag tag-pm" style="font-size:10px">PM</span>Penalaran Matematika</span>
+</div>
+
+<!-- ── MAIN CONTENT ── -->
+<div class="container" id="mainContent">
+
+  <!-- ═══════════════════════════════
+       FASE 1 — FONDASI ALJABAR
+  ═══════════════════════════════ -->
+  <section class="fase-section" id="fase-1">
+    <div class="fase-header">
+      <span class="fase-badge f1">Fase 1 — Fondasi Aljabar</span>
+      <div class="fase-line"></div>
+      <span class="fase-count">6 bab · Tidak ada prasyarat</span>
+    </div>
+    <div class="bab-grid">
+
+      <a href="bab-01-eksponen-logaritma.html" class="bab-card selesai" data-nama="eksponen logaritma">
+        <div class="bab-card-top">
+          <div class="bab-nama">Eksponen &amp; Logaritma</div>
+          <span class="bab-num">01</span>
+        </div>
+        <div class="bab-desc">Perkalian berulang dan kebalikannya. Fondasi untuk barisan geometri dan kalkulus.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="bab-02-persamaan-linear.html" class="bab-card coming-soon" data-nama="persamaan pertidaksamaan linear">
+        <div class="bab-card-top">
+          <div class="bab-nama">Persamaan &amp; Pertidaksamaan Linear</div>
+          <span class="bab-num">02</span>
+        </div>
+        <div class="bab-desc">Persamaan satu dan dua variabel. Dasar untuk hampir semua bab selanjutnya.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-03-spldv-spltv.html" class="bab-card coming-soon" data-nama="sistem persamaan linear dua tiga variabel spldv spltv">
+        <div class="bab-card-top">
+          <div class="bab-nama">Sistem Persamaan Linear (SPLDV/SPLTV)</div>
+          <span class="bab-num">03</span>
+        </div>
+        <div class="bab-desc">Memecahkan beberapa persamaan sekaligus. Prasyarat matriks dan program linear.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-04-himpunan-logika.html" class="bab-card coming-soon" data-nama="himpunan logika matematika">
+        <div class="bab-card-top">
+          <div class="bab-nama">Himpunan &amp; Logika Matematika</div>
+          <span class="bab-num">04</span>
+        </div>
+        <div class="bab-desc">Notasi himpunan, irisan, gabungan, dan prinsip logika dasar.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-05-perbandingan-rasio.html" class="bab-card coming-soon" data-nama="perbandingan rasio proporsi">
+        <div class="bab-card-top">
+          <div class="bab-nama">Perbandingan, Rasio &amp; Proporsi</div>
+          <span class="bab-num">05</span>
+        </div>
+        <div class="bab-desc">Skala, perbandingan senilai &amp; berbalik nilai. Sangat sering di soal PM.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-06-aritmetika-sosial.html" class="bab-card coming-soon" data-nama="aritmetika sosial bunga diskon pajak">
+        <div class="bab-card-top">
+          <div class="bab-nama">Aritmetika Sosial</div>
+          <span class="bab-num">06</span>
+        </div>
+        <div class="bab-desc">Bunga tunggal &amp; majemuk, diskon, pajak, untung rugi. Konteks nyata di PM.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FASE 2 — FUNGSI & POLA
+  ═══════════════════════════════ -->
+  <section class="fase-section" id="fase-2">
+    <div class="fase-header">
+      <span class="fase-badge f2">Fase 2 — Fungsi &amp; Pola</span>
+      <div class="fase-line"></div>
+      <span class="fase-count">6 bab · Prasyarat: Fase 1</span>
+    </div>
+    <div class="bab-grid">
+
+      <a href="bab-07-fungsi-komposisi-invers.html" class="bab-card coming-soon" data-nama="fungsi komposisi invers">
+        <div class="bab-card-top">
+          <div class="bab-nama">Fungsi, Komposisi &amp; Invers</div>
+          <span class="bab-num">07</span>
+        </div>
+        <div class="bab-desc">Domain, kodomain, range, komposisi f∘g, dan fungsi invers.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-08-fungsi-kuadrat.html" class="bab-card coming-soon" data-nama="persamaan fungsi kuadrat parabola">
+        <div class="bab-card-top">
+          <div class="bab-nama">Persamaan &amp; Fungsi Kuadrat</div>
+          <span class="bab-num">08</span>
+        </div>
+        <div class="bab-desc">Grafik parabola, diskriminan, titik puncak, dan akar-akar persamaan.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-09-pertidaksamaan-kuadrat.html" class="bab-card coming-soon" data-nama="pertidaksamaan kuadrat">
+        <div class="bab-card-top">
+          <div class="bab-nama">Pertidaksamaan Kuadrat</div>
+          <span class="bab-num">09</span>
+        </div>
+        <div class="bab-desc">Himpunan penyelesaian dari ax²+bx+c &gt; 0 dengan garis bilangan.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-10-barisan-deret.html" class="bab-card coming-soon" data-nama="barisan deret aritmatika geometri">
+        <div class="bab-card-top">
+          <div class="bab-nama">Barisan &amp; Deret</div>
+          <span class="bab-num">10</span>
+        </div>
+        <div class="bab-desc">Aritmatika &amp; geometri, deret tak hingga. Salah satu bab favorit UTBK.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-11-persamaan-garis-lurus.html" class="bab-card coming-soon" data-nama="persamaan garis lurus gradien">
+        <div class="bab-card-top">
+          <div class="bab-nama">Persamaan Garis Lurus</div>
+          <span class="bab-num">11</span>
+        </div>
+        <div class="bab-desc">Gradien, persamaan garis, jarak titik ke garis, dua garis sejajar/tegak lurus.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-12-polinomial.html" class="bab-card coming-soon" data-nama="polinomial suku banyak horner">
+        <div class="bab-card-top">
+          <div class="bab-nama">Polinomial (Suku Banyak)</div>
+          <span class="bab-num">12</span>
+        </div>
+        <div class="bab-desc">Pembagian suku banyak, teorema sisa, teorema faktor, skema Horner.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FASE 3 — GEOMETRI & TRIGONOMETRI
+  ═══════════════════════════════ -->
+  <section class="fase-section" id="fase-3">
+    <div class="fase-header">
+      <span class="fase-badge f3">Fase 3 — Geometri &amp; Trigonometri</span>
+      <div class="fase-line"></div>
+      <span class="fase-count">7 bab · Prasyarat: Fase 1–2</span>
+    </div>
+    <div class="bab-grid">
+
+      <a href="bab-13-trigonometri-dasar.html" class="bab-card coming-soon" data-nama="trigonometri dasar sin cos tan">
+        <div class="bab-card-top">
+          <div class="bab-nama">Trigonometri Dasar</div>
+          <span class="bab-num">13</span>
+        </div>
+        <div class="bab-desc">Perbandingan sin/cos/tan, kuadran, identitas dasar, aturan sinus &amp; kosinus.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-14-trigonometri-lanjut.html" class="bab-card coming-soon" data-nama="trigonometri lanjut jumlah selisih sudut rumus">
+        <div class="bab-card-top">
+          <div class="bab-nama">Trigonometri Lanjut</div>
+          <span class="bab-num">14</span>
+        </div>
+        <div class="bab-desc">Rumus jumlah &amp; selisih sudut, sudut ganda, persamaan trigonometri.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-15-vektor.html" class="bab-card coming-soon" data-nama="vektor dot product cross product">
+        <div class="bab-card-top">
+          <div class="bab-nama">Vektor</div>
+          <span class="bab-num">15</span>
+        </div>
+        <div class="bab-desc">Operasi vektor, panjang vektor, dot product, dan sudut antar vektor.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-16-geometri-transformasi.html" class="bab-card coming-soon" data-nama="geometri transformasi translasi rotasi refleksi dilatasi">
+        <div class="bab-card-top">
+          <div class="bab-nama">Geometri Transformasi</div>
+          <span class="bab-num">16</span>
+        </div>
+        <div class="bab-desc">Translasi, refleksi, rotasi, dilatasi, dan komposisi transformasi.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-17-lingkaran.html" class="bab-card coming-soon" data-nama="lingkaran garis singgung persamaan">
+        <div class="bab-card-top">
+          <div class="bab-nama">Lingkaran</div>
+          <span class="bab-num">17</span>
+        </div>
+        <div class="bab-desc">Persamaan lingkaran, garis singgung, kedudukan garis terhadap lingkaran.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-18-irisan-kerucut.html" class="bab-card coming-soon" data-nama="irisan kerucut parabola elips hiperbola">
+        <div class="bab-card-top">
+          <div class="bab-nama">Irisan Kerucut</div>
+          <span class="bab-num">18</span>
+        </div>
+        <div class="bab-desc">Parabola, elips, dan hiperbola — persamaan, unsur-unsur, dan grafik.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-19-geometri-ruang.html" class="bab-card coming-soon" data-nama="geometri ruang bangun ruang volume luas permukaan">
+        <div class="bab-card-top">
+          <div class="bab-nama">Geometri Ruang</div>
+          <span class="bab-num">19</span>
+        </div>
+        <div class="bab-desc">Bangun ruang, volume, luas permukaan, diagonal ruang dan bidang.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FASE 4 — ALJABAR LANJUT & STATISTIKA
+  ═══════════════════════════════ -->
+  <section class="fase-section" id="fase-4">
+    <div class="fase-header">
+      <span class="fase-badge f4">Fase 4 — Aljabar Lanjut &amp; Statistika</span>
+      <div class="fase-line"></div>
+      <span class="fase-count">7 bab · Prasyarat: Fase 1–3</span>
+    </div>
+    <div class="bab-grid">
+
+      <a href="bab-20-matriks.html" class="bab-card coming-soon" data-nama="matriks operasi invers determinan">
+        <div class="bab-card-top">
+          <div class="bab-nama">Matriks</div>
+          <span class="bab-num">20</span>
+        </div>
+        <div class="bab-desc">Operasi matriks, determinan, invers, dan penerapan ke SPLDV.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-21-program-linear.html" class="bab-card coming-soon" data-nama="program linear optimasi daerah penyelesaian">
+        <div class="bab-card-top">
+          <div class="bab-nama">Program Linear</div>
+          <span class="bab-num">21</span>
+        </div>
+        <div class="bab-desc">Model matematika, daerah penyelesaian, nilai optimum fungsi tujuan.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-22-statistika-deskriptif.html" class="bab-card coming-soon" data-nama="statistika deskriptif mean median modus simpangan">
+        <div class="bab-card-top">
+          <div class="bab-nama">Statistika Deskriptif</div>
+          <span class="bab-num">22</span>
+        </div>
+        <div class="bab-desc">Mean, median, modus, simpangan baku, histogram, dan ogive.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-23-statistika-lanjut.html" class="bab-card coming-soon" data-nama="statistika lanjut regresi distribusi normal">
+        <div class="bab-card-top">
+          <div class="bab-nama">Statistika Lanjut</div>
+          <span class="bab-num">23</span>
+        </div>
+        <div class="bab-desc">Regresi linear, korelasi, distribusi frekuensi, dan interpretasi data.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-24-permutasi-kombinasi.html" class="bab-card coming-soon" data-nama="permutasi kombinasi aturan pencacahan faktorial">
+        <div class="bab-card-top">
+          <div class="bab-nama">Permutasi &amp; Kombinasi</div>
+          <span class="bab-num">24</span>
+        </div>
+        <div class="bab-desc">Aturan perkalian, permutasi, kombinasi, dan segitiga Pascal.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-25-peluang-dasar.html" class="bab-card coming-soon" data-nama="peluang dasar probabilitas kejadian">
+        <div class="bab-card-top">
+          <div class="bab-nama">Peluang Dasar</div>
+          <span class="bab-num">25</span>
+        </div>
+        <div class="bab-desc">Ruang sampel, kejadian, peluang klasik, frekuensi relatif.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-26-peluang-lanjut.html" class="bab-card coming-soon" data-nama="peluang lanjut bersyarat majemuk bayes">
+        <div class="bab-card-top">
+          <div class="bab-nama">Peluang Lanjut</div>
+          <span class="bab-num">26</span>
+        </div>
+        <div class="bab-desc">Kejadian saling lepas, bebas, peluang bersyarat, dan teorema Bayes.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       FASE 5 — KALKULUS & MAHIR
+  ═══════════════════════════════ -->
+  <section class="fase-section" id="fase-5">
+    <div class="fase-header">
+      <span class="fase-badge f5">Fase 5 — Kalkulus &amp; Mahir</span>
+      <div class="fase-line"></div>
+      <span class="fase-count">6 bab · Prasyarat: Fase 1–4</span>
+    </div>
+    <div class="bab-grid">
+
+      <a href="bab-27-limit-fungsi.html" class="bab-card coming-soon" data-nama="limit fungsi tak tentu pendekatan">
+        <div class="bab-card-top">
+          <div class="bab-nama">Limit Fungsi</div>
+          <span class="bab-num">27</span>
+        </div>
+        <div class="bab-desc">Limit mendekati nilai, bentuk tak tentu 0/0, limit tak hingga, limit trigonometri.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-28-turunan.html" class="bab-card coming-soon" data-nama="turunan diferensial aturan rantai">
+        <div class="bab-card-top">
+          <div class="bab-nama">Turunan (Diferensial)</div>
+          <span class="bab-num">28</span>
+        </div>
+        <div class="bab-desc">Definisi turunan, aturan dasar, aturan rantai, turunan trigonometri.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-29-aplikasi-turunan.html" class="bab-card coming-soon" data-nama="aplikasi turunan nilai ekstrem monoton">
+        <div class="bab-card-top">
+          <div class="bab-nama">Aplikasi Turunan</div>
+          <span class="bab-num">29</span>
+        </div>
+        <div class="bab-desc">Nilai maksimum &amp; minimum, interval naik/turun, masalah optimasi.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-30-integral-tak-tentu.html" class="bab-card coming-soon" data-nama="integral tak tentu antiturunan substitusi">
+        <div class="bab-card-top">
+          <div class="bab-nama">Integral Tak Tentu</div>
+          <span class="bab-num">30</span>
+        </div>
+        <div class="bab-desc">Antiturunan, integral dengan substitusi, integral trigonometri.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-31-integral-tentu.html" class="bab-card coming-soon" data-nama="integral tentu luas daerah volume benda putar">
+        <div class="bab-card-top">
+          <div class="bab-nama">Integral Tentu &amp; Aplikasi</div>
+          <span class="bab-num">31</span>
+        </div>
+        <div class="bab-desc">Teorema dasar kalkulus, luas daerah, dan volume benda putar.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+      <a href="bab-32-bilangan-kompleks.html" class="bab-card coming-soon" data-nama="bilangan kompleks imajiner argand">
+        <div class="bab-card-top">
+          <div class="bab-nama">Bilangan Kompleks</div>
+          <span class="bab-num">32</span>
+        </div>
+        <div class="bab-desc">Bilangan imajiner, bentuk aljabar &amp; polar, diagram Argand, operasi kompleks.</div>
+        <div class="bab-meta">
+          <div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div>
+          <span class="bab-soon-label">Segera hadir</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- EMPTY STATE SEARCH -->
+  <div id="emptyState" style="display:none; text-align:center; padding:3rem 1rem; color:var(--teks3)">
+    <div style="font-size:32px; margin-bottom:.75rem">🔍</div>
+    <div style="font-size:16px; font-weight:600; color:var(--teks2); margin-bottom:4px">Bab tidak ditemukan</div>
+    <div style="font-size:14px">Coba kata kunci lain seperti "integral", "peluang", atau "matriks"</div>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div style="margin-bottom:6px">
+    <strong style="color:var(--teks2)">Matematika SMA</strong> — Persiapan UTBK/SNBT 2026
+  </div>
+  <div>32 bab · Dari fondasi hingga kalkulus · Gratis &amp; terbuka untuk semua</div>
+</footer>
+
+<script>
+  /* ── SEARCH / FILTER ── */
+  function filterBab() {
+    const q = document.getElementById('searchInput').value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.bab-card');
+    let visible = 0;
+
+    cards.forEach(card => {
+      const nama = (card.dataset.nama || '') + ' ' + (card.querySelector('.bab-nama')?.textContent || '') + ' ' + (card.querySelector('.bab-desc')?.textContent || '');
+      const match = !q || nama.toLowerCase().includes(q);
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+
+    /* tampilkan/sembunyikan header fase jika semua bab di dalamnya tersembunyi */
+    document.querySelectorAll('.fase-section').forEach(sec => {
+      const anyVisible = [...sec.querySelectorAll('.bab-card')].some(c => c.style.display !== 'none');
+      sec.style.display = anyVisible ? '' : 'none';
+    });
+
+    document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  /* ── HITUNG PROGRES ── */
+  function hitungProgress() {
+    const total = document.querySelectorAll('.bab-card').length;
+    const selesai = document.querySelectorAll('.bab-card.selesai').length;
+    const pct = Math.round((selesai / total) * 100 * 10) / 10;
+    document.getElementById('progTotal').style.width = pct + '%';
+    document.getElementById('progPct').textContent = selesai + ' / ' + total + ' bab';
+  }
+
+  /* ── AKTIFKAN NAV PILL saat scroll ── */
+  const faseSections = document.querySelectorAll('.fase-section');
+  const navPills = document.querySelectorAll('.nav-pill');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    faseSections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+    });
+    navPills.forEach(pill => {
+      pill.classList.toggle('aktif', pill.getAttribute('href') === '#' + current);
+    });
+  });
+
+  hitungProgress();
+</script>
+
+</body>
+</html>
