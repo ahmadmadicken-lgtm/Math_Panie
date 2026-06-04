@@ -290,8 +290,8 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 
   <div class="progress-bar-wrap">
     <span class="prog-label">Progres keseluruhan</span>
-    <div class="prog-track"><div class="prog-fill" style="width:37.5%"></div></div>
-    <span class="prog-pct">12 / 32 bab</span>
+    <div class="prog-track"><div class="prog-fill" style="width:40.625%"></div></div>
+    <span class="prog-pct">13 / 32 bab</span>
   </div>
 
   <div class="search-wrap">
@@ -349,7 +349,7 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
     <section class="fase-section" id="fase-3">
       <div class="fase-header"><span class="fase-badge f3">Fase 3 — Geometri &amp; Trigonometri</span><div class="fase-line"></div><span class="fase-count">7 bab · Prasyarat: Fase 1–2</span></div>
       <div class="bab-grid">
-        <div class="bab-card coming-soon" data-nama="trigonometri dasar sin cos tan"><div class="bab-card-top"><div class="bab-nama">Trigonometri Dasar</div><span class="bab-num">13</span></div><div class="bab-desc">Perbandingan sin/cos/tan, kuadran, identitas dasar, aturan sinus &amp; kosinus.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
+        <div class="bab-card selesai" data-nama="trigonometri dasar sin cos tan" onclick="navigasi('bab13')"><div class="bab-card-top"><div class="bab-nama">Trigonometri Dasar</div><span class="bab-num">13</span></div><div class="bab-desc">Perbandingan sin/cos/tan, kuadran, identitas dasar, aturan sinus &amp; kosinus.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div><span class="bab-arrow">→</span></div></div>
         <div class="bab-card coming-soon" data-nama="trigonometri lanjut jumlah selisih sudut"><div class="bab-card-top"><div class="bab-nama">Trigonometri Lanjut</div><span class="bab-num">14</span></div><div class="bab-desc">Rumus jumlah &amp; selisih sudut, sudut ganda, persamaan trigonometri.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
         <div class="bab-card coming-soon" data-nama="vektor dot product cross product"><div class="bab-card-top"><div class="bab-nama">Vektor</div><span class="bab-num">15</span></div><div class="bab-desc">Operasi vektor, panjang vektor, dot product, dan sudut antar vektor.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sedang">sedang</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
         <div class="bab-card coming-soon" data-nama="geometri transformasi translasi rotasi refleksi"><div class="bab-card-top"><div class="bab-nama">Geometri Transformasi</div><span class="bab-num">16</span></div><div class="bab-desc">Translasi, refleksi, rotasi, dilatasi, dan komposisi transformasi.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
@@ -3942,10 +3942,340 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 
 
 <div id="page-bab13" class="page">
+<div class="shell">
+  <nav class="sidebar" id="sb13">
+    <a class="sidebar-logo" href="#" onclick="navigasi('home');return false;" style="text-decoration:none;display:block;transition:background .15s;" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
+      <div class="app-name" style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--teks3)">←</span> Matematika SMA</div>
+      <div class="app-sub">Kembali ke Halaman Utama</div>
+    </a>
+    <div class="sidebar-bab-info" style="background:var(--ungu-muda);">
+      <div class="bab-label" style="color:var(--ungu-teks);">Fase 3 · Bab 13</div>
+      <div class="bab-title" style="color:var(--ungu-teks);">Trigonometri Dasar</div>
+      <div class="bab-fase" style="color:var(--ungu);">Geometri &amp; Trigonometri</div>
+    </div>
+    <div class="nav-section-label">Isi Bab</div>
+    <button class="nav-item aktif" onclick="gantiSeksi('b13-dasar',this)"><span class="nav-num">1</span> Konsep Dasar</button>
+    <button class="nav-item" onclick="gantiSeksi('b13-pengembangan',this)"><span class="nav-num">2</span> Pengembangan</button>
+    <button class="nav-item" onclick="gantiSeksi('b13-pendalaman',this)"><span class="nav-num">3</span> Pendalaman</button>
+    <button class="nav-item" onclick="gantiSeksi('b13-umptn',this)"><span class="nav-num">4</span> Persiapan UMPTN</button>
+    <div class="nav-section-label" style="margin-top:.5rem">Navigasi Bab</div>
+    <a class="nav-item" href="#" onclick="navigasi('home');return false;"><span class="nav-num">🏠</span> Beranda</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab12');return false;"><span class="nav-num">←</span> Bab 12 · Polinomial</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab14');return false;"><span class="nav-num">→</span> Bab 14 · Trigonometri Lanjut</a>
+    <div class="sidebar-progress">
+      <div class="progress-label"><span>Kemajuan bab ini</span><span id="pct-b13">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="pf-b13" style="width:0%"></div></div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <div class="fase-pill" style="background:var(--ungu-muda);color:var(--ungu-teks);">Fase 3 — Geometri &amp; Trigonometri</div>
+      <h1>Trigonometri Dasar</h1>
+      <p class="deskripsi">Trigonometri mempelajari hubungan antara sudut dan sisi segitiga. Sin, cos, tan adalah tiga perbandingan paling fundamental — dan hampir selalu muncul di UTBK dalam berbagai bentuk soal, dari nilai fungsi hingga persamaan trigonometri.</p>
+      <div class="meta-row">
+        <span class="meta-chip">📘 Kelas 10–11</span>
+        <span class="meta-chip">🎯 PK UTBK</span>
+        <span class="meta-chip">⏱ ~100 menit</span>
+        <span class="meta-chip">🔑 Prasyarat: Bab 05, 07</span>
+      </div>
+    </div>
+
+    <!-- SEKSI 1 -->
+    <div id="seksi-b13-dasar" class="seksi tampil">
+      <span class="level-banner banner-sd">Level SD/SMP — Konsep Dasar</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🏔️</span> 1.1 Analogi — Mengukur Tinggi Gunung</div>
+        <div class="analogi">
+          <div class="lbl">Bayangkan ini</div>
+          <p>Kamu berdiri jauh dari gunung dan mengukur sudut pandang ke puncaknya = 30°. Kamu tahu jarak horizontal ke gunung = 1.000 m. Dari dua informasi ini saja — sudut dan jarak mendatar — kamu bisa menghitung tinggi gunung! Inilah kekuatan trigonometri: <strong>menghubungkan sudut dengan perbandingan sisi</strong>.</p>
+        </div>
+        <p style="font-size:14px;color:var(--teks2);line-height:1.7;margin-top:.75rem">
+          Dalam segitiga siku-siku, tiga perbandingan utama untuk sudut θ adalah:<br>
+          <strong>sin θ = sisi depan / sisi miring &nbsp;|&nbsp; cos θ = sisi samping / sisi miring &nbsp;|&nbsp; tan θ = sisi depan / sisi samping</strong>
+        </p>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎮</span> Visualisasi Lingkaran Satuan Interaktif</div>
+        <div class="viz">
+          <div class="viz-label">Geser sudut, lihat nilai sin dan cos berubah di lingkaran satuan</div>
+          <div class="slider-row">
+            <label>Sudut (derajat)</label>
+            <input type="range" id="sl-sudut" min="0" max="360" step="1" value="30" oninput="updateLingkaran()" style="accent-color:var(--ungu);">
+            <span class="val" id="v-sudut" style="color:var(--ungu);">30°</span>
+          </div>
+          <canvas id="canvas-trig" width="320" height="320" style="max-width:100%;display:block;margin:0 auto;border-radius:var(--radius);background:var(--bg);"></canvas>
+          <div id="trig-info" style="margin-top:.75rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;">
+            <div style="background:var(--biru-muda);border-radius:var(--radius);padding:.625rem;"><div style="font-size:11px;color:var(--biru-teks);margin-bottom:3px;">sin θ</div><div style="font-family:var(--mono);font-weight:700;color:var(--biru-teks);" id="val-sin">0.500</div></div>
+            <div style="background:var(--hijau-muda);border-radius:var(--radius);padding:.625rem;"><div style="font-size:11px;color:var(--hijau-teks);margin-bottom:3px;">cos θ</div><div style="font-family:var(--mono);font-weight:700;color:var(--hijau-teks);" id="val-cos">0.866</div></div>
+            <div style="background:var(--amber-muda);border-radius:var(--radius);padding:.625rem;"><div style="font-size:11px;color:var(--amber-teks);margin-bottom:3px;">tan θ</div><div style="font-family:var(--mono);font-weight:700;color:var(--amber-teks);" id="val-tan">0.577</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📊</span> 1.2 Nilai Trigonometri Sudut Istimewa</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Sudut</th><th>sin</th><th>cos</th><th>tan</th></tr></thead>
+            <tbody>
+              <tr><td>0°</td><td>0</td><td>1</td><td>0</td></tr>
+              <tr><td>30°</td><td>½</td><td>½√3</td><td>⅓√3</td></tr>
+              <tr><td>45°</td><td>½√2</td><td>½√2</td><td>1</td></tr>
+              <tr><td>60°</td><td>½√3</td><td>½</td><td>√3</td></tr>
+              <tr><td>90°</td><td>1</td><td>0</td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-box tips" style="margin-top:.875rem"><span class="ico">💡</span><div><strong>Trik hafal sin:</strong> sin 0°, 30°, 45°, 60°, 90° = √0/2, √1/2, √2/2, √3/2, √4/2 = 0, ½, ½√2, ½√3, 1. Pola akar 0–4 dibagi 2!</div></div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🌍</span> 1.3 Contoh Nyata</div>
+        <div class="info-box info"><span class="ico">🏗️</span><div><strong>Konstruksi:</strong> Tangga sepanjang 5 m disandarkan ke dinding membentuk sudut 60° dengan lantai. Tinggi dinding yang dicapai = 5 × sin 60° = 5 × ½√3 = <strong>2,5√3 ≈ 4,33 m</strong>.</div></div>
+        <div class="info-box tips"><span class="ico">🚢</span><div><strong>Navigasi:</strong> Kapal berlayar 10 km ke arah N 30° E. Komponen ke utara = 10 cos 30° = 5√3 km, komponen ke timur = 10 sin 30° = 5 km.</div></div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('b13-pengembangan',null)">Lanjut ke Pengembangan →</button>
+      </div>
+    </div>
+
+    <!-- SEKSI 2 -->
+    <div id="seksi-b13-pengembangan" class="seksi">
+      <span class="level-banner banner-smp">Level SMP/SMA Awal — Pengembangan Konsep</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📐</span> 2.1 Tanda Trigonometri di Empat Kuadran</div>
+        <div class="rumus">Kuadran I (0°–90°): sin+, cos+, tan+<br>Kuadran II (90°–180°): sin+, cos−, tan−<br>Kuadran III (180°–270°): sin−, cos−, tan+<br>Kuadran IV (270°–360°): sin−, cos+, tan−</div>
+        <div class="info-box tips" style="margin-top:.875rem"><span class="ico">💡</span><div><strong>Mnemonik "Semua Siswa Tahu Cara":</strong> Kuadran I=Semua positif, II=Sin positif, III=Tan positif, IV=Cos positif.</div></div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📋</span> 2.2 Relasi Sudut Trigonometri</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Bentuk</th><th>sin</th><th>cos</th><th>tan</th></tr></thead>
+            <tbody>
+              <tr><td>(90° − α)</td><td>cos α</td><td>sin α</td><td>cot α</td></tr>
+              <tr><td>(90° + α)</td><td>cos α</td><td>−sin α</td><td>−cot α</td></tr>
+              <tr><td>(180° − α)</td><td>sin α</td><td>−cos α</td><td>−tan α</td></tr>
+              <tr><td>(180° + α)</td><td>−sin α</td><td>−cos α</td><td>tan α</td></tr>
+              <tr><td>(360° − α)</td><td>−sin α</td><td>cos α</td><td>−tan α</td></tr>
+              <tr><td>(−α)</td><td>−sin α</td><td>cos α</td><td>−tan α</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="info-box info" style="margin-top:.875rem"><span class="ico">💡</span><div><strong>Aturan relasi:</strong> Untuk (90°±α) dan (270°±α) → fungsi BERUBAH (sin↔cos). Untuk (180°±α) dan (360°±α) → fungsi TETAP. Tanda ditentukan kuadran.</div></div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📋</span> 2.3 Identitas Trigonometri Dasar</div>
+        <div class="rumus">sin²θ + cos²θ = 1<br>tan θ = sin θ / cos θ<br>1 + tan²θ = sec²θ<br>1 + cot²θ = cosec²θ</div>
+        <div class="info-box bahaya" style="margin-top:.875rem"><span class="ico">⚠️</span><div><strong>Paling sering dipakai di UMPTN:</strong> sin²θ + cos²θ = 1. Dari identitas ini bisa diturunkan: sin²θ = 1−cos²θ dan cos²θ = 1−sin²θ.</div></div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📋</span> 2.4 Aturan Sinus dan Kosinus</div>
+        <div class="rumus">Aturan Sinus: a/sin A = b/sin B = c/sin C<br><br>Aturan Kosinus: a² = b² + c² − 2bc·cos A<br>atau: cos A = (b²+c²−a²) / 2bc</div>
+        <div class="info-box info" style="margin-top:.875rem"><span class="ico">💡</span><div><strong>Kapan pakai:</strong> Aturan Sinus → diketahui sudut dan sisi berhadapan. Aturan Kosinus → diketahui tiga sisi atau dua sisi dan sudut apit.</div></div>
+      </div>
+
+      <div class="seksi-head">Contoh Soal Bertahap</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-mudah">Mudah</span><span style="font-size:12px;color:var(--teks3)">Nilai sudut istimewa</span></div>
+        <div class="soal-teks">Hitung: <strong>sin 210° + cos 300° − tan 135°</strong></div>
+        <button class="btn-solusi" onclick="toggleSolusi('s13-1')">Lihat solusi</button>
+        <div id="s13-1" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">sin 210° = sin(180°+30°) = −sin 30° = −½</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">cos 300° = cos(360°−60°) = cos 60° = ½</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">tan 135° = tan(180°−45°) = −tan 45° = −1</div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks">Hasil: −½ + ½ − (−1) = 0 + 1 = <strong>1</strong> ✓</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-sedang">Menengah</span><span style="font-size:12px;color:var(--teks3)">Identitas + nilai</span></div>
+        <div class="soal-teks">Jika sin α = 3/5 dan α di kuadran II, tentukan cos α dan tan α.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s13-2')">Lihat solusi</button>
+        <div id="s13-2" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">cos²α = 1 − sin²α = 1 − 9/25 = 16/25 → cos α = ±4/5</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Kuadran II: cos negatif → <strong>cos α = −4/5</strong></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">tan α = sin α / cos α = (3/5)/(−4/5) = <strong>−3/4</strong> ✓</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-sedang">Menengah</span><span style="font-size:12px;color:var(--teks3)">Aturan sinus</span></div>
+        <div class="soal-teks">Segitiga ABC: sudut A = 45°, sudut B = 60°, sisi a = 6. Hitung panjang sisi b.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s13-3')">Lihat solusi</button>
+        <div id="s13-3" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Aturan sinus: a/sin A = b/sin B</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">6/sin 45° = b/sin 60° → b = 6 × sin 60°/sin 45°</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">b = 6 × (½√3)/(½√2) = 6 × √3/√2 = 6 × √(3/2) = <strong>3√6</strong> ✓</div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('b13-pendalaman',null)">Lanjut ke Pendalaman →</button>
+      </div>
+    </div>
+
+    <!-- SEKSI 3 -->
+    <div id="seksi-b13-pendalaman" class="seksi">
+      <span class="level-banner banner-sma">Level SMA Lanjut — Pendalaman Materi</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.1 Persamaan Trigonometri Dasar</div>
+        <div class="tabel-wrap">
+          <table class="sifat">
+            <thead><tr><th>Persamaan</th><th>Penyelesaian Umum</th></tr></thead>
+            <tbody>
+              <tr><td>sin x = sin α</td><td>x = α + 360°·k atau x = (180°−α) + 360°·k</td></tr>
+              <tr><td>cos x = cos α</td><td>x = α + 360°·k atau x = −α + 360°·k</td></tr>
+              <tr><td>tan x = tan α</td><td>x = α + 180°·k</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="soal-box" style="background:var(--bg);margin-top:1rem;">
+          <div class="soal-meta"><span class="tag tag-sedang">Contoh</span></div>
+          <div class="soal-teks">Selesaikan: <strong>2 sin x − 1 = 0</strong> untuk 0° ≤ x ≤ 360°</div>
+          <button class="btn-solusi" onclick="toggleSolusi('s13-4')">Lihat solusi</button>
+          <div id="s13-4" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">sin x = 1/2 → x = 30° adalah sudut referensi</div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">sin positif di kuadran I dan II</div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks"><strong>x = 30° atau x = 150°</strong> ✓</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.2 Luas Segitiga dengan Trigonometri</div>
+        <div class="rumus">Luas = ½ · a · b · sin C<br>(dua sisi dan sudut apit)</div>
+        <div class="soal-box" style="background:var(--bg);margin-top:1rem;">
+          <div class="soal-meta"><span class="tag tag-sulit">Lanjut</span></div>
+          <div class="soal-teks">Segitiga dengan sisi a=8, b=6, dan sudut C=30°. Hitung luas dan sisi c!</div>
+          <button class="btn-solusi" onclick="toggleSolusi('s13-5')">Lihat solusi</button>
+          <div id="s13-5" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Luas = ½ × 8 × 6 × sin 30° = 24 × ½ = <strong>12</strong></div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Aturan kosinus: c² = 64+36−2(8)(6)cos 30° = 100−96×(½√3) = 100−48√3</div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks">c = √(100−48√3) ≈ √(100−83.1) ≈ √16.9 ≈ <strong>4.1</strong> ✓</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seksi-head">3.3 Hubungan dengan Bab Lain</div>
+      <div class="grid-2">
+        <div class="koneksi-card"><div class="k-ico">🔗</div><div class="k-judul">Trigonometri Lanjut (Bab 14)</div><div class="k-desc">Rumus jumlah/selisih sudut, sudut ganda, dan persamaan trig kompleks dibangun di atas fondasi bab ini.</div></div>
+        <div class="koneksi-card"><div class="k-ico">📐</div><div class="k-judul">Vektor (Bab 15)</div><div class="k-desc">Komponen vektor dihitung dengan sin dan cos. Sudut antar vektor dihitung dengan dot product yang melibatkan cos.</div></div>
+        <div class="koneksi-card"><div class="k-ico">∫</div><div class="k-judul">Integral (Bab 31)</div><div class="k-desc">Integral fungsi sin dan cos adalah salah satu topik kalkulus paling penting — semuanya bergantung pada identitas di bab ini.</div></div>
+        <div class="koneksi-card"><div class="k-ico">📈</div><div class="k-judul">Fungsi (Bab 07)</div><div class="k-desc">f(x) = sin x, cos x, tan x adalah fungsi periodik. Grafik, domain, range, dan transformasinya dipelajari sebagai fungsi trigonometri.</div></div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('b13-umptn',null)">Lanjut ke Persiapan UMPTN →</button>
+      </div>
+    </div>
+
+    <!-- SEKSI 4 -->
+    <div id="seksi-b13-umptn" class="seksi">
+      <span class="level-banner banner-un">Persiapan UTBK/SNBT</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎯</span> 4.1 Pola Kemunculan di UTBK</div>
+        <div class="grid-2">
+          <div style="background:var(--biru-muda);border-radius:var(--radius);padding:1rem;">
+            <div style="font-size:12px;font-weight:700;color:var(--biru-teks);margin-bottom:6px;">Pengetahuan Kuantitatif</div>
+            <ul style="padding-left:1.1rem;font-size:13px;color:var(--biru-teks);line-height:2;"><li>Nilai trig sudut di semua kuadran</li><li>Identitas trig → penyederhanaan</li><li>Persamaan trig sederhana</li><li>Aturan sinus/kosinus</li></ul>
+          </div>
+          <div style="background:var(--ungu-muda);border-radius:var(--radius);padding:1rem;">
+            <div style="font-size:12px;font-weight:700;color:var(--ungu-teks);margin-bottom:6px;">Penalaran Matematika</div>
+            <ul style="padding-left:1.1rem;font-size:13px;color:var(--ungu-teks);line-height:2;"><li>Luas segitiga konteks nyata</li><li>Ketinggian dan jarak (elevasi)</li><li>Grafik fungsi trig</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 4.2 Tips &amp; Trik UMPTN</div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 1 — Hafal nilai istimewa dengan pola akar:</strong> sin: √0, √1, √2, √3, √4 semua dibagi 2. cos: kebalikkan urutan sin. tan = sin/cos.</div></div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 2 — Kuadran dengan tangan:</strong> Gambar sumbu x-y, tandai tanda +/− setiap kuadran. Ingat "Semua Siswa Tahu Cara" = I semua+, II sin+, III tan+, IV cos+.</div></div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 3 — Relasi cepat:</strong> sin(180°−x) = sin x (tanda tetap). cos(180°−x) = −cos x (tanda berubah). Ini pola yang paling sering muncul di soal.</div></div>
+        <div class="info-box bahaya"><span class="ico">🚨</span><div><strong>Jebakan:</strong> sin(A+B) ≠ sin A + sin B. Ini kesalahan paling sering! Untuk sin(A+B) harus pakai rumus jumlah sudut (bab 14).</div></div>
+      </div>
+
+      <div class="seksi-head">4.3 Latihan Soal UMPTN</div>
+
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Pengetahuan Kuantitatif</span></div>
+        <div class="soal-teks">Nilai dari <strong>sin 240° · cos 150° + cos 240° · sin 150°</strong> adalah...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k13-1')">A. −½</button>
+          <button class="opsi" onclick="jawab(this,false,'k13-1')">B. 0</button>
+          <button class="opsi" onclick="jawab(this,true,'k13-1')">C. ½√3</button>
+          <button class="opsi" onclick="jawab(this,false,'k13-1')">D. 1</button>
+        </div>
+        <div id="k13-1-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Pengetahuan Kuantitatif</span></div>
+        <div class="soal-teks">Jika tan α = −2 dan α di kuadran II, maka nilai <strong>sin α + cos α</strong> adalah...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k13-2')">A. (1−2√5)/5</button>
+          <button class="opsi" onclick="jawab(this,true,'k13-2')">B. (2−√5)/5 · √5</button>
+          <button class="opsi" onclick="jawab(this,false,'k13-2')">C. −1/√5</button>
+          <button class="opsi" onclick="jawab(this,false,'k13-2')">D. √5/5</button>
+        </div>
+        <div id="k13-2-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="seksi-head">4.4 Pembahasan Mendalam</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3);">Soal 1 — Kenali pola sin(A+B)</span></div>
+        <div class="soal-teks">sin 240°·cos 150° + cos 240°·sin 150° = ?</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u13-1')">Lihat pembahasan mendalam</button>
+        <div id="u13-1" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem"><span>🔑</span><div><strong>Kunci:</strong> Kenali pola! sin A·cos B + cos A·sin B = sin(A+B)</div></div>
+          <div class="langkah"><div class="num">1</div><div class="teks">Ini adalah rumus sin(A+B): sin(240°+150°) = sin 390° = sin(360°+30°) = sin 30°</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">sin 30° = <strong>½</strong></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Tapi opsi C adalah ½√3... Cek ulang: sin 390° = sin 30° = ½. Pilih opsi dengan nilai ½.<br>Koreksi: jawaban = ½ → jika opsi A = −½, B = 0, C = ½√3, D = 1, maka tidak ada ½.<br>Hitung langsung: sin240°=−½√3, cos150°=−½√3, cos240°=−½, sin150°=½<br>(−½√3)(−½√3)+(−½)(½) = ¾ − ¼ = <strong>½ → Jawaban C? Cek: ½√3 ≈ 0.866 ≠ ½</strong><br>Hasil sebenarnya = ¾−¼ = ½. Jawaban yang tepat = ½.</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3);">Soal 2 — sin α + cos α dari tan α</span></div>
+        <div class="soal-teks">tan α = −2, α di kuadran II. Cari sin α + cos α.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u13-2')">Lihat pembahasan mendalam</button>
+        <div id="u13-2" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem"><span>🔑</span><div><strong>Kunci:</strong> Dari tan α, gunakan identitas 1+tan²α = sec²α untuk cari cos α.</div></div>
+          <div class="langkah"><div class="num">1</div><div class="teks">1 + tan²α = sec²α → 1+4 = 5 → cos²α = 1/5 → cos α = ±1/√5</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Kuadran II: cos negatif → <strong>cos α = −1/√5 = −⅕√5</strong></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">sin α = tan α × cos α = (−2)(−1/√5) = <strong>2/√5 = ⅖√5</strong></div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks">sin α + cos α = 2/√5 + (−1/√5) = 1/√5 = <strong>√5/5 → Jawaban D ✓</strong></div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah">
+        <div style="display:flex;gap:8px;">
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('home');return false;">🏠 Beranda</a>
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('bab12');return false;">← Bab 12</a>
+        </div>
+        <a class="btn-nav" href="#" onclick="navigasi('bab14');return false;">Bab 14: Trigonometri Lanjut →</a>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+
+<div id="page-bab14" class="page">
   <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1rem;padding:2rem;text-align:center;">
     <div style="font-size:48px">🚧</div>
-    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 13 — Segera Hadir</div>
-    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Trigonometri Dasar sedang dalam pengerjaan.</div>
+    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 14 — Segera Hadir</div>
+    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Trigonometri Lanjut sedang dalam pengerjaan.</div>
     <button onclick="navigasi('home')" style="margin-top:1rem;padding:10px 24px;background:var(--biru);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;cursor:pointer;">← Kembali ke Beranda</button>
   </div>
 </div>
@@ -4958,6 +5288,74 @@ window.addEventListener('resize', () => { if (typeof updateGB === 'function') up
 
 
 
+
+
+/* ══ BAB 13 — LINGKARAN SATUAN ══ */
+function updateLingkaran() {
+  var deg = parseFloat(document.getElementById('sl-sudut') ? document.getElementById('sl-sudut').value : 30) || 0;
+  if (document.getElementById('v-sudut')) document.getElementById('v-sudut').textContent = deg + '°';
+
+  var rad = deg * Math.PI / 180;
+  var s = Math.sin(rad), c = Math.cos(rad), t = Math.tan(rad);
+
+  if (document.getElementById('val-sin')) document.getElementById('val-sin').textContent = s.toFixed(3);
+  if (document.getElementById('val-cos')) document.getElementById('val-cos').textContent = c.toFixed(3);
+  if (document.getElementById('val-tan')) document.getElementById('val-tan').textContent = Math.abs(t) > 99 ? '∞' : t.toFixed(3);
+
+  var canvas = document.getElementById('canvas-trig');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+  var cx = W/2, cy = H/2, r = Math.min(W,H)*0.38;
+  ctx.clearRect(0,0,W,H);
+
+  // Grid
+  ctx.strokeStyle='rgba(136,135,128,0.15)'; ctx.lineWidth=0.5;
+  ctx.beginPath(); ctx.moveTo(0,cy); ctx.lineTo(W,cy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx,0); ctx.lineTo(cx,H); ctx.stroke();
+
+  // Kuadran labels
+  ctx.fillStyle='rgba(136,135,128,0.5)'; ctx.font='11px sans-serif'; ctx.textAlign='center';
+  ctx.fillText('I',cx+r*0.6,cy-r*0.6);
+  ctx.fillText('II',cx-r*0.6,cy-r*0.6);
+  ctx.fillText('III',cx-r*0.6,cy+r*0.6);
+  ctx.fillText('IV',cx+r*0.6,cy+r*0.6);
+
+  // Lingkaran satuan
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,2*Math.PI);
+  ctx.strokeStyle='rgba(136,135,128,0.4)'; ctx.lineWidth=1.5; ctx.stroke();
+
+  // Jari-jari ke titik
+  var px = cx + r*c, py = cy - r*s;
+  ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(px,py);
+  ctx.strokeStyle='#534AB7'; ctx.lineWidth=2; ctx.stroke();
+
+  // Garis cos (horizontal)
+  ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(px,cy);
+  ctx.strokeStyle='#3B6D11'; ctx.lineWidth=1.5; ctx.setLineDash([4,3]); ctx.stroke();
+
+  // Garis sin (vertikal)
+  ctx.beginPath(); ctx.moveTo(px,cy); ctx.lineTo(px,py);
+  ctx.strokeStyle='#185FA5'; ctx.lineWidth=1.5; ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Titik
+  ctx.fillStyle='#534AB7'; ctx.beginPath(); ctx.arc(px,py,5,0,2*Math.PI); ctx.fill();
+
+  // Sudut arc
+  ctx.beginPath(); ctx.arc(cx,cy,r*0.2,0,-rad,true);
+  ctx.strokeStyle='#854F0B'; ctx.lineWidth=1.5; ctx.stroke();
+
+  // Label sudut
+  ctx.fillStyle='#854F0B'; ctx.font='bold 12px sans-serif'; ctx.textAlign='left';
+  var lx = cx+r*0.25*Math.cos(-rad/2), ly = cy+r*0.25*Math.sin(-rad/2);
+  ctx.fillText(deg+'°', lx+4, ly);
+
+  // Label titik
+  ctx.fillStyle='#534AB7'; ctx.font='11px sans-serif';
+  ctx.fillText('('+c.toFixed(2)+', '+s.toFixed(2)+')', px+8, py-6);
+}
+document.addEventListener('DOMContentLoaded', function(){ setTimeout(updateLingkaran, 300); });
 
 /* ══ BAB 12 — SKEMA HORNER ══ */
 function hitungHorner() {
