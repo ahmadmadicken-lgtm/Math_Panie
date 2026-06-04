@@ -5619,12 +5619,221 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 </div>
 
 <div id="page-bab21" class="page">
-  <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1rem;padding:2rem;text-align:center;">
-    <div style="font-size:48px">🚧</div>
-    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 21 — Segera Hadir</div>
-    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Program Linear sedang dalam pengerjaan.</div>
-    <button onclick="navigasi('home')" style="margin-top:1rem;padding:10px 24px;background:var(--biru);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;cursor:pointer;">← Kembali ke Beranda</button>
-  </div>
+<div class="shell">
+  <nav class="sidebar" id="sb21">
+    <a class="sidebar-logo" href="#" onclick="navigasi('home');return false;" style="text-decoration:none;display:block;transition:background .15s;" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
+      <div class="app-name" style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--teks3)">&#8592;</span> Matematika SMA</div>
+      <div class="app-sub">Kembali ke Halaman Utama</div>
+    </a>
+    <div class="sidebar-bab-info" style="background:var(--amber-muda);">
+      <div class="bab-label" style="color:var(--amber-teks);">Fase 4 - Bab 21</div>
+      <div class="bab-title" style="color:var(--amber-teks);">Program Linear</div>
+      <div class="bab-fase" style="color:var(--amber);">Aljabar Lanjut</div>
+    </div>
+    <div class="nav-section-label">Isi Bab</div>
+    <button class="nav-item aktif" onclick="gantiSeksi('b21-dasar',this)"><span class="nav-num">1</span> Konsep Dasar</button>
+    <button class="nav-item" onclick="gantiSeksi('b21-pengembangan',this)"><span class="nav-num">2</span> Pengembangan</button>
+    <button class="nav-item" onclick="gantiSeksi('b21-pendalaman',this)"><span class="nav-num">3</span> Pendalaman</button>
+    <button class="nav-item" onclick="gantiSeksi('b21-umptn',this)"><span class="nav-num">4</span> Persiapan UMPTN</button>
+    <div class="nav-section-label" style="margin-top:.5rem">Navigasi Bab</div>
+    <a class="nav-item" href="#" onclick="navigasi('home');return false;"><span class="nav-num">&#127968;</span> Beranda</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab20');return false;"><span class="nav-num">&#8592;</span> Bab 20 - Matriks</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab22');return false;"><span class="nav-num">&#8594;</span> Bab 22 - Statistika</a>
+    <div class="sidebar-progress">
+      <div class="progress-label"><span>Kemajuan bab ini</span><span id="pct-b21">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="pf-b21" style="width:0%"></div></div>
+    </div>
+  </nav>
+  <main class="main">
+    <div class="page-header">
+      <div class="fase-pill" style="background:var(--amber-muda);color:var(--amber-teks);">Fase 4 - Aljabar Lanjut</div>
+      <h1>Program Linear</h1>
+      <p class="deskripsi">Program linear mencari nilai optimum (maksimum atau minimum) dari fungsi tujuan, dengan batasan berupa sistem pertidaksamaan linear. Dipakai di bisnis, logistik, dan ekonomi untuk keputusan optimal.</p>
+      <div class="meta-row">
+        <span class="meta-chip">&#128216; Kelas 11</span>
+        <span class="meta-chip">&#127919; PM UTBK</span>
+        <span class="meta-chip">&#9200; ~80 menit</span>
+        <span class="meta-chip">&#128273; Prasyarat: Bab 02, 11</span>
+      </div>
+    </div>
+
+    <div id="seksi-b21-dasar" class="seksi tampil">
+      <span class="level-banner banner-sd">Level SMP/SMA - Konsep Dasar</span>
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#127968;</span> 1.1 Analogi - Pabrik Kue</div>
+        <div class="analogi">
+          <div class="lbl">Bayangkan ini</div>
+          <p>Pabrik membuat kue A (untung Rp 5.000) dan kue B (untung Rp 8.000). Tapi bahan terbatas: tepung max 10 kg, telur max 8 kg. Berapa banyak kue A dan B harus dibuat agar untung maksimum? Ini adalah <strong>program linear</strong>: cari kombinasi terbaik dengan batasan sumber daya.</p>
+        </div>
+        <p style="font-size:14px;color:var(--teks2);line-height:1.7;margin-top:.75rem">
+          <strong>Fungsi tujuan:</strong> Z = 5000x + 8000y (yang ingin dimaksimalkan)<br>
+          <strong>Kendala:</strong> batasan bahan baku, jam kerja, kapasitas, dll<br>
+          <strong>Solusi optimal:</strong> selalu ada di titik sudut daerah feasible
+        </p>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#128204;</span> 1.2 Langkah-Langkah Penyelesaian</div>
+        <div class="rumus">1. Tentukan variabel (x dan y)<br>2. Tulis fungsi tujuan Z = ax + by<br>3. Tulis semua kendala sebagai pertidaksamaan<br>4. Gambar daerah feasible (daerah penyelesaian)<br>5. Tentukan titik sudut daerah feasible<br>6. Uji semua titik sudut ke fungsi tujuan<br>7. Nilai terbesar = maksimum, terkecil = minimum</div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#127758;</span> 1.3 Contoh Nyata</div>
+        <div class="info-box info"><span class="ico">&#9992;</span><div><strong>Maskapai penerbangan:</strong> Berapa kursi kelas bisnis vs ekonomi untuk memaksimalkan pendapatan, dengan kapasitas pesawat terbatas?</div></div>
+        <div class="info-box tips"><span class="ico">&#127807;</span><div><strong>Pertanian:</strong> Berapa hektar lahan ditanam padi vs jagung agar keuntungan maksimal, dengan air irigasi dan pupuk terbatas?</div></div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('b21-pengembangan',null)">Lanjut ke Pengembangan &#8594;</button>
+      </div>
+    </div>
+
+    <div id="seksi-b21-pengembangan" class="seksi">
+      <span class="level-banner banner-smp">Level SMP/SMA - Pengembangan</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#128200;</span> 2.1 Kalkulator Program Linear Interaktif</div>
+        <div class="viz">
+          <div class="viz-label">Masukkan koefisien dan visualisasi daerah feasible</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem;">
+            <div>
+              <div style="font-size:12px;color:var(--amber-teks);font-weight:600;margin-bottom:6px;">Fungsi Tujuan Z = ax + by</div>
+              <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px;">
+                <label style="font-size:12px;color:var(--teks3);">a =</label>
+                <input id="pl-a" type="number" value="5" style="width:60px;padding:6px;font-size:13px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--bg);color:var(--teks);text-align:center;" oninput="hitungPL()">
+                <label style="font-size:12px;color:var(--teks3);">b =</label>
+                <input id="pl-b" type="number" value="8" style="width:60px;padding:6px;font-size:13px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--bg);color:var(--teks);text-align:center;" oninput="hitungPL()">
+              </div>
+            </div>
+            <div>
+              <div style="font-size:12px;color:var(--biru-teks);font-weight:600;margin-bottom:6px;">Kendala (2 garis)</div>
+              <div style="font-size:12px;color:var(--teks3);line-height:1.9;">
+                x &lt;= <input id="pl-x1" type="number" value="6" style="width:45px;padding:4px;font-size:12px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--bg);color:var(--teks);text-align:center;" oninput="hitungPL()"><br>
+                y &lt;= <input id="pl-y1" type="number" value="5" style="width:45px;padding:4px;font-size:12px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--bg);color:var(--teks);text-align:center;" oninput="hitungPL()"><br>
+                x+y &lt;= <input id="pl-xy" type="number" value="9" style="width:45px;padding:4px;font-size:12px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--bg);color:var(--teks);text-align:center;" oninput="hitungPL()">
+              </div>
+            </div>
+          </div>
+          <canvas id="canvas-pl" width="360" height="300" style="max-width:100%;display:block;margin:0 auto;border-radius:var(--radius);background:var(--bg);"></canvas>
+          <div id="pl-result" style="margin-top:.75rem;font-size:13px;color:var(--teks2);background:var(--bg2);padding:.75rem 1rem;border-radius:var(--radius);border:0.5px solid var(--border);line-height:1.9;"></div>
+        </div>
+      </div>
+
+      <div class="seksi-head">Contoh Soal Bertahap</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-mudah">Mudah</span><span style="font-size:12px;color:var(--teks3)">Nilai optimum</span></div>
+        <div class="soal-teks">Daerah feasible dibatasi: x >= 0, y >= 0, x + y &lt;= 8, 2x + y &lt;= 12. Tentukan nilai maksimum Z = 3x + 5y!</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s21-1')">Lihat solusi</button>
+        <div id="s21-1" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Titik sudut: A(0,0), B(6,0), C(4,4), D(0,8)</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Cari perpotongan x+y=8 dan 2x+y=12: kurangi -> x=4, y=4 -> C(4,4)</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Uji titik sudut:<br>Z(0,0)=0, Z(6,0)=18, Z(4,4)=12+20=<strong>32</strong>, Z(0,8)=40</div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks">Z maks = Z(0,8) = <strong>40</strong> di titik (0,8) &#10003;</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-sedang">Menengah</span><span style="font-size:12px;color:var(--teks3)">Konteks bisnis</span></div>
+        <div class="soal-teks">Toko membuat produk A (untung 4) dan B (untung 6). Kendala: 2x + y &lt;= 14, x + 2y &lt;= 14, x,y >= 0. Maksimum keuntungan?</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s21-2')">Lihat solusi</button>
+        <div id="s21-2" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Titik potong 2x+y=14 dan x+2y=14: x=y, substitusi -> 3x=14 -> tidak bulat. Coba: dari 2x+y=14 dan x+2y=14, kurangi: x-y=0 -> x=y. Substitusi: 3x=14... Pakai eliminasi: (2x+y)-(x+2y)=0 -> x-y=0 -> x=y. Maka 3x=14, x=14/3 tidak bulat. Cek titik: (0,7), (7,0), (14/3, 14/3)</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Z(0,7) = 42, Z(7,0) = 28, Z(14/3,14/3) = 4(14/3)+6(14/3) = 10(14/3) = 140/3 = 46.67</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Nilai maksimum Z = <strong>140/3 ≈ 46.67</strong> &#10003;</div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('b21-pendalaman',null)">Lanjut ke Pendalaman &#8594;</button>
+      </div>
+    </div>
+
+    <div id="seksi-b21-pendalaman" class="seksi">
+      <span class="level-banner banner-sma">Level SMA Lanjut - Pendalaman</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#9889;</span> 3.1 Metode Garis Selidik</div>
+        <div class="rumus">Garis selidik Z = ax + by = k (konstan)<br>Geser garis selidik sejajar diri sendiri:<br>- Geser ke kanan atas -> Z membesar<br>- Geser ke kiri bawah -> Z mengecil<br>Titik paling jauh yang masih di daerah feasible = solusi maksimum</div>
+        <div class="info-box tips" style="margin-top:.875rem"><span class="ico">&#128161;</span><div><strong>Trik garis selidik:</strong> Gambar garis ax+by=0, geser sejajar. Titik sudut terjauh dari origin (searah koefisien positif) = maksimum.</div></div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#9889;</span> 3.2 Soal dengan Parameter</div>
+        <div class="soal-box" style="background:var(--bg);">
+          <div class="soal-meta"><span class="tag tag-sulit">Tipe UMPTN</span></div>
+          <div class="soal-teks">Daerah feasible dengan titik sudut O(0,0), A(4,0), B(3,2), C(0,3). Fungsi tujuan Z = px + 2y. Agar Z maksimum di titik B(3,2), tentukan nilai p!</div>
+          <button class="btn-solusi" onclick="toggleSolusi('s21-3')">Lihat solusi</button>
+          <div id="s21-3" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Z di semua titik: Z(O)=0, Z(A)=4p, Z(B)=3p+4, Z(C)=6</div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Agar Z maks di B: Z(B) >= Z(A) -> 3p+4 >= 4p -> 4 >= p -> p &lt;= 4</div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks">Agar Z maks di B: Z(B) >= Z(C) -> 3p+4 >= 6 -> 3p >= 2 -> p >= 2/3</div></div>
+            <div class="langkah"><div class="num">4</div><div class="teks"><strong>2/3 &lt;= p &lt;= 4</strong> &#10003;</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seksi-head">3.3 Hubungan dengan Bab Lain</div>
+      <div class="grid-2">
+        <div class="koneksi-card"><div class="k-ico">&#128279;</div><div class="k-judul">Pertidaksamaan (Bab 02, 09)</div><div class="k-desc">Setiap kendala program linear adalah pertidaksamaan linear. Daerah feasible = irisan semua daerah penyelesaian kendala.</div></div>
+        <div class="koneksi-card"><div class="k-ico">&#128200;</div><div class="k-judul">Garis Lurus (Bab 11)</div><div class="k-desc">Batas kendala adalah garis lurus. Titik sudut daerah feasible = perpotongan dua garis batas.</div></div>
+        <div class="koneksi-card"><div class="k-ico">&#128290;</div><div class="k-judul">SPLDV (Bab 03)</div><div class="k-desc">Mencari titik sudut daerah feasible = menyelesaikan SPLDV dari dua persamaan garis batas.</div></div>
+        <div class="koneksi-card"><div class="k-ico">&#128196;</div><div class="k-judul">Matriks (Bab 20)</div><div class="k-desc">Program linear skala besar (banyak variabel) diselesaikan dengan metode simplex yang menggunakan operasi matriks.</div></div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('b21-umptn',null)">Lanjut ke Persiapan UMPTN &#8594;</button>
+      </div>
+    </div>
+
+    <div id="seksi-b21-umptn" class="seksi">
+      <span class="level-banner banner-un">Persiapan UTBK/SNBT</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#9889;</span> 4.2 Tips &amp; Trik UMPTN</div>
+        <div class="info-box tips"><span class="ico">&#128161;</span><div><strong>Trik 1 - Titik sudut langsung:</strong> Tidak perlu gambar lengkap. Cari semua titik sudut (dari perpotongan pasangan kendala dan sumbu), uji ke Z.</div></div>
+        <div class="info-box tips"><span class="ico">&#128161;</span><div><strong>Trik 2 - Soal parameter:</strong> Tulis Z di semua titik sudut dalam bentuk p, lalu buat pertidaksamaan: Z(titik target) >= Z(titik lain).</div></div>
+        <div class="info-box tips"><span class="ico">&#128161;</span><div><strong>Trik 3 - Cek syarat:</strong> Selalu cek x >= 0 dan y >= 0 (kecuali soal tidak menyebutkan). Titik sudut di sumbu juga harus diperiksa!</div></div>
+        <div class="info-box bahaya"><span class="ico">&#128680;</span><div><strong>Jebakan:</strong> Nilai optimum SELALU di titik sudut daerah feasible, bukan di tengah-tengah. Jangan cari titik yang "terlihat bagus" di tengah!</div></div>
+      </div>
+
+      <div class="seksi-head">4.3 Latihan Soal UMPTN</div>
+
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Penalaran Matematika</span></div>
+        <div class="soal-teks">Daerah feasible dibatasi x+y &lt;= 10, 2x+y &lt;= 16, x >= 0, y >= 0. Nilai maksimum Z = 4x + 3y adalah...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k21-1')">A. 30</button>
+          <button class="opsi" onclick="jawab(this,false,'k21-1')">B. 34</button>
+          <button class="opsi" onclick="jawab(this,true,'k21-1')">C. 36</button>
+          <button class="opsi" onclick="jawab(this,false,'k21-1')">D. 40</button>
+        </div>
+        <div id="k21-1-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3);">Pembahasan soal 1</span></div>
+        <div class="soal-teks">Maks Z = 4x+3y, kendala x+y&lt;=10, 2x+y&lt;=16, x,y>=0.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u21-1')">Lihat pembahasan mendalam</button>
+        <div id="u21-1" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem"><span>&#128273;</span><div><strong>Kunci:</strong> Cari titik sudut, uji semua ke Z.</div></div>
+          <div class="langkah"><div class="num">1</div><div class="teks">Titik sudut: O(0,0), A(8,0) dari 2x+y=16 saat y=0, D(0,10) dari x+y=10 saat x=0</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Titik potong x+y=10 dan 2x+y=16: kurangi -> x=6, y=4 -> B(6,4)</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Z(O)=0, Z(A)=32, Z(B)=24+12=<strong>36</strong>, Z(D)=30</div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks"><strong>Z maks = 36 di B(6,4) -> Jawaban C &#10003;</strong></div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah">
+        <div style="display:flex;gap:8px;">
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('home');return false;">&#127968; Beranda</a>
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('bab20');return false;">&#8592; Bab 20</a>
+        </div>
+        <a class="btn-nav" href="#" onclick="navigasi('bab22');return false;">Bab 22: Statistika &#8594;</a>
+      </div>
+    </div>
+  </main>
+</div>
 </div>
 
 
@@ -6438,10 +6647,19 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 </div>
 </div>
 
+<div id="page-bab22" class="page">
+  <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1rem;padding:2rem;text-align:center;">
+    <div style="font-size:48px">🚧</div>
+    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 22 — Segera Hadir</div>
+    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Statistika Deskriptif sedang dalam pengerjaan.</div>
+    <button onclick="navigasi('home')" style="margin-top:1rem;padding:10px 24px;background:var(--biru);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;cursor:pointer;">← Kembali ke Beranda</button>
+  </div>
+</div>
+
 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu" style="display:none">☰</button>
 
 <script>
-/* ══ ROUTER ══ */
+/* == ROUTER == */
 const pages = {};
 
 function navigasi(pageId) {
@@ -6465,7 +6683,7 @@ function scrollToFase(id) {
   return false;
 }
 
-/* ══ SEARCH ══ */
+/* == SEARCH == */
 function filterBab() {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
   const cards = document.querySelectorAll('#page-home .bab-card');
@@ -6483,13 +6701,13 @@ function filterBab() {
   document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
 }
 
-/* ══ TOGGLE MENU MOBILE (untuk halaman bab) ══ */
+/* == TOGGLE MENU MOBILE (untuk halaman bab) == */
 function toggleMenu() {
   const sidebar = document.querySelector('.page.aktif .sidebar');
   if (sidebar) sidebar.classList.toggle('buka');
 }
 
-/* ══ BAB FUNCTIONS (dipanggil oleh bab 01 & 02) ══ */
+/* == BAB FUNCTIONS (dipanggil oleh bab 01 & 02) == */
 function gantiSeksi(id, btn) {
   const activePage = document.querySelector('.page.aktif');
   if (!activePage) return;
@@ -6527,12 +6745,12 @@ function jawab(btn, benar, kuisId) {
   if (fb) {
     fb.classList.add('tampil');
     fb.innerHTML = benar
-      ? '<span style="color:var(--hijau);font-weight:700">✓ Benar!</span> Lihat pembahasan lengkap di bagian 4.4.'
-      : '<span style="color:var(--merah);font-weight:700">✗ Belum tepat.</span> Lihat pembahasan di bagian 4.4.';
+      ? '<span style="color:var(--hijau);font-weight:700">\u2713 Benar!</span> Lihat pembahasan lengkap di bagian 4.4.'
+      : '<span style="color:var(--merah);font-weight:700">\u2717 Belum tepat.</span> Lihat pembahasan di bagian 4.4.';
   }
 }
 
-/* ══ BAB 01 FUNCTIONS ══ */
+/* == BAB 01 FUNCTIONS == */
 function updateViz() {
   const a = parseInt(document.getElementById('sl-basis').value);
   const n = parseInt(document.getElementById('sl-pangkat').value);
@@ -6551,11 +6769,11 @@ function updateViz() {
   }
   if (hasil > 60) {
     const d = document.createElement('div');
-    d.className = 'blok b0'; d.textContent = '…';
+    d.className = 'blok b0'; d.textContent = '\u2026';
     grid.appendChild(d);
   }
   document.getElementById('viz-hasil').textContent = hasil.toLocaleString('id-ID');
-  const langkah = Array.from({ length: n }, () => a).join(' × ');
+  const langkah = Array.from({ length: n }, () => a).join(' \u00D7 ');
   document.getElementById('viz-sub').textContent = a + '^ ' + n + ' = ' + langkah + ' = ' + hasil;
 }
 
@@ -6569,13 +6787,13 @@ function hitungLog() {
   r.style.display = 'block';
   const isPerfect = Math.abs(Math.round(hasil) - hasil) < 0.0001;
   if (isPerfect) {
-    r.innerHTML = `<strong>${basis}</strong>log ${nilai} = <strong>${Math.round(hasil)}</strong> &nbsp;→&nbsp; artinya: ${basis}<sup>${Math.round(hasil)}</sup> = ${nilai} ✓`;
+    r.innerHTML = '<strong>' + (basis) + '</strong>log ' + (nilai) + ' = <strong>' + (Math.round(hasil)) + '</strong> &nbsp;\u2192&nbsp; artinya: ' + (basis) + '<sup>' + (Math.round(hasil)) + '</sup> = ' + (nilai) + ' \u2713';
   } else {
-    r.innerHTML = `<strong>${basis}</strong>log ${nilai} ≈ <strong>${hasilBulat}</strong> &nbsp;→&nbsp; artinya: ${basis}<sup>${hasilBulat}</sup> ≈ ${nilai}`;
+    r.innerHTML = '<strong>' + (basis) + '</strong>log ' + (nilai) + ' \u2248 <strong>' + (hasilBulat) + '</strong> &nbsp;\u2192&nbsp; artinya: ' + (basis) + '<sup>' + (hasilBulat) + '</sup> \u2248 ' + (nilai) + '';
   }
 }
 
-/* ══ BAB 02 FUNCTIONS ══ */
+/* == BAB 02 FUNCTIONS == */
 function updateGB() {
   const a = parseInt(document.getElementById('sl-a').value);
   const b = parseInt(document.getElementById('sl-b').value);
@@ -6584,7 +6802,7 @@ function updateGB() {
   document.getElementById('v-b').textContent = b >= 0 ? '+' + b : b;
   document.getElementById('v-c').textContent = c;
   const x = parseFloat(((c - b) / a).toFixed(2));
-  const bSign = b >= 0 ? ' + ' + b : ' − ' + Math.abs(b);
+  const bSign = b >= 0 ? ' + ' + b : ' \u2212 ' + Math.abs(b);
   document.getElementById('persamaan-disp').textContent = a + 'x' + bSign + ' > ' + c;
   document.getElementById('hasil-x').textContent = x % 1 === 0 ? x : x.toFixed(2);
   renderGB(x);
@@ -6614,8 +6832,8 @@ function renderGB(xVal) {
   fill.style.top = '25px'; fill.style.height = '10px';
   container.appendChild(fill);
   const arrow = document.createElement('div');
-  arrow.style.cssText = `position:absolute;top:25px;left:${toX(xVal)}px;right:0;height:10px;display:flex;align-items:center;justify-content:flex-end;padding-right:4px;font-size:16px;color:var(--biru);font-weight:700`;
-  arrow.textContent = '→'; container.appendChild(arrow);
+  arrow.style.cssText = 'position:absolute;top:25px;left:' + (toX(xVal)) + 'px;right:0;height:10px;display:flex;align-items:center;justify-content:flex-end;padding-right:4px;font-size:16px;color:var(--biru);font-weight:700';
+  arrow.textContent = '\u2192'; container.appendChild(arrow);
   const pt = document.createElement('div');
   pt.className = 'gb-point'; pt.style.left = toX(xVal) + 'px'; container.appendChild(pt);
 }
@@ -6633,7 +6851,7 @@ window.addEventListener('resize', () => { if (typeof updateGB === 'function') up
 
 
 
-/* ══ BAB 14 — KALKULATOR TRIG LANJUT ══ */
+/* == BAB 14 - KALKULATOR TRIG LANJUT == */
 function hitungTrigLanjut() {
   var rumus = document.getElementById('trig-rumus') ? document.getElementById('trig-rumus').value : 'sin_sum';
   var A = parseFloat(document.getElementById('trig-A') ? document.getElementById('trig-A').value : 30) || 0;
@@ -6648,25 +6866,25 @@ function hitungTrigLanjut() {
   var hasil, label, rumusStr;
 
   switch(rumus) {
-    case 'sin_sum':  hasil=sA*cB+cA*sB; label='sin('+A+'°+'+B+'°)'; rumusStr='sin A cos B + cos A sin B'; break;
-    case 'sin_diff': hasil=sA*cB-cA*sB; label='sin('+A+'°−'+B+'°)'; rumusStr='sin A cos B − cos A sin B'; break;
-    case 'cos_sum':  hasil=cA*cB-sA*sB; label='cos('+A+'°+'+B+'°)'; rumusStr='cos A cos B − sin A sin B'; break;
-    case 'cos_diff': hasil=cA*cB+sA*sB; label='cos('+A+'°−'+B+'°)'; rumusStr='cos A cos B + sin A sin B'; break;
-    case 'sin_double': hasil=2*sA*cA; label='sin(2×'+A+'°)'; rumusStr='2 sin A cos A'; break;
-    case 'cos_double': hasil=cA*cA-sA*sA; label='cos(2×'+A+'°)'; rumusStr='cos²A − sin²A'; break;
-    case 'tan_double': hasil=2*tA/(1-tA*tA); label='tan(2×'+A+'°)'; rumusStr='2 tan A / (1−tan²A)'; break;
+    case 'sin_sum':  hasil=sA*cB+cA*sB; label='sin('+A+'\u00B0+'+B+'\u00B0)'; rumusStr='sin A cos B + cos A sin B'; break;
+    case 'sin_diff': hasil=sA*cB-cA*sB; label='sin('+A+'\u00B0\u2212'+B+'\u00B0)'; rumusStr='sin A cos B \u2212 cos A sin B'; break;
+    case 'cos_sum':  hasil=cA*cB-sA*sB; label='cos('+A+'\u00B0+'+B+'\u00B0)'; rumusStr='cos A cos B \u2212 sin A sin B'; break;
+    case 'cos_diff': hasil=cA*cB+sA*sB; label='cos('+A+'\u00B0\u2212'+B+'\u00B0)'; rumusStr='cos A cos B + sin A sin B'; break;
+    case 'sin_double': hasil=2*sA*cA; label='sin(2\u00D7'+A+'\u00B0)'; rumusStr='2 sin A cos A'; break;
+    case 'cos_double': hasil=cA*cA-sA*sA; label='cos(2\u00D7'+A+'\u00B0)'; rumusStr='cos\u00B2A \u2212 sin\u00B2A'; break;
+    case 'tan_double': hasil=2*tA/(1-tA*tA); label='tan(2\u00D7'+A+'\u00B0)'; rumusStr='2 tan A / (1\u2212tan\u00B2A)'; break;
     default: hasil=0; label='?'; rumusStr='';
   }
 
   var r = document.getElementById('trig-lanjut-result');
   if (!r) return;
   r.style.display='block';
-  r.innerHTML = label + ' = ' + rumusStr + '<br>= <strong>' + (isNaN(hasil)||!isFinite(hasil)?'∞':hasil.toFixed(6)) + '</strong>';
+  r.innerHTML = label + ' = ' + rumusStr + '<br>= <strong>' + (isNaN(hasil)||!isFinite(hasil)?'\u221E':hasil.toFixed(6)) + '</strong>';
 }
 document.addEventListener('DOMContentLoaded', function(){ setTimeout(hitungTrigLanjut, 400); });
 
 
-/* ══ BAB 15 — VEKTOR INTERAKTIF ══ */
+/* == BAB 15 - VEKTOR INTERAKTIF == */
 function updateVektor() {
   var ax=parseFloat(document.getElementById('v-ax')?document.getElementById('v-ax').value:3)||0;
   var ay=parseFloat(document.getElementById('v-ay')?document.getElementById('v-ay').value:2)||0;
@@ -6691,18 +6909,18 @@ function updateVektor() {
   arrow(ctx,cx,cy,cx+bx*s,cy-by*s,'#3B6D11');
   var rx=ax+bx,ry=ay+by;
   arrow(ctx,cx,cy,cx+rx*s,cy-ry*s,'#A32D2D');
-  ctx.fillStyle='#185FA5';ctx.font='bold 12px sans-serif';ctx.fillText('a⃗',cx+ax*s+6,cy-ay*s-4);
-  ctx.fillStyle='#3B6D11';ctx.fillText('b⃗',cx+bx*s+6,cy-by*s-4);
-  ctx.fillStyle='#A32D2D';ctx.fillText('a⃗+b⃗',cx+rx*s+6,cy-ry*s-4);
+  ctx.fillStyle='#185FA5';ctx.font='bold 12px sans-serif';ctx.fillText('a\u20D7',cx+ax*s+6,cy-ay*s-4);
+  ctx.fillStyle='#3B6D11';ctx.fillText('b\u20D7',cx+bx*s+6,cy-by*s-4);
+  ctx.fillStyle='#A32D2D';ctx.fillText('a\u20D7+b\u20D7',cx+rx*s+6,cy-ry*s-4);
   var dot=ax*bx+ay*by,mA=Math.sqrt(ax*ax+ay*ay),mB=Math.sqrt(bx*bx+by*by);
   var cosT=mA>0&&mB>0?dot/(mA*mB):0,deg=(Math.acos(Math.max(-1,Math.min(1,cosT)))*180/Math.PI).toFixed(1);
   var info=document.getElementById('vektor-info');
-  if(info)info.innerHTML='a⃗·b⃗ = <strong>'+dot+'</strong> | |a⃗| = <strong>'+mA.toFixed(2)+'</strong> | |b⃗| = <strong>'+mB.toFixed(2)+'</strong> | θ = <strong>'+deg+'°</strong> | a⃗+b⃗ = <strong>('+rx+','+ry+')</strong>';
+  if(info)info.innerHTML='a\u20D7\u00B7b\u20D7 = <strong>'+dot+'</strong> | |a\u20D7| = <strong>'+mA.toFixed(2)+'</strong> | |b\u20D7| = <strong>'+mB.toFixed(2)+'</strong> | \u03B8 = <strong>'+deg+'\u00B0</strong> | a\u20D7+b\u20D7 = <strong>('+rx+','+ry+')</strong>';
 }
 document.addEventListener('DOMContentLoaded',function(){setTimeout(updateVektor,400);});
 
 
-/* ══ BAB 16 — TRANSFORMASI INTERAKTIF ══ */
+/* == BAB 16 - TRANSFORMASI INTERAKTIF == */
 function updateTransf() {
   var t = document.getElementById('sel-transf') ? document.getElementById('sel-transf').value : 'refl_x';
   var px = parseFloat(document.getElementById('pt-x') ? document.getElementById('pt-x').value : 3) || 0;
@@ -6739,13 +6957,13 @@ function updateTransf() {
   ctx.beginPath(); ctx.moveTo(cx+px*s,cy-py*s); ctx.lineTo(cx+nx*s,cy-ny*s); ctx.stroke();
   ctx.setLineDash([]);
   var info = document.getElementById('transf-info');
-  var names = {refl_x:'Refleksi sb-x',refl_y:'Refleksi sb-y',refl_yx:'Refleksi y=x',rot90ccw:'Rotasi 90° CCW',rot180:'Rotasi 180°',rot90cw:'Rotasi 90° CW',dilat2:'Dilatasi k=2',dilat05:'Dilatasi k=0.5'};
-  if (info) info.textContent = names[t]+': P('+px+','+py+') → P\'('+nx+','+ny+')';
+  var names = {refl_x:'Refleksi sb-x',refl_y:'Refleksi sb-y',refl_yx:'Refleksi y=x',rot90ccw:'Rotasi 90\u00B0 CCW',rot180:'Rotasi 180\u00B0',rot90cw:'Rotasi 90\u00B0 CW',dilat2:'Dilatasi k=2',dilat05:'Dilatasi k=0.5'};
+  if (info) info.textContent = names[t]+': P('+px+','+py+') \u2192 P\'('+nx+','+ny+')';
 }
 document.addEventListener('DOMContentLoaded', function(){ setTimeout(updateTransf, 500); });
 
 
-/* ══ BAB 20 — KALKULATOR MATRIKS ══ */
+/* == BAB 20 - KALKULATOR MATRIKS == */
 function hitungMatriks() {
   var a=parseFloat(document.getElementById('m-a')?document.getElementById('m-a').value:1)||0;
   var b=parseFloat(document.getElementById('m-b')?document.getElementById('m-b').value:0)||0;
@@ -6754,24 +6972,150 @@ function hitungMatriks() {
   var det=a*d-b*c;
   var r=document.getElementById('mat-result'); if(!r)return;
   var inv='';
-  if(det!==0){inv='A⁻¹ = (1/'+det+') × ['+d+'  '+(−b)+'; '+(−c)+'  '+a+'] = ['+frac(d,det)+'  '+frac(-b,det)+'; '+frac(-c,det)+'  '+frac(a,det)+']';}
+  if(det!==0){inv='A\u207B\u00B9 = (1/'+det+') \u00D7 ['+d+'  '+(-b)+'; '+(-c)+'  '+a+'] = ['+frac(d,det)+'  '+frac(-b,det)+'; '+frac(-c,det)+'  '+frac(a,det)+']';}
   else{inv='A tidak punya invers (det=0)';}
-  r.innerHTML='A = ['+a+'  '+b+'; '+c+'  '+d+']<br>det(A) = '+a+'×'+d+' − '+b+'×'+c+' = <strong>'+det+'</strong><br>'+inv;
+  r.innerHTML='A = ['+a+'  '+b+'; '+c+'  '+d+']<br>det(A) = '+a+'\u00D7'+d+' \u2212 '+b+'\u00D7'+c+' = <strong>'+det+'</strong><br>'+inv;
 }
-function frac(n,d){if(d===0)return'∞';if(n===0)return'0';if(n%d===0)return String(n/d);return n+'/'+d;}
+function frac(n,d){if(d===0)return'\u221E';if(n===0)return'0';if(n%d===0)return String(n/d);return n+'/'+d;}
 document.addEventListener('DOMContentLoaded',function(){setTimeout(hitungMatriks,500);});
 
-/* ══ BAB 13 — LINGKARAN SATUAN ══ */
+
+/* == BAB 21 - PROGRAM LINEAR == */
+function hitungPL() {
+  var a = parseFloat(document.getElementById('pl-a') ? document.getElementById('pl-a').value : 5) || 0;
+  var b = parseFloat(document.getElementById('pl-b') ? document.getElementById('pl-b').value : 8) || 0;
+  var x1 = parseFloat(document.getElementById('pl-x1') ? document.getElementById('pl-x1').value : 6) || 6;
+  var y1 = parseFloat(document.getElementById('pl-y1') ? document.getElementById('pl-y1').value : 5) || 5;
+  var xy = parseFloat(document.getElementById('pl-xy') ? document.getElementById('pl-xy').value : 9) || 9;
+
+  var canvas = document.getElementById('canvas-pl');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+  var maxV = Math.max(x1, y1, xy) + 2;
+  var sc = Math.min((W - 40) / maxV, (H - 40) / maxV);
+  var ox = 30, oy = H - 30;
+
+  ctx.clearRect(0, 0, W, H);
+
+  function px(x) { return ox + x * sc; }
+  function py(y) { return oy - y * sc; }
+
+  // Grid
+  ctx.strokeStyle = 'rgba(136,135,128,0.12)'; ctx.lineWidth = 0.5;
+  for (var i = 0; i <= maxV; i++) {
+    ctx.beginPath(); ctx.moveTo(px(i), oy); ctx.lineTo(px(i), 0); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(ox, py(i)); ctx.lineTo(W, py(i)); ctx.stroke();
+  }
+
+  // Axes
+  ctx.strokeStyle = 'rgba(100,100,100,0.5)'; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(ox, 0); ctx.lineTo(ox, oy + 5); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(ox - 5, oy); ctx.lineTo(W, oy); ctx.stroke();
+
+  // Axis labels
+  ctx.fillStyle = '#888'; ctx.font = '10px sans-serif'; ctx.textAlign = 'center';
+  for (var j = 1; j <= maxV - 1; j += 2) {
+    ctx.fillText(j, px(j), oy + 14);
+    ctx.fillText(j, ox - 12, py(j) + 4);
+  }
+
+  // Daerah feasible - titik sudut
+  var corners = [[0, 0]];
+  // x = x1
+  if (x1 <= y1 && x1 <= xy) corners.push([x1, 0]);
+  // y = y1
+  if (y1 <= x1 && y1 <= xy) corners.push([0, y1]);
+  // x+y = xy saat x=0
+  if (xy <= y1) corners.push([0, xy]);
+  // x+y = xy saat y=0
+  if (xy <= x1) corners.push([xy, 0]);
+  // Perpotongan x=x1 dan y=y1 (jika keduanya memenuhi x+y<=xy)
+  if (x1 + y1 <= xy) corners.push([x1, y1]);
+  // Perpotongan x=x1 dan x+y=xy
+  var y_at_x1 = xy - x1;
+  if (y_at_x1 >= 0 && y_at_x1 <= y1) corners.push([x1, y_at_x1]);
+  // Perpotongan y=y1 dan x+y=xy
+  var x_at_y1 = xy - y1;
+  if (x_at_y1 >= 0 && x_at_y1 <= x1) corners.push([x_at_y1, y1]);
+
+  // Hapus duplikat dan sort
+  var unique = [];
+  corners.forEach(function(c) {
+    var found = unique.some(function(u) { return Math.abs(u[0]-c[0]) < 0.01 && Math.abs(u[1]-c[1]) < 0.01; });
+    if (!found && c[0] >= -0.01 && c[1] >= -0.01) unique.push(c);
+  });
+
+  // Sort by angle dari centroid
+  var cx = unique.reduce(function(s,c){return s+c[0];},0)/unique.length;
+  var cy2 = unique.reduce(function(s,c){return s+c[1];},0)/unique.length;
+  unique.sort(function(a,b){ return Math.atan2(a[1]-cy2,a[0]-cx) - Math.atan2(b[1]-cy2,b[0]-cx); });
+
+  // Fill feasible region
+  if (unique.length > 2) {
+    ctx.beginPath();
+    ctx.moveTo(px(unique[0][0]), py(unique[0][1]));
+    unique.forEach(function(p) { ctx.lineTo(px(p[0]), py(p[1])); });
+    ctx.closePath();
+    ctx.fillStyle = 'rgba(59,109,17,0.12)';
+    ctx.fill();
+    ctx.strokeStyle = '#3B6D11'; ctx.lineWidth = 1.5; ctx.stroke();
+  }
+
+  // Garis kendala
+  ctx.setLineDash([5, 3]);
+  // x = x1
+  ctx.strokeStyle = '#185FA5'; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(px(x1), py(0)); ctx.lineTo(px(x1), py(maxV)); ctx.stroke();
+  // y = y1
+  ctx.strokeStyle = '#534AB7';
+  ctx.beginPath(); ctx.moveTo(px(0), py(y1)); ctx.lineTo(px(maxV), py(y1)); ctx.stroke();
+  // x+y = xy
+  ctx.strokeStyle = '#A32D2D';
+  ctx.beginPath(); ctx.moveTo(px(0), py(xy)); ctx.lineTo(px(xy), py(0)); ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Titik sudut dan nilai Z
+  var zMax = -Infinity, zMin = Infinity, bestPt = null;
+  unique.forEach(function(p) {
+    var z = a * p[0] + b * p[1];
+    if (z > zMax) { zMax = z; bestPt = p; }
+    if (z < zMin) zMin = z;
+    ctx.fillStyle = '#185FA5';
+    ctx.beginPath(); ctx.arc(px(p[0]), py(p[1]), 4, 0, 2*Math.PI); ctx.fill();
+    ctx.fillStyle = '#185FA5'; ctx.font = 'bold 10px sans-serif'; ctx.textAlign = 'left';
+    ctx.fillText('(' + p[0].toFixed(1) + ',' + p[1].toFixed(1) + ')', px(p[0]) + 5, py(p[1]) - 4);
+  });
+
+  // Titik optimal
+  if (bestPt) {
+    ctx.fillStyle = '#A32D2D';
+    ctx.beginPath(); ctx.arc(px(bestPt[0]), py(bestPt[1]), 7, 0, 2*Math.PI); ctx.fill();
+  }
+
+  // Info
+  var res = document.getElementById('pl-result');
+  if (!res) return;
+  var rows = unique.map(function(p) {
+    var z = a*p[0]+b*p[1];
+    var isBest = bestPt && Math.abs(p[0]-bestPt[0])<0.01 && Math.abs(p[1]-bestPt[1])<0.01;
+    return '<tr style="' + (isBest ? 'background:var(--hijau-muda);font-weight:700;' : '') + '"><td style="padding:4px 10px;border:0.5px solid var(--border);">(' + p[0].toFixed(2) + ', ' + p[1].toFixed(2) + ')</td><td style="padding:4px 10px;border:0.5px solid var(--border);">' + z.toFixed(2) + (isBest ? ' <- MAKS' : '') + '</td></tr>';
+  }).join('');
+  res.innerHTML = '<table style="width:100%;border-collapse:collapse;font-size:13px;"><tr style="background:var(--bg3);"><th style="padding:5px 10px;border:0.5px solid var(--border);">Titik Sudut</th><th style="padding:5px 10px;border:0.5px solid var(--border);">Z = ' + a + 'x + ' + b + 'y</th></tr>' + rows + '</table>';
+}
+document.addEventListener('DOMContentLoaded', function() { setTimeout(hitungPL, 600); });
+
+/* == BAB 13 - LINGKARAN SATUAN == */
 function updateLingkaran() {
   var deg = parseFloat(document.getElementById('sl-sudut') ? document.getElementById('sl-sudut').value : 30) || 0;
-  if (document.getElementById('v-sudut')) document.getElementById('v-sudut').textContent = deg + '°';
+  if (document.getElementById('v-sudut')) document.getElementById('v-sudut').textContent = deg + '\u00B0';
 
   var rad = deg * Math.PI / 180;
   var s = Math.sin(rad), c = Math.cos(rad), t = Math.tan(rad);
 
   if (document.getElementById('val-sin')) document.getElementById('val-sin').textContent = s.toFixed(3);
   if (document.getElementById('val-cos')) document.getElementById('val-cos').textContent = c.toFixed(3);
-  if (document.getElementById('val-tan')) document.getElementById('val-tan').textContent = Math.abs(t) > 99 ? '∞' : t.toFixed(3);
+  if (document.getElementById('val-tan')) document.getElementById('val-tan').textContent = Math.abs(t) > 99 ? '\u221E' : t.toFixed(3);
 
   var canvas = document.getElementById('canvas-trig');
   if (!canvas) return;
@@ -6820,7 +7164,7 @@ function updateLingkaran() {
   // Label sudut
   ctx.fillStyle='#854F0B'; ctx.font='bold 12px sans-serif'; ctx.textAlign='left';
   var lx = cx+r*0.25*Math.cos(-rad/2), ly = cy+r*0.25*Math.sin(-rad/2);
-  ctx.fillText(deg+'°', lx+4, ly);
+  ctx.fillText(deg+'\u00B0', lx+4, ly);
 
   // Label titik
   ctx.fillStyle='#534AB7'; ctx.font='11px sans-serif';
@@ -6828,7 +7172,7 @@ function updateLingkaran() {
 }
 document.addEventListener('DOMContentLoaded', function(){ setTimeout(updateLingkaran, 300); });
 
-/* ══ BAB 12 — SKEMA HORNER ══ */
+/* == BAB 12 - SKEMA HORNER == */
 function hitungHorner() {
   var koefStr = document.getElementById('poly-koef') ? document.getElementById('poly-koef').value : '';
   var k = parseFloat(document.getElementById('poly-x') ? document.getElementById('poly-x').value : 0);
@@ -6853,7 +7197,7 @@ function hitungHorner() {
   html += '<td style="padding:6px 10px;border:0.5px solid var(--border2);background:var(--bg3);font-weight:700;">Koef</td>';
   koef.forEach(function(c,i){ html += '<td style="padding:6px 12px;border:0.5px solid var(--border2);color:var(--biru);font-weight:700;text-align:center;">'+c+'</td>'; });
   html += '</tr><tr>';
-  html += '<td style="padding:6px 10px;border:0.5px solid var(--border2);background:var(--bg3);font-weight:700;">× '+k+'</td>';
+  html += '<td style="padding:6px 10px;border:0.5px solid var(--border2);background:var(--bg3);font-weight:700;">\u00D7 '+k+'</td>';
   html += '<td style="padding:6px 12px;border:0.5px solid var(--border2);"></td>';
   for(var i=0; i<hasilBagi.length; i++){
     var mul = hasilBagi[i]*k;
@@ -6877,19 +7221,19 @@ function hitungHorner() {
     return (c>=0&&i>0?'+':'')+coefStr+'x'+superscript(deg);
   }).filter(Boolean).join('') || '0';
 
-  function superscript(n){ return n<=1?'':(n===2?'²':n===3?'³':n===4?'⁴':n===5?'⁵':'^'+n); }
+  function superscript(n){ return n<=1?'':(n===2?'\u00B2':n===3?'\u00B3':n===4?'\u2074':n===5?'\u2075':'^'+n); }
 
   html += '<div style="background:var(--teal-muda);border:0.5px solid #9FE1CB;border-radius:var(--radius);padding:.875rem 1.1rem;font-size:14px;color:var(--teal-teks);line-height:1.9;">';
   html += 'P('+k+') = <strong>'+sisa+'</strong> (nilai fungsi di x='+k+')<br>';
   html += 'Hasil bagi: <strong>'+hasilBagiStr+'</strong><br>';
   html += 'Sisa: <strong style="color:var(--merah-teks)">'+sisa+'</strong><br>';
-  if(sisa===0) html += '<span style="color:var(--hijau-teks);font-weight:700;">✓ (x−'+k+') adalah faktor polinomial ini!</span>';
+  if(sisa===0) html += '<span style="color:var(--hijau-teks);font-weight:700;">\u2713 (x\u2212'+k+') adalah faktor polinomial ini!</span>';
   html += '</div>';
 
   res.innerHTML = html;
 }
 
-/* ══ BAB 11 — GARIS LURUS INTERAKTIF ══ */
+/* == BAB 11 - GARIS LURUS INTERAKTIF == */
 function updateGaris() {
   var m = parseFloat(document.getElementById('sl-m') ? document.getElementById('sl-m').value : 1) || 0;
   var c = parseFloat(document.getElementById('sl-c11') ? document.getElementById('sl-c11').value : 0) || 0;
@@ -6944,13 +7288,13 @@ function updateGaris() {
   // Info
   var info = document.getElementById('garis-info');
   var mStr = m===0?'0':m;
-  var cStr = c>=0?(' + '+c):(' − '+Math.abs(c));
+  var cStr = c>=0?(' + '+c):(' \u2212 '+Math.abs(c));
   if(m===0) info.textContent = 'y = '+c+' (garis horizontal, m=0)';
   else info.textContent = 'y = '+mStr+'x'+cStr+' | m = '+m+' | intercept-y = '+c;
 }
 document.addEventListener('DOMContentLoaded', function(){ setTimeout(updateGaris,200); });
 
-/* ══ BAB 10 — GENERATOR BARISAN ══ */
+/* == BAB 10 - GENERATOR BARISAN == */
 function generateBarisan() {
   var jenis = document.getElementById('bd-jenis') ? document.getElementById('bd-jenis').value : 'aritmatika';
   var a1 = parseFloat(document.getElementById('bd-a1').value) || 1;
@@ -6985,16 +7329,16 @@ function generateBarisan() {
   if(jenis==='aritmatika'){
     var an = 'a\u2099 = '+a1+' + (n\u22121)\u00d7'+br+' = '+(a1-br)+' + '+br+'n';
     var s10 = 10/2*(2*a1+9*br);
-    infoEl.innerHTML = 'Suku ke-n: <strong>'+an+'</strong><br>Beda (b) = <strong>'+br+'</strong><br>S₁₀ = <strong>'+s10+'</strong>';
+    infoEl.innerHTML = 'Suku ke-n: <strong>'+an+'</strong><br>Beda (b) = <strong>'+br+'</strong><br>S\u2081\u2080 = <strong>'+s10+'</strong>';
   } else {
     var konvergen = Math.abs(br) < 1;
-    var sinf = konvergen ? (a1/(1-br)).toFixed(4) : '∞ (divergen)';
+    var sinf = konvergen ? (a1/(1-br)).toFixed(4) : '\u221E (divergen)';
     infoEl.innerHTML = 'Suku ke-n: <strong>a\u2099 = '+a1+' \u00d7 '+br+'^(n\u22121)</strong><br>Rasio (r) = <strong>'+br+'</strong><br>S\u221e = <strong>'+sinf+'</strong>';
   }
 }
 document.addEventListener('DOMContentLoaded', function(){ setTimeout(generateBarisan, 250); });
 
-/* ══ BAB 09 — PERTIDAKSAMAAN KUADRAT ══ */
+/* == BAB 09 - PERTIDAKSAMAAN KUADRAT == */
 function hitungPTQ() {
   var a = parseFloat(document.getElementById('ptq-a').value) || 1;
   var b = parseFloat(document.getElementById('ptq-b').value) || 0;
@@ -7004,36 +7348,36 @@ function hitungPTQ() {
   res.style.display = 'block';
 
   var D = b*b - 4*a*c;
-  var tandaStr = {'gt':' > 0','gte':' ≥ 0','lt':' < 0','lte':' ≤ 0'}[tanda];
+  var tandaStr = {'gt':' > 0','gte':' \u2265 0','lt':' < 0','lte':' \u2264 0'}[tanda];
   var inklusif = tanda === 'gte' || tanda === 'lte';
   var lebihBesar = tanda === 'gt' || tanda === 'gte';
 
   var html = '<div style="font-family:var(--mono);font-size:14px;color:var(--biru-teks);background:var(--biru-muda);padding:8px 12px;border-radius:var(--radius);margin-bottom:10px;">' +
-    a+'x² + '+b+'x + '+c + tandaStr + '</div>';
+    a+'x\u00B2 + '+b+'x + '+c + tandaStr + '</div>';
 
   html += '<div style="font-size:13px;color:var(--teks2);line-height:1.9;">';
-  html += 'D = '+b+'² − 4×'+a+'×'+c+' = <strong>'+D.toFixed(2)+'</strong><br>';
+  html += 'D = '+b+'\u00B2 \u2212 4\u00D7'+a+'\u00D7'+c+' = <strong>'+D.toFixed(2)+'</strong><br>';
 
   if(a === 0) {
-    html += '⚠️ Ini bukan persamaan kuadrat (a=0). Gunakan Bab 02.';
+    html += '\u26A0\uFE0F Ini bukan persamaan kuadrat (a=0). Gunakan Bab 02.';
   } else if(D < 0) {
     if((a > 0 && lebihBesar) || (a < 0 && !lebihBesar)) {
-      html += '<strong style="color:var(--hijau-teks)">HP = ℝ (semua bilangan real)</strong>';
+      html += '<strong style="color:var(--hijau-teks)">HP = \u211D (semua bilangan real)</strong>';
     } else {
-      html += '<strong style="color:var(--merah-teks)">HP = ∅ (tidak ada solusi)</strong>';
+      html += '<strong style="color:var(--merah-teks)">HP = \u2205 (tidak ada solusi)</strong>';
     }
   } else if(D === 0) {
     var x1 = -b/(2*a);
     if((a > 0 && lebihBesar) || (a < 0 && !lebihBesar)) {
       html += 'Akar kembar: x = '+x1.toFixed(2)+'<br>';
       html += inklusif
-        ? '<strong style="color:var(--hijau-teks)">HP = ℝ (semua x)</strong>'
-        : '<strong style="color:var(--hijau-teks)">HP = ℝ \\ {'+x1.toFixed(2)+'}</strong>';
+        ? '<strong style="color:var(--hijau-teks)">HP = \u211D (semua x)</strong>'
+        : '<strong style="color:var(--hijau-teks)">HP = \u211D \\ {'+x1.toFixed(2)+'}</strong>';
     } else {
       html += 'Akar kembar: x = '+x1.toFixed(2)+'<br>';
       html += inklusif
         ? '<strong style="color:var(--hijau-teks)">HP = {'+x1.toFixed(2)+'}</strong>'
-        : '<strong style="color:var(--merah-teks)">HP = ∅</strong>';
+        : '<strong style="color:var(--merah-teks)">HP = \u2205</strong>';
     }
   } else {
     var x1 = (-b - Math.sqrt(D))/(2*a);
@@ -7043,9 +7387,9 @@ function hitungPTQ() {
     var x2s = Number.isInteger(x2) ? x2 : x2.toFixed(3);
     var lb = inklusif ? '[' : '(';
     var rb = inklusif ? ']' : ')';
-    html += 'Akar: x₁ = '+x1s+', x₂ = '+x2s+'<br>';
+    html += 'Akar: x\u2081 = '+x1s+', x\u2082 = '+x2s+'<br>';
     if((a > 0 && lebihBesar) || (a < 0 && !lebihBesar)) {
-      html += '<strong style="color:var(--hijau-teks)">HP = (−∞, '+x1s+lb.replace('[','').replace('(','')+') ∪ ('+rb.replace(']','').replace(')','') + x2s+', +∞)</strong><br>';
+      html += '<strong style="color:var(--hijau-teks)">HP = (\u2212\u221E, '+x1s+lb.replace('[','').replace('(','')+') \u222A ('+rb.replace(']','').replace(')','') + x2s+', +\u221E)</strong><br>';
       html += '<em>x &lt;'+( inklusif?'=':'')+' '+x1s+' atau x &gt;'+( inklusif?'=':'')+' '+x2s+'</em>';
     } else {
       html += '<strong style="color:var(--hijau-teks)">HP = '+lb+x1s+', '+x2s+rb+'</strong><br>';
@@ -7056,7 +7400,7 @@ function hitungPTQ() {
   res.innerHTML = html;
 }
 
-/* ══ BAB 08 — PARABOLA INTERAKTIF ══ */
+/* == BAB 08 - PARABOLA INTERAKTIF == */
 function updateParabola() {
   var a = parseFloat(document.getElementById('sl-a08').value) || 0;
   var b = parseFloat(document.getElementById('sl-b08').value) || 0;
@@ -7138,18 +7482,18 @@ function updateParabola() {
 
   // Info
   var D = b*b - 4*a*c;
-  var arahStr = a>0 ? 'terbuka ke atas ∪' : a<0 ? 'terbuka ke bawah ∩' : 'garis lurus';
-  var dStr = a!==0 ? ('D = '+b+'²−4('+a+')('+c+') = '+D.toFixed(2)+' → '+
+  var arahStr = a>0 ? 'terbuka ke atas \u222A' : a<0 ? 'terbuka ke bawah \u2229' : 'garis lurus';
+  var dStr = a!==0 ? ('D = '+b+'\u00B2\u22124('+a+')('+c+') = '+D.toFixed(2)+' \u2192 '+
     (D>0?'2 akar real berbeda':D===0?'akar kembar':'tidak ada akar real')) : '';
   var pStr = a!==0 ? 'Puncak: ('+(-b/(2*a)).toFixed(2)+', '+(-(D)/(4*a)).toFixed(2)+')' : '';
   var infoEl = document.getElementById('parabola-info');
   if(infoEl) infoEl.innerHTML =
-    'f(x) = <strong>'+a+'x² + '+b+'x + '+c+'</strong><br>'+
+    'f(x) = <strong>'+a+'x\u00B2 + '+b+'x + '+c+'</strong><br>'+
     'Parabola '+arahStr+'<br>'+dStr+'<br>'+pStr;
 }
 document.addEventListener('DOMContentLoaded', function(){ setTimeout(updateParabola, 200); });
 
-/* ══ BAB 07 — KALKULATOR FUNGSI ══ */
+/* == BAB 07 - KALKULATOR FUNGSI == */
 var fnDefs = {
   '2x+1': function(x){ return 2*x+1; },
   'x^2-3': function(x){ return x*x-3; },
@@ -7159,10 +7503,10 @@ var fnDefs = {
 };
 var fnLabels = {
   '2x+1':'f(x) = 2x + 1',
-  'x^2-3':'f(x) = x² − 3',
-  '3x-5':'f(x) = 3x − 5',
-  '(x+1)/(x-2)':'f(x) = (x+1)/(x−2)',
-  'sqrt(x+4)':'f(x) = √(x+4)'
+  'x^2-3':'f(x) = x\u00B2 \u2212 3',
+  '3x-5':'f(x) = 3x \u2212 5',
+  '(x+1)/(x-2)':'f(x) = (x+1)/(x\u22122)',
+  'sqrt(x+4)':'f(x) = \u221A(x+4)'
 };
 
 function perbaruiFn() {
@@ -7187,14 +7531,14 @@ function hitungFungsi() {
   var hasil = fn(x);
   if (hasil === null || isNaN(hasil)) {
     res.style.background = 'var(--merah-muda)'; res.style.borderColor = '#F7C1C1'; res.style.color = 'var(--merah-teks)';
-    res.innerHTML = '⚠️ x = ' + x + ' tidak ada di domain fungsi ini!';
+    res.innerHTML = '\u26A0\uFE0F x = ' + x + ' tidak ada di domain fungsi ini!';
   } else {
     res.style.background = 'var(--teal-muda)'; res.style.borderColor = '#9FE1CB'; res.style.color = 'var(--teal-teks)';
     res.innerHTML = 'f(' + x + ') = <strong>' + (Number.isInteger(hasil) ? hasil : hasil.toFixed(4)) + '</strong>';
   }
 }
 
-/* ══ BAB 06 — ARITMETIKA SOSIAL ══ */
+/* == BAB 06 - ARITMETIKA SOSIAL == */
 function hitungUntungRugi() {
   var hb = parseFloat(document.getElementById('as-hb').value) || 0;
   var hj = parseFloat(document.getElementById('as-hj').value) || 0;
@@ -7203,14 +7547,14 @@ function hitungUntungRugi() {
   if (hj > hb) {
     var u = hj - hb, pu = (u/hb*100).toFixed(2);
     r.style.background = 'var(--hijau-muda)'; r.style.border = '0.5px solid #C0DD97'; r.style.color = 'var(--hijau-teks)';
-    r.innerHTML = '✓ <strong>UNTUNG</strong><br>Untung = ' + u.toLocaleString('id-ID') + '<br>% Untung = <strong>' + pu + '%</strong> dari harga beli';
+    r.innerHTML = '\u2713 <strong>UNTUNG</strong><br>Untung = ' + u.toLocaleString('id-ID') + '<br>% Untung = <strong>' + pu + '%</strong> dari harga beli';
   } else if (hj < hb) {
     var rg = hb - hj, prg = (rg/hb*100).toFixed(2);
     r.style.background = 'var(--merah-muda)'; r.style.border = '0.5px solid #F7C1C1'; r.style.color = 'var(--merah-teks)';
-    r.innerHTML = '✗ <strong>RUGI</strong><br>Rugi = ' + rg.toLocaleString('id-ID') + '<br>% Rugi = <strong>' + prg + '%</strong> dari harga beli';
+    r.innerHTML = '\u2717 <strong>RUGI</strong><br>Rugi = ' + rg.toLocaleString('id-ID') + '<br>% Rugi = <strong>' + prg + '%</strong> dari harga beli';
   } else {
     r.style.background = 'var(--abu-muda,#F1EFE8)'; r.style.border = '0.5px solid var(--border2)'; r.style.color = 'var(--teks2)';
-    r.innerHTML = '— <strong>IMPAS</strong> (tidak untung, tidak rugi)';
+    r.innerHTML = '- <strong>IMPAS</strong> (tidak untung, tidak rugi)';
   }
 }
 
@@ -7240,7 +7584,7 @@ function hitungBungaMajemuk() {
     'Pertumbuhan = <strong>' + ((Math.pow(1+r,t)-1)*100).toFixed(2) + '%</strong></div>';
 }
 
-/* ══ BAB 05 — KALKULATOR RASIO ══ */
+/* == BAB 05 - KALKULATOR RASIO == */
 function hitungRasio() {
   var a = parseFloat(document.getElementById('rasio-a').value) || 1;
   var b = parseFloat(document.getElementById('rasio-b').value) || 1;
@@ -7251,8 +7595,8 @@ function hitungRasio() {
   var r = document.getElementById('rasio-result');
   r.style.display = 'block';
   r.innerHTML = 'Rasio <strong>' + a + ' : ' + b + '</strong> dari total <strong>' + total.toLocaleString('id-ID') + '</strong><br>' +
-    '→ Bagian A = ' + a + '/' + bagian + ' × ' + total.toLocaleString('id-ID') + ' = <strong>' + nilaiA.toLocaleString('id-ID') + '</strong><br>' +
-    '→ Bagian B = ' + b + '/' + bagian + ' × ' + total.toLocaleString('id-ID') + ' = <strong>' + nilaiB.toLocaleString('id-ID') + '</strong>';
+    '\u2192 Bagian A = ' + a + '/' + bagian + ' \u00D7 ' + total.toLocaleString('id-ID') + ' = <strong>' + nilaiA.toLocaleString('id-ID') + '</strong><br>' +
+    '\u2192 Bagian B = ' + b + '/' + bagian + ' \u00D7 ' + total.toLocaleString('id-ID') + ' = <strong>' + nilaiB.toLocaleString('id-ID') + '</strong>';
   var bar = document.getElementById('rasio-bar');
   bar.style.display = 'block';
   var pctA = (a / bagian * 100).toFixed(1);
@@ -7260,10 +7604,10 @@ function hitungRasio() {
   bar.innerHTML = '<div style="display:flex;border-radius:99px;overflow:hidden;height:28px;">' +
     '<div style="width:' + pctA + '%;background:var(--biru);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;transition:width .4s;">' + pctA + '%</div>' +
     '<div style="width:' + pctB + '%;background:var(--hijau);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;transition:width .4s;">' + pctB + '%</div>' +
-    '</div><div style="display:flex;gap:1rem;margin-top:6px;font-size:12px;color:var(--teks3);"><span style="color:var(--biru);font-weight:600;">■ A</span><span style="color:var(--hijau);font-weight:600;">■ B</span></div>';
+    '</div><div style="display:flex;gap:1rem;margin-top:6px;font-size:12px;color:var(--teks3);"><span style="color:var(--biru);font-weight:600;">\u25A0 A</span><span style="color:var(--hijau);font-weight:600;">\u25A0 B</span></div>';
 }
 
-/* ══ BAB 04 — VENN CANVAS ══ */
+/* == BAB 04 - VENN CANVAS == */
 var vennMode = 'irisan';
 function setVenn(mode) {
   vennMode = mode;
@@ -7272,10 +7616,10 @@ function setVenn(mode) {
     if (b) { b.style.background = m===mode ? 'var(--biru)' : 'var(--bg)'; b.style.color = m===mode ? '#fff' : 'var(--teks2)'; b.style.borderColor = m===mode ? 'var(--biru)' : 'var(--border2)'; }
   });
   var descs = {
-    irisan: '<strong>A ∩ B</strong> = elemen yang ada di <em>kedua</em> himpunan sekaligus. A={1,2,3,4,5}, B={3,4,5,6,7} → A∩B={3,4,5}',
-    gabungan: '<strong>A ∪ B</strong> = semua elemen yang ada di A <em>atau</em> B. A∪B={1,2,3,4,5,6,7}',
+    irisan: '<strong>A \u2229 B</strong> = elemen yang ada di <em>kedua</em> himpunan sekaligus. A={1,2,3,4,5}, B={3,4,5,6,7} \u2192 A\u2229B={3,4,5}',
+    gabungan: '<strong>A \u222A B</strong> = semua elemen yang ada di A <em>atau</em> B. A\u222AB={1,2,3,4,5,6,7}',
     selisihA: '<strong>A \\ B</strong> = elemen di A yang <em>tidak</em> ada di B. A\\B={1,2}',
-    komplemen: '<strong>Aᶜ</strong> = semua elemen di S yang <em>tidak</em> ada di A. Jika S={1..8}, Aᶜ={6,7,8}'
+    komplemen: '<strong>A\u1D9C</strong> = semua elemen di S yang <em>tidak</em> ada di A. Jika S={1..8}, A\u1D9C={6,7,8}'
   };
   var d = document.getElementById('venn-desc');
   if (d) d.innerHTML = descs[mode];
@@ -7351,7 +7695,7 @@ function drawVenn() {
 }
 document.addEventListener('DOMContentLoaded', function() { setTimeout(function(){ setVenn('irisan'); drawVenn(); }, 150); });
 
-/* ══ BAB 03 — CANVAS SPLDV ══ */
+/* == BAB 03 - CANVAS SPLDV == */
 function drawSPLDV() {
   const canvas = document.getElementById('canvas-spldv');
   if (!canvas) return;
@@ -7381,7 +7725,7 @@ function drawSPLDV() {
   }
   ctx.fillText('x', W-12, cy-8); ctx.fillText('y', cx+10, 12);
 
-  // Garis 1: 2x + y = 8 → y = 8 - 2x (biru)
+  // Garis 1: 2x + y = 8 -> y = 8 - 2x (biru)
   ctx.strokeStyle = '#185FA5'; ctx.lineWidth = 2;
   ctx.beginPath();
   for(let x=-7;x<=7;x+=0.1){
@@ -7395,7 +7739,7 @@ function drawSPLDV() {
   ctx.fillStyle = '#185FA5'; ctx.font = '12px sans-serif'; ctx.textAlign = 'left';
   ctx.fillText('2x + y = 8', cx+1*scale+4, cy-6*scale);
 
-  // Garis 2: x - y = 1 → y = x - 1 (hijau)
+  // Garis 2: x - y = 1 -> y = x - 1 (hijau)
   ctx.strokeStyle = '#3B6D11'; ctx.lineWidth = 2;
   ctx.beginPath();
   for(let x=-6;x<=7;x+=0.1){
@@ -7407,7 +7751,7 @@ function drawSPLDV() {
 
   // Label garis 2
   ctx.fillStyle = '#3B6D11'; ctx.font = '12px sans-serif';
-  ctx.fillText('x − y = 1', cx+5*scale+4, cy-4*scale);
+  ctx.fillText('x \u2212 y = 1', cx+5*scale+4, cy-4*scale);
 
   // Titik solusi: (3, 2)
   ctx.fillStyle = '#A32D2D';
