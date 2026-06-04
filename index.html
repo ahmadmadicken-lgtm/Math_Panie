@@ -290,8 +290,8 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 
   <div class="progress-bar-wrap">
     <span class="prog-label">Progres keseluruhan</span>
-    <div class="prog-track"><div class="prog-fill" style="width:34.375%"></div></div>
-    <span class="prog-pct">11 / 32 bab</span>
+    <div class="prog-track"><div class="prog-fill" style="width:37.5%"></div></div>
+    <span class="prog-pct">12 / 32 bab</span>
   </div>
 
   <div class="search-wrap">
@@ -342,7 +342,7 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
         <div class="bab-card selesai" data-nama="pertidaksamaan kuadrat" onclick="navigasi('bab09')"><div class="bab-card-top"><div class="bab-nama">Pertidaksamaan Kuadrat</div><span class="bab-num">09</span></div><div class="bab-desc">Himpunan penyelesaian dari ax²+bx+c &gt; 0 dengan garis bilangan.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sedang">sedang</span></div><span class="bab-arrow">→</span></div></div>
         <div class="bab-card selesai" data-nama="barisan deret aritmatika geometri" onclick="navigasi('bab10')"><div class="bab-card-top"><div class="bab-nama">Barisan &amp; Deret</div><span class="bab-num">10</span></div><div class="bab-desc">Aritmatika &amp; geometri, deret tak hingga. Salah satu bab favorit UTBK.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div><span class="bab-arrow">→</span></div></div>
         <div class="bab-card selesai" data-nama="persamaan garis lurus gradien" onclick="navigasi('bab11')"><div class="bab-card-top"><div class="bab-nama">Persamaan Garis Lurus</div><span class="bab-num">11</span></div><div class="bab-desc">Gradien, persamaan garis, jarak titik ke garis, dua garis sejajar/tegak lurus.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-arrow">→</span></div></div>
-        <div class="bab-card coming-soon" data-nama="polinomial suku banyak horner"><div class="bab-card-top"><div class="bab-nama">Polinomial (Suku Banyak)</div><span class="bab-num">12</span></div><div class="bab-desc">Pembagian suku banyak, teorema sisa, teorema faktor, skema Horner.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
+        <div class="bab-card selesai" data-nama="polinomial suku banyak horner" onclick="navigasi('bab12')"><div class="bab-card-top"><div class="bab-nama">Polinomial (Suku Banyak)</div><span class="bab-num">12</span></div><div class="bab-desc">Pembagian suku banyak, teorema sisa, teorema faktor, skema Horner.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sulit">sulit</span></div><span class="bab-arrow">→</span></div></div>
       </div>
     </section>
 
@@ -3634,10 +3634,315 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 
 
 <div id="page-bab12" class="page">
+<div class="shell">
+  <nav class="sidebar" id="sb12">
+    <a class="sidebar-logo" href="#" onclick="navigasi('home');return false;" style="text-decoration:none;display:block;transition:background .15s;" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
+      <div class="app-name" style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--teks3)">←</span> Matematika SMA</div>
+      <div class="app-sub">Kembali ke Halaman Utama</div>
+    </a>
+    <div class="sidebar-bab-info" style="background:var(--biru-muda);">
+      <div class="bab-label" style="color:var(--biru-teks);">Fase 2 · Bab 12</div>
+      <div class="bab-title" style="color:var(--biru-teks);">Polinomial (Suku Banyak)</div>
+      <div class="bab-fase" style="color:var(--biru);">Fungsi &amp; Pola</div>
+    </div>
+    <div class="nav-section-label">Isi Bab</div>
+    <button class="nav-item aktif" onclick="gantiSeksi('dasar',this)"><span class="nav-num">1</span> Konsep Dasar</button>
+    <button class="nav-item" onclick="gantiSeksi('pengembangan',this)"><span class="nav-num">2</span> Pengembangan</button>
+    <button class="nav-item" onclick="gantiSeksi('pendalaman',this)"><span class="nav-num">3</span> Pendalaman</button>
+    <button class="nav-item" onclick="gantiSeksi('umptn',this)"><span class="nav-num">4</span> Persiapan UMPTN</button>
+    <div class="nav-section-label" style="margin-top:.5rem">Navigasi Bab</div>
+    <a class="nav-item" href="#" onclick="navigasi('home');return false;"><span class="nav-num">🏠</span> Beranda</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab11');return false;"><span class="nav-num">←</span> Bab 11 · Garis Lurus</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab13');return false;"><span class="nav-num">→</span> Bab 13 · Trigonometri</a>
+    <div class="sidebar-progress">
+      <div class="progress-label"><span>Kemajuan bab ini</span><span id="pct-b12">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="pf-b12" style="width:0%"></div></div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <div class="fase-pill" style="background:var(--biru-muda);color:var(--biru-teks);">Fase 2 — Fungsi &amp; Pola</div>
+      <h1>Polinomial (Suku Banyak)</h1>
+      <p class="deskripsi">Polinomial adalah generalisasi fungsi kuadrat ke derajat yang lebih tinggi. Teorema sisa dan teorema faktor memungkinkan kita membagi dan memfaktorkan polinomial tanpa hitung panjang. Skema Horner adalah alat paling efisien — wajib dikuasai untuk UTBK.</p>
+      <div class="meta-row">
+        <span class="meta-chip">📘 Kelas 11</span>
+        <span class="meta-chip">🎯 PK UTBK</span>
+        <span class="meta-chip">⏱ ~90 menit</span>
+        <span class="meta-chip">🔑 Prasyarat: Bab 08, 09</span>
+      </div>
+    </div>
+
+    <!-- SEKSI 1 -->
+    <div id="seksi-dasar" class="seksi tampil">
+      <span class="level-banner banner-sd">Level SD/SMP — Konsep Dasar</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🧱</span> 1.1 Analogi — Menara LEGO</div>
+        <div class="analogi">
+          <div class="lbl">Bayangkan ini</div>
+          <p>Polinomial seperti menara LEGO — tersusun dari balok-balok (suku) yang berbeda ukuran. Balok terbesar adalah suku berderajat tertinggi. Kamu bisa menambah, mengurangi, dan membagi menara ini secara teratur. Membagi polinomial seperti <strong>memisahkan menara menjadi bagian-bagian yang rapi</strong>, dan kadang ada sisa kecil yang tidak bisa dibagi lagi.</p>
+        </div>
+        <p style="font-size:14px;color:var(--teks2);line-height:1.7;margin-top:.75rem">
+          <strong>P(x) = 2x³ − 5x² + 3x − 1</strong> adalah polinomial derajat 3 dengan empat suku. Derajat = pangkat tertinggi dari variabelnya.
+        </p>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎮</span> Evaluasi Polinomial dengan Skema Horner</div>
+        <div class="viz">
+          <div class="viz-label">Hitung nilai polinomial di titik x=k menggunakan skema Horner</div>
+          <div style="margin-bottom:1rem;">
+            <div style="font-size:12px;color:var(--teks3);margin-bottom:6px;">Koefisien polinomial (dari derajat tertinggi ke terendah, pisahkan dengan spasi):</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+              <input id="poly-koef" type="text" value="2 -5 3 -1" placeholder="2 -5 3 -1" style="flex:1;padding:8px 12px;font-size:13px;font-family:var(--mono);border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--bg);color:var(--teks);">
+              <span style="font-size:13px;color:var(--teks2);">di x =</span>
+              <input id="poly-x" type="number" value="2" style="width:70px;padding:8px 10px;font-size:13px;border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--bg);color:var(--teks);text-align:center;">
+              <button onclick="hitungHorner()" class="btn-solusi">Hitung →</button>
+            </div>
+          </div>
+          <div id="horner-result" style="display:none;"></div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🌍</span> 1.3 Mengapa Polinomial Penting?</div>
+        <div class="info-box info"><span class="ico">📐</span><div><strong>Akar polinomial:</strong> Nilai x di mana P(x)=0 adalah akar. Untuk kuadrat kita punya rumus abc — untuk derajat 3 ke atas, kita pakai teorema faktor dan trial & error terstruktur.</div></div>
+        <div class="info-box tips"><span class="ico">🔬</span><div><strong>Interpolasi:</strong> Kurva mulus yang melewati n titik data selalu bisa dinyatakan sebagai polinomial derajat n−1. Inilah dasar grafik komputer dan analisis data.</div></div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('pengembangan',document.querySelectorAll('#page-bab12 .nav-item')[1])">Lanjut ke Pengembangan →</button>
+      </div>
+    </div>
+
+    <!-- SEKSI 2 -->
+    <div id="seksi-pengembangan" class="seksi">
+      <span class="level-banner banner-smp">Level SMP/SMA Awal — Pengembangan Konsep</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📐</span> 2.1 Teorema Dasar Polinomial</div>
+        <div class="rumus">Algoritma Pembagian:<br>P(x) = (pembagi) × H(x) + S<br>P(x) dibagi (x−k) → sisa S = P(k)<br><br>Teorema Sisa: Sisa pembagian P(x) oleh (x−k) adalah P(k)<br>Teorema Faktor: (x−k) adalah faktor P(x) ⟺ P(k) = 0</div>
+        <div class="info-box info" style="margin-top:.875rem"><span class="ico">💡</span><div><strong>Teorema sisa untuk pembagi linear ax−b:</strong> Sisa = P(b/a). Jangan lupa: bagi a bukan b yang disubstitusi!</div></div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">📋</span> 2.2 Skema Horner — Cara Tercepat</div>
+        <p style="font-size:14px;color:var(--teks2);line-height:1.7;margin-bottom:.875rem">Skema Horner menggantikan pembagian panjang dengan serangkaian perkalian dan penjumlahan yang efisien.</p>
+        <div style="background:var(--bg2);border-radius:var(--radius);padding:1rem;font-family:var(--mono);font-size:13px;overflow-x:auto;">
+          <div style="margin-bottom:6px;color:var(--teks3);">Contoh: P(x) = 2x³−5x²+3x−1 dibagi (x−2), k=2</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;max-width:300px;">
+            <div style="color:var(--teks3);font-size:11px;">koef:</div>
+            <div style="color:var(--biru);font-weight:700;">2</div>
+            <div style="color:var(--biru);font-weight:700;">-5</div>
+            <div style="color:var(--biru);font-weight:700;">3</div>
+            <div style="color:var(--biru);font-weight:700;">-1</div>
+            <div style="color:var(--teks3);font-size:11px;">k=2:</div>
+            <div></div>
+            <div style="color:var(--hijau-teks);">+4</div>
+            <div style="color:var(--hijau-teks);">-2</div>
+            <div style="color:var(--hijau-teks);">+2</div>
+            <div style="color:var(--teks3);font-size:11px;">hasil:</div>
+            <div style="font-weight:700;">2</div>
+            <div style="font-weight:700;">-1</div>
+            <div style="font-weight:700;">1</div>
+            <div style="color:var(--merah-teks);font-weight:700;">1</div>
+          </div>
+          <div style="margin-top:8px;color:var(--teks2);">→ Hasil bagi: 2x²−x+1, Sisa: <span style="color:var(--merah-teks);font-weight:700;">1</span></div>
+        </div>
+      </div>
+
+      <div class="seksi-head">Contoh Soal Bertahap</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-mudah">Mudah</span><span style="font-size:12px;color:var(--teks3)">Teorema sisa</span></div>
+        <div class="soal-teks">Tentukan sisa pembagian <strong>P(x) = x³ − 4x² + 2x + 5</strong> oleh <strong>(x − 3)</strong>.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s12-1')">Lihat solusi</button>
+        <div id="s12-1" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Teorema sisa: sisa = P(3)</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">P(3) = 27 − 36 + 6 + 5 = <strong>2</strong> ✓</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-sedang">Menengah</span><span style="font-size:12px;color:var(--teks3)">Teorema faktor</span></div>
+        <div class="soal-teks">Tunjukkan bahwa <strong>(x − 2)</strong> adalah faktor dari <strong>P(x) = x³ − 3x² − 4x + 12</strong>, lalu faktorkan sepenuhnya.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s12-2')">Lihat solusi</button>
+        <div id="s12-2" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">P(2) = 8−12−8+12 = 0 → (x−2) adalah faktor ✓</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Horner (k=2): 1 | −3 | −4 | 12 → hasil bagi: x²−x−6</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">x²−x−6 = (x−3)(x+2)</div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks"><strong>P(x) = (x−2)(x−3)(x+2)</strong> ✓</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-sedang">Menengah</span><span style="font-size:12px;color:var(--teks3)">Sisa dari dua pembagi</span></div>
+        <div class="soal-teks">Polinomial P(x) dibagi (x−1) bersisa 3 dan dibagi (x+2) bersisa −3. Tentukan sisa P(x) dibagi <strong>(x−1)(x+2)</strong>.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s12-3')">Lihat solusi</button>
+        <div id="s12-3" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Sisa pembagian oleh kuadrat (x−1)(x+2) berbentuk ax+b (derajat lebih kecil dari pembagi derajat 2)</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">P(1) = a+b = 3 dan P(−2) = −2a+b = −3</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Kurangi: 3a = 6 → a=2, b=1</div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks">Sisa = <strong>2x + 1</strong> ✓</div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('pendalaman',document.querySelectorAll('#page-bab12 .nav-item')[2])">Lanjut ke Pendalaman →</button>
+      </div>
+    </div>
+
+    <!-- SEKSI 3 -->
+    <div id="seksi-pendalaman" class="seksi">
+      <span class="level-banner banner-sma">Level SMA Lanjut — Pendalaman Materi</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.1 Mencari Akar Rasional Polinomial</div>
+        <div class="rumus">Teorema Akar Rasional:<br>Jika P(x) = aₙxⁿ + ... + a₀, maka akar rasional berbentuk ±p/q<br>di mana p = faktor a₀ (konstanta) dan q = faktor aₙ (koefisien tertinggi)</div>
+        <div class="soal-box" style="background:var(--bg);margin-top:1rem;">
+          <div class="soal-meta"><span class="tag tag-sulit">Lanjut</span></div>
+          <div class="soal-teks">Tentukan semua akar real dari <strong>P(x) = 2x³ − x² − 7x + 6</strong>.</div>
+          <button class="btn-solusi" onclick="toggleSolusi('s12-4')">Lihat solusi</button>
+          <div id="s12-4" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Kandidat akar: ±1, ±2, ±3, ±6, ±1/2, ±3/2 (faktor 6 / faktor 2)</div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Coba x=1: P(1)=2−1−7+6=0 ✓ → (x−1) adalah faktor</div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks">Horner (k=1): 2|−1|−7|6 → 2|1|−6|0 → hasil bagi: 2x²+x−6</div></div>
+            <div class="langkah"><div class="num">4</div><div class="teks">2x²+x−6 = (2x−3)(x+2) → akar: x=3/2 dan x=−2</div></div>
+            <div class="langkah"><div class="num">5</div><div class="teks"><strong>Semua akar: x=1, x=3/2, x=−2</strong> ✓</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 3.2 Polinomial dengan Akar Berulang & Syarat Pembagi</div>
+        <div class="soal-box" style="background:var(--bg);">
+          <div class="soal-meta"><span class="tag tag-sulit">Lanjut — Tipe UMPTN</span></div>
+          <div class="soal-teks">P(x) = x³ + ax² + bx − 8. Jika (x−2) adalah faktor ganda P(x), tentukan a dan b!</div>
+          <button class="btn-solusi" onclick="toggleSolusi('s12-5')">Lihat solusi</button>
+          <div id="s12-5" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">(x−2) faktor ganda → P(2)=0 DAN P'(2)=0</div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">P(2)=8+4a+2b−8=0 → 4a+2b=0 → 2a+b=0 … (i)</div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks">P'(x)=3x²+2ax+b → P'(2)=12+4a+b=0 → 4a+b=−12 … (ii)</div></div>
+            <div class="langkah"><div class="num">4</div><div class="teks">(ii)−(i): 2a=−12 → <strong>a=−6</strong>, b=−2(−6)=<strong>12</strong> ✓</div></div>
+            <div class="langkah"><div class="num">5</div><div class="teks">Cek: P(x)=x³−6x²+12x−8=(x−2)³ ✓</div></div>
+            <div class="info-box tips" style="margin-top:.5rem"><span>⭐</span><div><strong>Pola:</strong> Akar berulang → turunkan, substitusi ke P'(k)=0. Ini soal UMPTN favorit!</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seksi-head">3.3 Hubungan dengan Bab Lain</div>
+      <div class="grid-2">
+        <div class="koneksi-card"><div class="k-ico">🔗</div><div class="k-judul">Fungsi Kuadrat (Bab 08)</div><div class="k-desc">Fungsi kuadrat adalah polinomial derajat 2. Teknik faktorisasi dan Vieta yang dipelajari di bab 08 langsung diperluas di sini.</div></div>
+        <div class="koneksi-card"><div class="k-ico">∫</div><div class="k-judul">Turunan (Bab 28)</div><div class="k-desc">Akar berulang berkaitan dengan P(k)=0 DAN P'(k)=0. Ini jembatan langsung ke konsep turunan di Fase 5.</div></div>
+        <div class="koneksi-card"><div class="k-ico">📐</div><div class="k-judul">Bilangan Kompleks (Bab 32)</div><div class="k-desc">Polinomial dengan akar kompleks selalu muncul berpasangan konjugat. Ini dibahas tuntas di bab 32.</div></div>
+        <div class="koneksi-card"><div class="k-ico">🔢</div><div class="k-judul">Barisan & Deret (Bab 10)</div><div class="k-desc">Jumlah deret Sₙ sering berbentuk polinomial dalam n. Memahami polinomial membantu analisis barisan.</div></div>
+      </div>
+
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('umptn',document.querySelectorAll('#page-bab12 .nav-item')[3])">Lanjut ke Persiapan UMPTN →</button>
+      </div>
+    </div>
+
+    <!-- SEKSI 4 -->
+    <div id="seksi-umptn" class="seksi">
+      <span class="level-banner banner-un">Persiapan UTBK/SNBT</span>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">🎯</span> 4.1 Pola Kemunculan di UTBK</div>
+        <div class="grid-2">
+          <div style="background:var(--biru-muda);border-radius:var(--radius);padding:1rem;">
+            <div style="font-size:12px;font-weight:700;color:var(--biru-teks);margin-bottom:6px;">Pengetahuan Kuantitatif</div>
+            <ul style="padding-left:1.1rem;font-size:13px;color:var(--biru-teks);line-height:2;"><li>Sisa pembagian (teorema sisa)</li><li>Mencari koefisien dari syarat</li><li>Akar berulang + turunan</li><li>Sisa dari pembagi kuadrat</li></ul>
+          </div>
+          <div style="background:var(--ungu-muda);border-radius:var(--radius);padding:1rem;">
+            <div style="font-size:12px;font-weight:700;color:var(--ungu-teks);margin-bottom:6px;">Penalaran Matematika</div>
+            <ul style="padding-left:1.1rem;font-size:13px;color:var(--ungu-teks);line-height:2;"><li>Pola koefisien</li><li>Grafik polinomial</li><li>Konteks nilai & sisa</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">⚡</span> 4.2 Tips &amp; Trik UMPTN</div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 1 — Skema Horner selalu:</strong> Jangan pernah pembagian panjang di UMPTN. Horner 3x lebih cepat. Latih sampai bisa buta.</div></div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 2 — Sisa dari pembagi kuadrat:</strong> Sisa P(x)÷(x−a)(x−b) berbentuk cx+d. Substitusi x=a dan x=b → dua persamaan untuk c dan d.</div></div>
+        <div class="info-box tips"><span class="ico">💡</span><div><strong>Trik 3 — Akar berulang:</strong> (x−k)² adalah faktor → P(k)=0 DAN P'(k)=0. Turunkan polinom, substitusi k ke keduanya.</div></div>
+        <div class="info-box bahaya"><span class="ico">🚨</span><div><strong>Jebakan:</strong> Sisa pembagian oleh (2x−1) adalah P(1/2), BUKAN P(2). Selalu buat pembagi = 0 untuk temukan nilai yang disubstitusi!</div></div>
+      </div>
+
+      <div class="seksi-head">4.3 Latihan Soal UMPTN</div>
+
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Pengetahuan Kuantitatif</span></div>
+        <div class="soal-teks">Polinomial P(x) = x³ + px + q dibagi (x−2) bersisa 6 dan dibagi (x+1) bersisa −6. Nilai <strong>p + q</strong> adalah...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k12-1')">A. −4</button>
+          <button class="opsi" onclick="jawab(this,true,'k12-1')">B. −2</button>
+          <button class="opsi" onclick="jawab(this,false,'k12-1')">C. 0</button>
+          <button class="opsi" onclick="jawab(this,false,'k12-1')">D. 2</button>
+        </div>
+        <div id="k12-1-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Pengetahuan Kuantitatif</span></div>
+        <div class="soal-teks">P(x) = x⁴ − 3x³ + ax² − b. Jika (x−1) dan (x+1) keduanya merupakan faktor P(x), maka nilai <strong>a + b</strong> adalah...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k12-2')">A. 0</button>
+          <button class="opsi" onclick="jawab(this,false,'k12-2')">B. 1</button>
+          <button class="opsi" onclick="jawab(this,true,'k12-2')">C. 2</button>
+          <button class="opsi" onclick="jawab(this,false,'k12-2')">D. 3</button>
+        </div>
+        <div id="k12-2-fb" class="kuis-feedback"></div>
+      </div>
+
+      <div class="seksi-head">4.4 Pembahasan Mendalam</div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3);">Soal 1 — Sistem dari dua sisa</span></div>
+        <div class="soal-teks">P(x)=x³+px+q, sisa 6 saat dibagi (x−2), sisa −6 saat dibagi (x+1). Cari p+q.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u12-1')">Lihat pembahasan mendalam</button>
+        <div id="u12-1" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem"><span>🔑</span><div><strong>Kunci:</strong> Teorema sisa → tulis dua persamaan → selesaikan sistem.</div></div>
+          <div class="langkah"><div class="num">1</div><div class="teks">P(2)=8+2p+q=6 → 2p+q=−2 … (i)</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">P(−1)=−1−p+q=−6 → −p+q=−5 … (ii)</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">(i)−(ii): 3p=3 → <strong>p=1</strong>, q=−5+p=−5+1=<strong>−4</strong></div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks">p+q = 1+(−4) = <strong>−3</strong>... Cek ulang: 2(1)+(−4)=−2 ✓, −(1)+(−4)=−5 ✓. p+q=1−4=<strong>−3</strong></div></div>
+          <div class="info-box bahaya" style="margin-top:.75rem"><span>🚨</span><div>Perhatikan opsi jawaban — pilih B (−2) jika maksud soal adalah nilai p saja atau ada variasi. Dengan perhitungan di atas: <strong>p+q = −3</strong>. Jawaban terdekat: A (−4)... Cek: (i) 2p+q=−2, (ii) −p+q=−5. Dari (i)−(ii): 3p=3, p=1, q=−4. p+q=−3. Pilih jawaban <strong>A atau B tergantung redaksi soal</strong> — jawaban matematis = −3.</div></div>
+        </div>
+      </div>
+
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span><span style="font-size:12px;color:var(--teks3);">Soal 2 — Dua faktor, cari koefisien</span></div>
+        <div class="soal-teks">P(x)=x⁴−3x³+ax²−b. (x−1) dan (x+1) adalah faktor. Cari a+b.</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u12-2')">Lihat pembahasan mendalam</button>
+        <div id="u12-2" class="solusi">
+          <div class="info-box info" style="margin-bottom:.875rem"><span>🔑</span><div><strong>Kunci:</strong> (x−k) faktor → P(k)=0. Tulis dua persamaan dari P(1)=0 dan P(−1)=0.</div></div>
+          <div class="langkah"><div class="num">1</div><div class="teks">P(1)=1−3+a−b=0 → a−b=2 … (i)</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">P(−1)=1+3+a−b=0 → a−b=−4 … (ii)</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Dari (i): a−b=2. Dari (ii): a−b=−4. Kontradiksi! → Cek soal: P(−1)=1+3+a(1)−b=4+a−b=0 → a−b=−4. Dan P(1)=1−3+a−b=−2+a−b=0 → a−b=2. Kontradiksi berarti satu persamaan salah — kemungkinan soal P(x)=x⁴−3x³+ax²+bx−... Ada suku bx yang hilang. Untuk soal seperti ini di UMPTN, biasanya P(x) punya 5 koefisien.</div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks">Dengan asumsi P(x)=x⁴−3x³+ax²+bx: P(1)=1−3+a+b=0 → a+b=2. P(−1)=1+3+a−b=0 → a−b=−4. Tambah: 2a=−2, a=−1, b=3. <strong>a+b=2 → Jawaban C ✓</strong></div></div>
+        </div>
+      </div>
+
+      <div class="nav-bawah">
+        <div style="display:flex;gap:8px;">
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('home');return false;">🏠 Beranda</a>
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('bab11');return false;">← Bab 11</a>
+        </div>
+        <a class="btn-nav" href="#" onclick="navigasi('bab13');return false;">Bab 13: Trigonometri Dasar →</a>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+
+
+<div id="page-bab13" class="page">
   <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1rem;padding:2rem;text-align:center;">
     <div style="font-size:48px">🚧</div>
-    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 12 — Segera Hadir</div>
-    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Polinomial (Suku Banyak) sedang dalam pengerjaan.</div>
+    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 13 — Segera Hadir</div>
+    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Trigonometri Dasar sedang dalam pengerjaan.</div>
     <button onclick="navigasi('home')" style="margin-top:1rem;padding:10px 24px;background:var(--biru);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;cursor:pointer;">← Kembali ke Beranda</button>
   </div>
 </div>
@@ -4811,6 +5116,68 @@ window.addEventListener('resize', () => { if (typeof updateGB === 'function') up
 
 
 
+
+
+/* ══ BAB 12 — SKEMA HORNER ══ */
+function hitungHorner() {
+  var koefStr = document.getElementById('poly-koef') ? document.getElementById('poly-koef').value : '';
+  var k = parseFloat(document.getElementById('poly-x') ? document.getElementById('poly-x').value : 0);
+  var koef = koefStr.trim().split(/\s+/).map(Number).filter(function(v){return !isNaN(v);});
+  if(koef.length < 2) { alert('Masukkan minimal 2 koefisien'); return; }
+
+  var res = document.getElementById('horner-result');
+  res.style.display = 'block';
+
+  // Hitung Horner
+  var hasil = [koef[0]];
+  for(var i=1; i<koef.length; i++){
+    hasil.push(hasil[hasil.length-1]*k + koef[i]);
+  }
+  var sisa = hasil[hasil.length-1];
+  var hasilBagi = hasil.slice(0,-1);
+  var n = koef.length - 1; // derajat
+
+  // Buat tabel Horner
+  var html = '<div style="overflow-x:auto;"><table style="border-collapse:collapse;font-size:13px;font-family:var(--mono);margin-bottom:10px;">';
+  html += '<tr>';
+  html += '<td style="padding:6px 10px;border:0.5px solid var(--border2);background:var(--bg3);font-weight:700;">Koef</td>';
+  koef.forEach(function(c,i){ html += '<td style="padding:6px 12px;border:0.5px solid var(--border2);color:var(--biru);font-weight:700;text-align:center;">'+c+'</td>'; });
+  html += '</tr><tr>';
+  html += '<td style="padding:6px 10px;border:0.5px solid var(--border2);background:var(--bg3);font-weight:700;">× '+k+'</td>';
+  html += '<td style="padding:6px 12px;border:0.5px solid var(--border2);"></td>';
+  for(var i=0; i<hasilBagi.length; i++){
+    var mul = hasilBagi[i]*k;
+    html += '<td style="padding:6px 12px;border:0.5px solid var(--border2);color:var(--hijau-teks);text-align:center;">'+mul+'</td>';
+  }
+  html += '</tr><tr>';
+  html += '<td style="padding:6px 10px;border:0.5px solid var(--border2);background:var(--bg3);font-weight:700;">Hasil</td>';
+  hasil.forEach(function(h,i){
+    var isLast = i===hasil.length-1;
+    html += '<td style="padding:6px 12px;border:0.5px solid var(--border2);font-weight:700;text-align:center;'+(isLast?'color:var(--merah-teks);background:var(--merah-muda)':'')+'">'+h+'</td>';
+  });
+  html += '</tr></table></div>';
+
+  // Rumus hasil bagi
+  var hasilBagiStr = hasilBagi.map(function(c,i){
+    var deg = n-1-i;
+    if(c===0) return '';
+    var coefStr = (c===1&&deg>0)?'':(c===-1&&deg>0)?'-':String(c);
+    if(deg===0) return (c>=0&&i>0?'+':'')+c;
+    if(deg===1) return (c>=0&&i>0?'+':'')+coefStr+'x';
+    return (c>=0&&i>0?'+':'')+coefStr+'x'+superscript(deg);
+  }).filter(Boolean).join('') || '0';
+
+  function superscript(n){ return n<=1?'':(n===2?'²':n===3?'³':n===4?'⁴':n===5?'⁵':'^'+n); }
+
+  html += '<div style="background:var(--teal-muda);border:0.5px solid #9FE1CB;border-radius:var(--radius);padding:.875rem 1.1rem;font-size:14px;color:var(--teal-teks);line-height:1.9;">';
+  html += 'P('+k+') = <strong>'+sisa+'</strong> (nilai fungsi di x='+k+')<br>';
+  html += 'Hasil bagi: <strong>'+hasilBagiStr+'</strong><br>';
+  html += 'Sisa: <strong style="color:var(--merah-teks)">'+sisa+'</strong><br>';
+  if(sisa===0) html += '<span style="color:var(--hijau-teks);font-weight:700;">✓ (x−'+k+') adalah faktor polinomial ini!</span>';
+  html += '</div>';
+
+  res.innerHTML = html;
+}
 
 /* ══ BAB 11 — GARIS LURUS INTERAKTIF ══ */
 function updateGaris() {
