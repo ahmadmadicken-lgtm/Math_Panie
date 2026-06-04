@@ -313,8 +313,8 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 
   <div class="progress-bar-wrap">
     <span class="prog-label">Progres keseluruhan</span>
-    <div class="prog-track"><div class="prog-fill" style="width:62.500%"></div></div>
-    <span class="prog-pct">20 / 32 bab</span>
+    <div class="prog-track"><div class="prog-fill" style="width:65.625%"></div></div>
+    <span class="prog-pct">21 / 32 bab</span>
   </div>
 
   <div class="search-wrap">
@@ -387,7 +387,7 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
       <div class="bab-grid">
         <button class="bab-card selesai" data-nama="matriks operasi invers determinan" onclick="navigasi('bab20')" style="text-align:left;width:100%;font:inherit;"><div class="bab-card-top"><div class="bab-nama">Matriks</div><span class="bab-num">20</span></div><div class="bab-desc">Operasi matriks, determinan, invers, dan penerapan ke SPLDV.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sedang">sedang</span></div><span class="bab-soon-label">Segera hadir</span></div></button>
         <div class="bab-card coming-soon" data-nama="program linear optimasi daerah penyelesaian"><div class="bab-card-top"><div class="bab-nama">Program Linear</div><span class="bab-num">21</span></div><div class="bab-desc">Model matematika, daerah penyelesaian, nilai optimum fungsi tujuan.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
-        <div class="bab-card coming-soon" data-nama="statistika deskriptif mean median modus"><div class="bab-card-top"><div class="bab-nama">Statistika Deskriptif</div><span class="bab-num">22</span></div><div class="bab-desc">Mean, median, modus, simpangan baku, histogram, dan ogive.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
+        <div class="bab-card selesai" data-nama="statistika deskriptif mean median modus" onclick="navigasi('bab22')"><div class="bab-card-top"><div class="bab-nama">Statistika Deskriptif</div><span class="bab-num">22</span></div><div class="bab-desc">Mean, median, modus, simpangan baku, histogram, dan ogive.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-arrow">&#8594;</span></div></div>
         <div class="bab-card coming-soon" data-nama="statistika lanjut regresi distribusi"><div class="bab-card-top"><div class="bab-nama">Statistika Lanjut</div><span class="bab-num">23</span></div><div class="bab-desc">Regresi linear, korelasi, distribusi frekuensi, dan interpretasi data.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
         <div class="bab-card coming-soon" data-nama="permutasi kombinasi aturan pencacahan"><div class="bab-card-top"><div class="bab-nama">Permutasi &amp; Kombinasi</div><span class="bab-num">24</span></div><div class="bab-desc">Aturan perkalian, permutasi, kombinasi, dan segitiga Pascal.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
         <div class="bab-card coming-soon" data-nama="peluang dasar probabilitas kejadian"><div class="bab-card-top"><div class="bab-nama">Peluang Dasar</div><span class="bab-num">25</span></div><div class="bab-desc">Ruang sampel, kejadian, peluang klasik, frekuensi relatif.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
@@ -6648,10 +6648,220 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 </div>
 
 <div id="page-bab22" class="page">
+<div class="shell">
+  <nav class="sidebar" id="sb22">
+    <a class="sidebar-logo" href="#" onclick="navigasi('home');return false;" style="text-decoration:none;display:block;transition:background .15s;" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
+      <div class="app-name" style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;color:var(--teks3)">&#8592;</span> Matematika SMA</div>
+      <div class="app-sub">Kembali ke Halaman Utama</div>
+    </a>
+    <div class="sidebar-bab-info" style="background:var(--amber-muda);">
+      <div class="bab-label" style="color:var(--amber-teks);">Fase 4 - Bab 22</div>
+      <div class="bab-title" style="color:var(--amber-teks);">Statistika Deskriptif</div>
+      <div class="bab-fase" style="color:var(--amber);">Aljabar Lanjut</div>
+    </div>
+    <div class="nav-section-label">Isi Bab</div>
+    <button class="nav-item aktif" onclick="gantiSeksi('b22-dasar',this)"><span class="nav-num">1</span> Konsep Dasar</button>
+    <button class="nav-item" onclick="gantiSeksi('b22-pengembangan',this)"><span class="nav-num">2</span> Pengembangan</button>
+    <button class="nav-item" onclick="gantiSeksi('b22-pendalaman',this)"><span class="nav-num">3</span> Pendalaman</button>
+    <button class="nav-item" onclick="gantiSeksi('b22-umptn',this)"><span class="nav-num">4</span> Persiapan UMPTN</button>
+    <div class="nav-section-label" style="margin-top:.5rem">Navigasi Bab</div>
+    <a class="nav-item" href="#" onclick="navigasi('home');return false;"><span class="nav-num">&#127968;</span> Beranda</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab21');return false;"><span class="nav-num">&#8592;</span> Bab 21 - Program Linear</a>
+    <a class="nav-item" href="#" onclick="navigasi('bab23');return false;"><span class="nav-num">&#8594;</span> Bab 23 - Statistika Lanjut</a>
+    <div class="sidebar-progress">
+      <div class="progress-label"><span>Kemajuan bab ini</span><span id="pct-b22">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="pf-b22" style="width:0%"></div></div>
+    </div>
+  </nav>
+  <main class="main">
+    <div class="page-header">
+      <div class="fase-pill" style="background:var(--amber-muda);color:var(--amber-teks);">Fase 4 - Aljabar Lanjut</div>
+      <h1>Statistika Deskriptif</h1>
+      <p class="deskripsi">Statistika deskriptif merangkum dan menggambarkan data: rata-rata, median, modus, jangkauan, varians, simpangan baku. Ini adalah bab yang paling dekat dengan kehidupan nyata dan sangat sering muncul di PM UTBK dalam bentuk tabel dan grafik.</p>
+      <div class="meta-row">
+        <span class="meta-chip">&#128216; Kelas 10-12</span>
+        <span class="meta-chip">&#127919; PM &amp; PK UTBK</span>
+        <span class="meta-chip">&#9200; ~90 menit</span>
+        <span class="meta-chip">&#128273; Prasyarat: Bab 05</span>
+      </div>
+    </div>
+
+    <div id="seksi-b22-dasar" class="seksi tampil">
+      <span class="level-banner banner-sd">Level SD/SMP - Konsep Dasar</span>
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#128200;</span> 1.1 Analogi - Laporan Nilai Kelas</div>
+        <div class="analogi">
+          <div class="lbl">Bayangkan ini</div>
+          <p>Guru ingin tahu gambaran nilai ulangan kelas. Daripada lihat 30 angka satu per satu, cukup lihat <strong>rata-rata</strong> (nilai tipikal), <strong>median</strong> (nilai tengah), <strong>modus</strong> (nilai terbanyak), dan <strong>simpangan baku</strong> (seberapa tersebar nilainya). Empat angka itu sudah mewakili keseluruhan data!</p>
+        </div>
+      </div>
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#128202;</span> 1.2 Ukuran Pemusatan Data</div>
+        <div class="tabel-wrap"><table class="sifat">
+          <thead><tr><th>Ukuran</th><th>Definisi</th><th>Rumus</th></tr></thead>
+          <tbody>
+            <tr><td>Mean (rata-rata)</td><td>Jumlah semua data dibagi banyak data</td><td>x&#772; = (&#931;x&#8342;) / n</td></tr>
+            <tr><td>Median</td><td>Nilai tengah data yang sudah diurutkan</td><td>n ganjil: x&#8346;(n+1)/2&#8347;; n genap: rata2 dua tengah</td></tr>
+            <tr><td>Modus</td><td>Nilai yang paling sering muncul</td><td>Data tunggal: lihat frekuensi tertinggi</td></tr>
+            <tr><td>Kuartil Q1, Q2, Q3</td><td>Membagi data jadi 4 bagian sama</td><td>Q2 = median; Q1 = median bawah; Q3 = median atas</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#127914;</span> 1.3 Kalkulator Statistik Interaktif</div>
+        <div class="viz">
+          <div class="viz-label">Masukkan data (pisahkan dengan koma), hitung otomatis</div>
+          <textarea id="stat-data" rows="2" style="width:100%;padding:8px 12px;font-size:13px;font-family:var(--mono);border:0.5px solid var(--border2);border-radius:var(--radius);background:var(--bg);color:var(--teks);resize:vertical;" placeholder="Contoh: 4, 7, 2, 9, 5, 3, 8, 6, 1, 10">4, 7, 2, 9, 5, 3, 8, 6, 1, 10</textarea>
+          <button onclick="hitungStatistik()" class="btn-solusi" style="margin-top:8px;">Hitung &#8594;</button>
+          <div id="stat-result" style="display:none;margin-top:.875rem;"></div>
+        </div>
+      </div>
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('b22-pengembangan',null)">Lanjut ke Pengembangan &#8594;</button>
+      </div>
+    </div>
+
+    <div id="seksi-b22-pengembangan" class="seksi">
+      <span class="level-banner banner-smp">Level SMP/SMA - Pengembangan</span>
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#128290;</span> 2.1 Ukuran Penyebaran Data</div>
+        <div class="tabel-wrap"><table class="sifat">
+          <thead><tr><th>Ukuran</th><th>Rumus Data Tunggal</th><th>Makna</th></tr></thead>
+          <tbody>
+            <tr><td>Jangkauan (R)</td><td>R = x_maks - x_min</td><td>Rentang data</td></tr>
+            <tr><td>Jangkauan Interkuartil</td><td>IQR = Q3 - Q1</td><td>Rentang 50% data tengah</td></tr>
+            <tr><td>Simpangan Rata-rata</td><td>SR = (&#931;|x&#8342; - x&#772;|) / n</td><td>Rata-rata jarak ke mean</td></tr>
+            <tr><td>Varians (s&#178;)</td><td>s&#178; = &#931;(x&#8342; - x&#772;)&#178; / n</td><td>Rata-rata kuadrat simpangan</td></tr>
+            <tr><td>Simpangan Baku (s)</td><td>s = &#8730;(s&#178;)</td><td>Akar varians; satuan sama dengan data</td></tr>
+          </tbody>
+        </table></div>
+        <div class="info-box bahaya" style="margin-top:.875rem"><span class="ico">&#9888;</span><div><strong>Varians populasi vs sampel:</strong> Populasi: bagi n. Sampel: bagi (n-1). Di SMA umumnya pakai populasi (bagi n) kecuali dinyatakan sebaliknya.</div></div>
+      </div>
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#128200;</span> 2.2 Data Berkelompok</div>
+        <div class="rumus">Mean data berkelompok: x&#772; = (&#931;f&#8342;x&#8342;) / (&#931;f&#8342;)<br>Modal: Mo = L + ((d1)/(d1+d2)) x p<br>Median: Me = L + ((n/2 - F)/(f)) x p<br><br>L = tepi bawah kelas, p = panjang kelas<br>d1 = selisih frekuensi kelas modal dengan sebelumnya<br>d2 = selisih frekuensi kelas modal dengan sesudahnya<br>F = frekuensi kumulatif sebelum kelas median</div>
+      </div>
+      <div class="seksi-head">Contoh Soal Bertahap</div>
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-mudah">Mudah</span><span style="font-size:12px;color:var(--teks3)">Data tunggal</span></div>
+        <div class="soal-teks">Data: 5, 3, 8, 7, 4, 6, 9, 2, 8, 8. Tentukan mean, median, modus, dan simpangan baku!</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s22-1')">Lihat solusi</button>
+        <div id="s22-1" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Diurutkan: 2,3,4,5,6,7,8,8,8,9. n=10</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Mean = (2+3+4+5+6+7+8+8+8+9)/10 = 60/10 = <strong>6</strong></div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Median (n=10 genap) = (x5+x6)/2 = (6+7)/2 = <strong>6.5</strong></div></div>
+          <div class="langkah"><div class="num">4</div><div class="teks">Modus = <strong>8</strong> (muncul 3 kali)</div></div>
+          <div class="langkah"><div class="num">5</div><div class="teks">Varians = [(2-6)^2+(3-6)^2+...+(9-6)^2]/10 = [16+9+4+1+0+1+4+4+4+9]/10 = 52/10 = 5.2<br>s = &#8730;5.2 &#8776; <strong>2.28</strong> &#10003;</div></div>
+        </div>
+      </div>
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-sedang">Menengah</span><span style="font-size:12px;color:var(--teks3)">Data berkelompok - Mean</span></div>
+        <div class="soal-teks">Tabel: [40-49: f=3], [50-59: f=7], [60-69: f=15], [70-79: f=10], [80-89: f=5]. Hitung mean!</div>
+        <button class="btn-solusi" onclick="toggleSolusi('s22-2')">Lihat solusi</button>
+        <div id="s22-2" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Titik tengah: 44.5, 54.5, 64.5, 74.5, 84.5</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">&#931;fx = 3(44.5)+7(54.5)+15(64.5)+10(74.5)+5(84.5) = 133.5+381.5+967.5+745+422.5 = 2650</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">&#931;f = 40. Mean = 2650/40 = <strong>66.25</strong> &#10003;</div></div>
+        </div>
+      </div>
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('b22-pendalaman',null)">Lanjut ke Pendalaman &#8594;</button>
+      </div>
+    </div>
+
+    <div id="seksi-b22-pendalaman" class="seksi">
+      <span class="level-banner banner-sma">Level SMA Lanjut - Pendalaman</span>
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#9889;</span> 3.1 Box Plot dan Outlier</div>
+        <div class="rumus">Box plot (5-number summary): Min, Q1, Median, Q3, Maks<br>IQR = Q3 - Q1<br>Batas bawah outlier: Q1 - 1.5 x IQR<br>Batas atas outlier: Q3 + 1.5 x IQR<br>Data di luar batas = outlier (pencilan)</div>
+        <div class="info-box info" style="margin-top:.875rem"><span class="ico">&#128161;</span><div><strong>Interpretasi:</strong> Box plot menunjukkan distribusi data. Box sempit = data terpusat. Box lebar = data tersebar. Median di tengah box = distribusi simetris.</div></div>
+      </div>
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#9889;</span> 3.2 Soal Mencari Data dari Statistik</div>
+        <div class="soal-box" style="background:var(--bg);">
+          <div class="soal-meta"><span class="tag tag-sulit">Tipe UMPTN Favorit</span></div>
+          <div class="soal-teks">Rata-rata 8 data adalah 15. Jika ditambah dua data baru 19 dan x, rata-rata menjadi 16. Tentukan x!</div>
+          <button class="btn-solusi" onclick="toggleSolusi('s22-3')">Lihat solusi</button>
+          <div id="s22-3" class="solusi">
+            <div class="langkah"><div class="num">1</div><div class="teks">Jumlah 8 data awal = 8 x 15 = 120</div></div>
+            <div class="langkah"><div class="num">2</div><div class="teks">Jumlah 10 data baru = 10 x 16 = 160</div></div>
+            <div class="langkah"><div class="num">3</div><div class="teks">19 + x = 160 - 120 = 40</div></div>
+            <div class="langkah"><div class="num">4</div><div class="teks">x = <strong>21</strong> &#10003;</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="seksi-head">3.3 Hubungan dengan Bab Lain</div>
+      <div class="grid-2">
+        <div class="koneksi-card"><div class="k-ico">&#128200;</div><div class="k-judul">Statistika Lanjut (Bab 23)</div><div class="k-desc">Distribusi normal, regresi, dan korelasi dibangun di atas konsep mean dan simpangan baku dari bab ini.</div></div>
+        <div class="koneksi-card"><div class="k-ico">&#127922;</div><div class="k-judul">Peluang (Bab 25-26)</div><div class="k-desc">Distribusi probabilitas punya mean dan varians. Konsep ini menghubungkan statistika dengan teori peluang.</div></div>
+        <div class="koneksi-card"><div class="k-ico">&#128290;</div><div class="k-judul">Barisan & Deret (Bab 10)</div><div class="k-desc">Mean data berkelas menggunakan rumus yang mirip dengan rata-rata berbobot - gabungan konsep barisan.</div></div>
+        <div class="koneksi-card"><div class="k-ico">&#128196;</div><div class="k-judul">Fungsi (Bab 07)</div><div class="k-desc">Grafik histogram, poligon frekuensi, dan ogif adalah representasi visual fungsi distribusi frekuensi.</div></div>
+      </div>
+      <div class="nav-bawah" style="justify-content:flex-end;">
+        <button class="btn-nav" onclick="gantiSeksi('b22-umptn',null)">Lanjut ke Persiapan UMPTN &#8594;</button>
+      </div>
+    </div>
+
+    <div id="seksi-b22-umptn" class="seksi">
+      <span class="level-banner banner-un">Persiapan UTBK/SNBT</span>
+      <div class="kartu">
+        <div class="kartu-judul"><span class="ico">&#9889;</span> 4.2 Tips &amp; Trik UMPTN</div>
+        <div class="info-box tips"><span class="ico">&#128161;</span><div><strong>Trik 1 - Mean dari mean:</strong> Jika diketahui mean kelompok A (nA, xA) dan B (nB, xB), mean gabungan = (nAxA + nBxB)/(nA+nB). Jangan rata-ratakan mean-nya langsung!</div></div>
+        <div class="info-box tips"><span class="ico">&#128161;</span><div><strong>Trik 2 - Tambah/hapus data:</strong> Jumlah baru = Jumlah lama +/- data baru. Mean baru = Jumlah baru / n baru. Ini selalu lebih cepat dari menghitung ulang.</div></div>
+        <div class="info-box tips"><span class="ico">&#128161;</span><div><strong>Trik 3 - Varians dari soal:</strong> Sering ada soal "jika setiap data ditambah k, apa yang berubah?" Jawab: mean berubah (+k), varians/simpangan baku TIDAK berubah.</div></div>
+        <div class="info-box bahaya"><span class="ico">&#128680;</span><div><strong>Jebakan:</strong> Jika data dikalikan k, varians menjadi k^2 kali lipat (bukan k kali), simpangan baku menjadi |k| kali lipat.</div></div>
+      </div>
+      <div class="seksi-head">4.3 Latihan Soal UMPTN</div>
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Penalaran Matematika</span></div>
+        <div class="soal-teks">Rata-rata nilai 5 siswa adalah 72. Jika nilai tertinggi 90 dihapus, rata-rata menjadi...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k22-1')">A. 63</button>
+          <button class="opsi" onclick="jawab(this,true,'k22-1')">B. 67.5</button>
+          <button class="opsi" onclick="jawab(this,false,'k22-1')">C. 70</button>
+          <button class="opsi" onclick="jawab(this,false,'k22-1')">D. 65</button>
+        </div>
+        <div id="k22-1-fb" class="kuis-feedback"></div>
+      </div>
+      <div class="kartu">
+        <div class="umptn-header"><span class="tahun-pill">Prediksi SNBT 2026</span><span style="font-size:12px;color:var(--teks3);">Pengetahuan Kuantitatif</span></div>
+        <div class="soal-teks">Data: 3, 5, 7, 9, 11. Jika setiap data ditambah 4, simpangan baku data baru adalah...</div>
+        <div class="kuis-opsi">
+          <button class="opsi" onclick="jawab(this,false,'k22-2')">A. Bertambah 4</button>
+          <button class="opsi" onclick="jawab(this,true,'k22-2')">B. Sama (tidak berubah)</button>
+          <button class="opsi" onclick="jawab(this,false,'k22-2')">C. Berlipat dua</button>
+          <button class="opsi" onclick="jawab(this,false,'k22-2')">D. Berkurang 4</button>
+        </div>
+        <div id="k22-2-fb" class="kuis-feedback"></div>
+      </div>
+      <div class="seksi-head">4.4 Pembahasan Mendalam</div>
+      <div class="soal-box">
+        <div class="soal-meta"><span class="tag tag-umptn">UMPTN</span></div>
+        <div class="soal-teks">Rata-rata 5 siswa = 72, nilai 90 dihapus. Mean baru?</div>
+        <button class="btn-solusi" onclick="toggleSolusi('u22-1')">Lihat pembahasan</button>
+        <div id="u22-1" class="solusi">
+          <div class="langkah"><div class="num">1</div><div class="teks">Jumlah awal = 5 x 72 = 360</div></div>
+          <div class="langkah"><div class="num">2</div><div class="teks">Jumlah setelah hapus 90 = 360 - 90 = 270</div></div>
+          <div class="langkah"><div class="num">3</div><div class="teks">Mean baru = 270/4 = <strong>67.5 &#8594; Jawaban B &#10003;</strong></div></div>
+        </div>
+      </div>
+      <div class="nav-bawah">
+        <div style="display:flex;gap:8px;">
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('home');return false;">&#127968; Beranda</a>
+          <a class="btn-nav sekunder" href="#" onclick="navigasi('bab21');return false;">&#8592; Bab 21</a>
+        </div>
+        <a class="btn-nav" href="#" onclick="navigasi('bab23');return false;">Bab 23: Statistika Lanjut &#8594;</a>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+
+<div id="page-bab23" class="page">
   <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1rem;padding:2rem;text-align:center;">
     <div style="font-size:48px">🚧</div>
-    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 22 — Segera Hadir</div>
-    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Statistika Deskriptif sedang dalam pengerjaan.</div>
+    <div style="font-size:22px;font-weight:700;color:var(--teks)">Bab 23 — Segera Hadir</div>
+    <div style="font-size:15px;color:var(--teks2);max-width:400px;">Statistika Lanjut sedang dalam pengerjaan.</div>
     <button onclick="navigasi('home')" style="margin-top:1rem;padding:10px 24px;background:var(--biru);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:700;cursor:pointer;">← Kembali ke Beranda</button>
   </div>
 </div>
@@ -6979,6 +7189,70 @@ function hitungMatriks() {
 function frac(n,d){if(d===0)return'\u221E';if(n===0)return'0';if(n%d===0)return String(n/d);return n+'/'+d;}
 document.addEventListener('DOMContentLoaded',function(){setTimeout(hitungMatriks,500);});
 
+
+
+/* == BAB 22 - STATISTIK KALKULATOR == */
+function hitungStatistik() {
+  var raw = document.getElementById('stat-data') ? document.getElementById('stat-data').value : '';
+  var data = raw.split(',').map(function(s){ return parseFloat(s.trim()); }).filter(function(v){ return !isNaN(v); });
+  if (data.length < 2) { alert('Masukkan minimal 2 data'); return; }
+
+  data.sort(function(a,b){ return a-b; });
+  var n = data.length;
+
+  // Mean
+  var sum = data.reduce(function(s,v){ return s+v; }, 0);
+  var mean = sum / n;
+
+  // Median
+  var median = n % 2 === 0 ? (data[n/2-1] + data[n/2]) / 2 : data[Math.floor(n/2)];
+
+  // Modus
+  var freq = {};
+  data.forEach(function(v){ freq[v] = (freq[v]||0)+1; });
+  var maxF = Math.max.apply(null, Object.values(freq));
+  var modus = Object.keys(freq).filter(function(k){ return freq[k]===maxF; }).map(Number);
+
+  // Min Max
+  var dMin = data[0], dMax = data[n-1];
+
+  // Q1 Q2 Q3
+  function quartile(arr, q) {
+    var pos = (arr.length - 1) * q;
+    var base = Math.floor(pos);
+    var rest = pos - base;
+    return arr[base+1] !== undefined ? arr[base] + rest*(arr[base+1]-arr[base]) : arr[base];
+  }
+  var q1 = quartile(data, 0.25), q3 = quartile(data, 0.75);
+  var iqr = q3 - q1;
+
+  // Varians & simpangan baku
+  var varians = data.reduce(function(s,v){ return s + (v-mean)*(v-mean); }, 0) / n;
+  var sb = Math.sqrt(varians);
+
+  var res = document.getElementById('stat-result');
+  res.style.display = 'block';
+  res.innerHTML =
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:.875rem;">' +
+    statChip('Mean', mean.toFixed(3), 'var(--biru-muda)', 'var(--biru-teks)') +
+    statChip('Median', median.toFixed(3), 'var(--hijau-muda)', 'var(--hijau-teks)') +
+    statChip('Modus', modus.join(', '), 'var(--ungu-muda)', 'var(--ungu-teks)') +
+    statChip('Min', dMin, 'var(--amber-muda)', 'var(--amber-teks)') +
+    statChip('Maks', dMax, 'var(--amber-muda)', 'var(--amber-teks)') +
+    statChip('Jangkauan', (dMax-dMin).toFixed(3), 'var(--teal-muda)', 'var(--teal-teks)') +
+    statChip('Q1', q1.toFixed(3), 'var(--biru-muda)', 'var(--biru-teks)') +
+    statChip('Q3', q3.toFixed(3), 'var(--biru-muda)', 'var(--biru-teks)') +
+    statChip('IQR', iqr.toFixed(3), 'var(--teal-muda)', 'var(--teal-teks)') +
+    statChip('Varians', varians.toFixed(3), 'var(--merah-muda)', 'var(--merah-teks)') +
+    statChip('Simp. Baku', sb.toFixed(3), 'var(--merah-muda)', 'var(--merah-teks)') +
+    statChip('n', n, 'var(--bg3)', 'var(--teks)') +
+    '</div>' +
+    '<div style="font-size:12px;color:var(--teks3);">Data terurut: ' + data.join(', ') + '</div>';
+}
+function statChip(label, value, bg, color) {
+  return '<div style="background:'+bg+';border-radius:var(--radius);padding:.625rem .75rem;"><div style="font-size:11px;color:'+color+';margin-bottom:3px;">'+label+'</div><div style="font-size:15px;font-weight:700;color:'+color+';">'+value+'</div></div>';
+}
+document.addEventListener('DOMContentLoaded', function(){ setTimeout(function(){ if(document.getElementById('stat-data')) hitungStatistik(); }, 700); });
 
 /* == BAB 21 - PROGRAM LINEAR == */
 function hitungPL() {
