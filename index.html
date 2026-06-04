@@ -5627,7 +5627,6 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
   </div>
 </div>
 
-<button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu">☰</button>
 
 <!-- script bab01/02 dipindah ke script global -->
 
@@ -6110,7 +6109,6 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
   </main>
 </div>
 
-<button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu">☰</button>
 
 <!-- script bab02/03 dipindah ke script global -->
 </div>
@@ -6118,7 +6116,6 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 <!-- ══════════════════════════════════════════
      PAGE: BAB 03+ (coming soon placeholder)
 ══════════════════════════════════════════ -->
-<button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu">☰</button>
 
 <!-- script bab01/02 dipindah ke script global -->
 
@@ -6457,8 +6454,6 @@ function navigasi(pageId) {
     target.classList.add('aktif');
     target.style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    const isHome = pageId === 'home';
-    document.getElementById('menuToggle').style.display = isHome ? 'none' : '';
   }
 }
 
