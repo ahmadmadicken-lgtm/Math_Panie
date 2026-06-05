@@ -273,9 +273,130 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
   .kuis-opsi { grid-template-columns:1fr; }
 }
 @media (max-width:420px) { .bab-grid { grid-template-columns:1fr; } }
+
+  .bab-num { margin-right: 26px !important; }
+  button.bab-card.selesai::after, div.bab-card.selesai::after { top: 8px; right: 8px; }
+
+/* -- DARK MODE -- */
+[data-theme="dark"] {
+  --bg:        #0F1117;
+  --bg2:       #1A1C25;
+  --bg3:       #22252F;
+  --teks:      #E8E6E0;
+  --teks2:     #A8A49C;
+  --teks3:     #6B6760;
+  --border:    #2E3040;
+  --border2:   #2A2D3A;
+
+  --biru:      #4D9FE8;
+  --biru-muda: #0D2035;
+  --biru-teks: #7DC4FF;
+  --biru-mid:  #4D9FE8;
+
+  --hijau:     #6DB84A;
+  --hijau-muda:#0D2010;
+  --hijau-teks:#90D870;
+
+  --amber:     #F0A942;
+  --amber-muda:#291A06;
+  --amber-teks:#F5C97A;
+
+  --ungu:      #8B82E8;
+  --ungu-muda: #1A1840;
+  --ungu-teks: #B0A8FF;
+
+  --merah:     #E05C5C;
+  --merah-muda:#2A0D0D;
+  --merah-teks:#FF9090;
+
+  --teal:      #3FC494;
+  --teal-muda: #0A2018;
+  --teal-teks: #6DDEB0;
+}
+
+[data-theme="dark"] .sidebar {
+  background: var(--bg2);
+  border-right-color: var(--border);
+}
+[data-theme="dark"] .main {
+  background: var(--bg);
+}
+[data-theme="dark"] button.bab-card,
+[data-theme="dark"] div.bab-card {
+  background: var(--bg2);
+  border-color: var(--border2);
+}
+[data-theme="dark"] button.bab-card.selesai {
+  border-color: var(--hijau);
+}
+[data-theme="dark"] .kartu {
+  background: var(--bg2);
+  border-color: var(--border);
+}
+[data-theme="dark"] .soal-box {
+  background: var(--bg2);
+  border-color: var(--border);
+}
+[data-theme="dark"] input, [data-theme="dark"] select, [data-theme="dark"] textarea {
+  background: var(--bg3) !important;
+  color: var(--teks) !important;
+  border-color: var(--border2) !important;
+}
+[data-theme="dark"] canvas {
+  background: var(--bg2) !important;
+}
+[data-theme="dark"] .solusi {
+  background: var(--bg3);
+  border-color: var(--border);
+}
+
+/* Toggle button */
+.dark-toggle {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 999;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  padding: 2px 3px;
+  transition: background .25s;
+}
+.dark-toggle-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--teks3);
+  transition: transform .25s, background .25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+}
+[data-theme="dark"] .dark-toggle {
+  background: var(--bg3);
+  border-color: var(--border2);
+}
+[data-theme="dark"] .dark-toggle-thumb {
+  transform: translateX(20px);
+  background: var(--amber);
+}
+
 </style>
 </head>
 <body>
+
+<button class="dark-toggle" id="darkToggle" onclick="toggleDark()" title="Toggle dark mode" aria-label="Toggle dark/light mode">
+  <div class="dark-toggle-thumb" id="darkThumb">&#9788;</div>
+</button>
+
 
 <!-- ══════════════════════════════════════════
      PAGE: HOME / INDEX
@@ -313,8 +434,8 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 
   <div class="progress-bar-wrap">
     <span class="prog-label">Progres keseluruhan</span>
-    <div class="prog-track"><div class="prog-fill" style="width:78.125%"></div></div>
-    <span class="prog-pct">25 / 32 bab</span>
+    <div class="prog-track"><div class="prog-fill" style="width:81.250%"></div></div>
+    <span class="prog-pct">26 / 32 bab</span>
   </div>
 
   <div class="search-wrap">
@@ -386,7 +507,7 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
       <div class="fase-header"><span class="fase-badge f4">Fase 4 — Aljabar Lanjut &amp; Statistika</span><div class="fase-line"></div><span class="fase-count">7 bab · Prasyarat: Fase 1–3</span></div>
       <div class="bab-grid">
         <button class="bab-card selesai" data-nama="matriks operasi invers determinan" onclick="navigasi('bab20')" style="text-align:left;width:100%;font:inherit;"><div class="bab-card-top"><div class="bab-nama">Matriks</div><span class="bab-num">20</span></div><div class="bab-desc">Operasi matriks, determinan, invers, dan penerapan ke SPLDV.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-sedang">sedang</span></div><span class="bab-soon-label">Segera hadir</span></div></button>
-        <div class="bab-card coming-soon" data-nama="program linear optimasi daerah penyelesaian"><div class="bab-card-top"><div class="bab-nama">Program Linear</div><span class="bab-num">21</span></div><div class="bab-desc">Model matematika, daerah penyelesaian, nilai optimum fungsi tujuan.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div><span class="bab-soon-label">Segera hadir</span></div></div>
+        <div class="bab-card selesai" data-nama="program linear optimasi daerah penyelesaian" onclick="navigasi('bab21')"><div class="bab-card-top"><div class="bab-nama">Program Linear</div><span class="bab-num">21</span></div><div class="bab-desc">Model matematika, daerah penyelesaian, nilai optimum fungsi tujuan.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div><span class="bab-arrow">&#8594;</span></div></div>
         <div class="bab-card selesai" data-nama="statistika deskriptif mean median modus" onclick="navigasi('bab22')"><div class="bab-card-top"><div class="bab-nama">Statistika Deskriptif</div><span class="bab-num">22</span></div><div class="bab-desc">Mean, median, modus, simpangan baku, histogram, dan ogive.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-mudah">dasar</span></div><span class="bab-arrow">&#8594;</span></div></div>
         <div class="bab-card selesai" data-nama="statistika lanjut regresi distribusi" onclick="navigasi('bab23')"><div class="bab-card-top"><div class="bab-nama">Statistika Lanjut</div><span class="bab-num">23</span></div><div class="bab-desc">Regresi linear, korelasi, distribusi frekuensi, dan interpretasi data.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div><span class="bab-arrow">&#8594;</span></div></div>
         <div class="bab-card selesai" data-nama="permutasi kombinasi aturan pencacahan" onclick="navigasi('bab24')"><div class="bab-card-top"><div class="bab-nama">Permutasi &amp; Kombinasi</div><span class="bab-num">24</span></div><div class="bab-desc">Aturan perkalian, permutasi, kombinasi, dan segitiga Pascal.</div><div class="bab-meta"><div class="tag-row"><span class="tag tag-pk">PK</span><span class="tag tag-pm">PM</span><span class="tag tag-sedang">sedang</span></div><span class="bab-arrow">&#8594;</span></div></div>
@@ -426,7 +547,7 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 <div id="page-bab01" class="page">
 <div class="shell">
 
-  <!-- ── SIDEBAR ── -->
+  <!-- -- SIDEBAR -- -->
   <nav class="sidebar" id="sidebar">
     <a class="sidebar-logo" href="#" onclick="navigasi('home');return false;" style="text-decoration:none;display:block;transition:background .15s;" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
       <div class="app-name" style="display:flex;align-items:center;gap:6px;">
@@ -474,7 +595,7 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
     </div>
   </nav>
 
-  <!-- ── MAIN ── -->
+  <!-- -- MAIN -- -->
   <main class="main">
 
     <!-- HEADER -->
@@ -7470,6 +7591,30 @@ table.nilai td.tdk { background:var(--merah-muda);color:var(--merah-teks); }
 <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Buka menu" style="display:none">☰</button>
 
 <script>
+
+/* -- DARK MODE TOGGLE -- */
+function toggleDark() {
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  var thumb = document.getElementById('darkThumb');
+  if (thumb) thumb.innerHTML = isDark ? '&#9788;' : '&#9790;';
+  try { localStorage.setItem('theme', isDark ? 'light' : 'dark'); } catch(e) {}
+}
+
+/* Restore saved theme */
+(function() {
+  try {
+    var saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.addEventListener('DOMContentLoaded', function() {
+        var t = document.getElementById('darkThumb');
+        if (t) t.innerHTML = '&#9790;';
+      });
+    }
+  } catch(e) {}
+})();
+
 
 /* == BAB 25 - SIMULATOR DADU == */
 var daduFreq = {};
